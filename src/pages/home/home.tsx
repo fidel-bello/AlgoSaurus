@@ -5,6 +5,7 @@ import styles from "./home.module.css";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { VictoryBar } from "victory";
 import { generateRandomArray } from "../../helpers/functions/helperFunctions";
+import InsertionSortGraph from "../../components/graphs/insertionSortGraph";
 
 const HomePage = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -22,7 +23,7 @@ const HomePage = (): JSX.Element | null => {
   };
 
   const returnCorrectGraph = () => {
-    if (currentAlgo === "Bubble")
+    if (currentAlgo === "Bubble") {
       return (
         <BubbleSortGraph
           isAlgorithmRunning={isAlgorithmRunning}
@@ -30,6 +31,16 @@ const HomePage = (): JSX.Element | null => {
           generateArray={generateArray}
         />
       );
+    }
+    if (currentAlgo === "Insertion") {
+      return (
+        <InsertionSortGraph
+          isAlgorithmRunning={isAlgorithmRunning}
+          data={data}
+          generateArray={generateArray}
+        />
+      );
+    }
   };
 
   if (!isAlgorithmRunning) {
