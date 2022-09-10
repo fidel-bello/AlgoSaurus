@@ -7,8 +7,7 @@ export const bubbleSort = async ({
   setCurrentIndex,
   setDataSet,
   delay,
-  setRunConfetti,
-  isRunning,
+  setIsConfettiRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
 
@@ -30,5 +29,5 @@ export const bubbleSort = async ({
     }
   }
 
-  if (setRunConfetti) setRunConfetti(true);
+  if (setIsConfettiRunning) setIsConfettiRunning(true);
 };

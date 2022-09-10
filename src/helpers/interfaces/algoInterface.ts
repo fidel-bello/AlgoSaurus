@@ -7,6 +7,5 @@ export interface AlgoInterface {
   setCurrentIndex3?: React.Dispatch<React.SetStateAction<number | null>>;
   setDataSet: React.Dispatch<React.SetStateAction<number[] | null>>;
   delay: number;
-  setRunConfetti?: React.Dispatch<React.SetStateAction<boolean>>;
-  isRunning?: boolean;
+  setIsConfettiRunning?: React.Dispatch<React.SetStateAction<boolean>>;
 }
