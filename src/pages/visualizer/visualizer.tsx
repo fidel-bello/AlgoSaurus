@@ -14,6 +14,7 @@ import { generateRandomArray } from "../../helpers/functions/helperFunctions";
 import ReturnCorrectInfo from "./components/returnCorrectInfo";
 import SelectAlgorithm from "./components/selectAlgorithm";
 import styles from "./visualizer.module.css";
+import { motion } from "framer-motion";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -111,8 +112,18 @@ const Visualizer = (): JSX.Element | null => {
     }
   };
 
+  const variants = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
   return (
-    <div className={styles.container}>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={variants}
+      className={styles.container}
+    >
       <div className={styles.graph_container}>
         {isAlgorithmRunning ? (
           returnCorrectGraph()
@@ -169,7 +180,7 @@ const Visualizer = (): JSX.Element | null => {
       </div>
       <br></br>
       <ReturnCorrectInfo currentAlgo={currentAlgo} />
-    </div>
+    </motion.div>
   );
 };
 
