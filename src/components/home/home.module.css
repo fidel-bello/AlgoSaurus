@@ -4,11 +4,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  top: 50%;
+  top: 45%;
   left: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
 }
+
 .hero h1 {
   font-size: 4rem;
 }
@@ -26,6 +27,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 .animationArea .boxArea li {
   position: absolute;
@@ -33,9 +35,9 @@
   list-style: none;
   width: 0;
   height: 0;
-  border-bottom: 40px solid #845454;
-  border-left: 20px solid #845454;
-  border-right: 20px solid #845454;
+  border-bottom: 40px solid #c62222;
+  border-left: 20px solid #c71f1f;
+  border-right: 20px solid #ce1b1b;
   animation: animate 20s linear infinite;
   bottom: -150px;
 }
@@ -82,6 +84,7 @@
   z-index: 10000;
   transition: 1s ease;
   margin-top: 30px;
+  backdrop-filter: blur(10px);
 }
 .heroButton:hover {
   background-color: white;
@@ -111,9 +114,11 @@
 @keyframes heroAnimate {
   0% {
     transform: translateY(-25%);
+    opacity: 0;
   }
   100% {
     transform: translateY(0%);
+    opacity: 1;
   }
 }
 

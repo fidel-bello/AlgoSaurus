@@ -5,12 +5,11 @@ const home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
-        <h1 className={styles.heroHeader}>Algorithm Visualizer</h1>
-        <h1 className={styles.heroHeader}>A tool for explaining.</h1>
+        <h1 className={styles.heroHeader}>Algorithm Visualizer!</h1>
         <p className={styles.heroPara}>
-          Grasping the concept of algorithms is hard,
+          A tool for explaining concept of sorting algorithms in computing.
         </p>
-        <p className={styles.heroPara}>let us help.</p>
+        <br></br>
         <Link to="/algorithm-visualizer">
           <button className={styles.heroButton}>Learn More</button>
         </Link>
