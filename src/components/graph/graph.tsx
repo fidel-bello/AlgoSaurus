@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BsPauseFill, BsPlayFill } from "react-icons/bs";
+import { BsPlayFill, BsStopFill } from "react-icons/bs";
 import { VictoryBar } from "victory";
 import { bubbleSort } from "../../helpers/algorithms/sorting/bubleSort";
 import { heapSort } from "../../helpers/algorithms/sorting/heapSort";
@@ -33,6 +33,7 @@ const Graph = (): JSX.Element | null => {
   if (!dataSet) return null;
 
   const handleClick = () => {
+    console.log(isRun);
     switch (currentAlgo) {
       case "Bubble":
         bubbleSort({
@@ -132,8 +133,8 @@ const Graph = (): JSX.Element | null => {
               <BsPlayFill className={styles.playButton} />
             </button>
           ) : (
-            <button>
-              <BsPauseFill className={styles.playButton} />
+            <button onClick={handleClick}>
+              <BsStopFill className={styles.playButton} />
             </button>
           )}
         </div>
