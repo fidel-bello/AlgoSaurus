@@ -1,0 +1,7 @@
+.container {
+  max-width: 90vw;
+  overflow-x: scroll;
+}
+.code {
+  padding-right: 100px;
+}
