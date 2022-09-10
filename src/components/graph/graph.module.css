@@ -17,16 +17,12 @@
   background-color: rgb(20, 20, 20);
   color: white;
   border: 1px solid rgb(60, 60, 60);
-  padding: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
   cursor: pointer;
+  padding: 15px;
 }
-
 .playButton {
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .buttonContainer button {
@@ -39,8 +35,4 @@
 
 select {
   margin-bottom: 0.5rem;
-}
-
-.algoButtons {
-  display: none;
 }
