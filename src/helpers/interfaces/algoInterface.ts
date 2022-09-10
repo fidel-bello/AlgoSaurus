@@ -11,3 +11,4 @@ export interface AlgoInterface {
   setIsConfettiRunning?: React.Dispatch<React.SetStateAction<boolean>>;
   setIsAlgorithmRunning: React.Dispatch<React.SetStateAction<boolean>>;
 }
+//binary
