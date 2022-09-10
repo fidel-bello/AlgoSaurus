@@ -9,6 +9,7 @@ import InsertionSortGraph from "../../components/graphs/insertionSortGraph";
 import SelectionSortGraph from "../../components/graphs/selectionSortGraph";
 import QuickSortGraph from "../../components/graphs/quickSortGraph";
 import HeapSortGraph from "../../components/graphs/heapSortGraph";
+import MergeSortGraph from "../../components/graphs/mergeSortGraph";
 
 const HomePage = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -18,16 +19,10 @@ const HomePage = (): JSX.Element | null => {
   const [isAlgorithmRunning, setIsAlgorithmRunning] = useState(false);
 
   useEffect(() => {
-    generateArray();
-  }, []);
+    if (!isAlgorithmRunning) generateArray();
+  }, [isAlgorithmRunning]);
 
   const generateArray = () => {
-    setData(generateRandomArray({ total: 30, min: 0, max: 100 }));
-  };
-
-  useEffect(() => {
-    setIsAlgorithmRunning(false);
-    console.log("Hello");
     if (currentAlgo === "Bubble") {
       setData(generateRandomArray({ total: 30, min: 0, max: 100 }));
     } else if (currentAlgo === "Insertion") {
@@ -41,13 +36,18 @@ const HomePage = (): JSX.Element | null => {
     } else if (currentAlgo === "Heap") {
       setData(generateRandomArray({ total: 200, min: 0, max: 100 }));
     }
+  };
+
+  useEffect(() => {
+    setIsAlgorithmRunning(false);
+
+    generateArray();
   }, [currentAlgo]);
 
   const returnCorrectGraph = () => {
     const graphProps = {
       isAlgorithmRunning,
       data,
-      generateArray,
     };
 
     if (currentAlgo === "Bubble") {
@@ -60,6 +60,8 @@ const HomePage = (): JSX.Element | null => {
       return <QuickSortGraph {...graphProps} />;
     } else if (currentAlgo === "Heap") {
       return <HeapSortGraph {...graphProps} />;
+    } else if (currentAlgo === "Merge") {
+      return <MergeSortGraph {...graphProps} />;
     }
   };
 

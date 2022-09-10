@@ -5,11 +5,13 @@ export const mergeSort = async ({
   dataSet,
   setCurrentIndex,
   setCurrentIndex2,
+  setCurrentIndex3,
   setDataSet,
   delay,
 }: AlgoInterface) => {
   if (!dataSet) return null;
   if (!setCurrentIndex2) return null;
+  if (!setCurrentIndex3) return null;
 
   const length = dataSet.length;
   const array = dataSet;
@@ -47,6 +49,8 @@ export const mergeSort = async ({
       if (array[i] <= array[j]) {
         sorted.push(array[i++]);
         setCurrentIndex(i);
+        setCurrentIndex2(j);
+        setCurrentIndex3(end);
       } else {
         sorted.push(array[j++]);
         setCurrentIndex2(j);
