@@ -89,11 +89,14 @@ const Visualizer = (): JSX.Element | null => {
 
   return (
     <div className={styles.container}>
-      {isAlgorithmRunning ? (
-        returnCorrectGraph()
-      ) : (
-        <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
-      )}
+      <div className={styles.graph_container}>
+        {isAlgorithmRunning ? (
+          returnCorrectGraph()
+        ) : (
+          <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
+        )}
+      </div>
+
       <div className={styles.menu_container}>
         <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
         <div className={styles.buttonContainer}>
@@ -116,7 +119,7 @@ const Visualizer = (): JSX.Element | null => {
             }}
             type="range"
             min={1}
-            max={1000}
+            max={200}
             step={1}
           />
           <span>{delay} (delay msec)</span>

@@ -4,6 +4,7 @@ import styles from "./info.module.css";
 const SelectionInfo = () => {
   return (
     <div className={styles.container}>
+      <h2 className={styles.header}>Selection Sort</h2>
       <p>
         The selection sort algorithm is a simple, yet effective sorting
         algorithm. A selection-based sorting algorithm is described as an
