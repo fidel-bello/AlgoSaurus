@@ -1,6 +1,5 @@
+import { sleep, swapElements } from "../../functions/helperFunctions";
 import { AlgoInterface } from "../../interfaces/algoInterface";
-import { sleep } from "../../functions/helperFunctions";
-import { swapElements } from "../../functions/helperFunctions";
 
 export const heapSort = async ({
   dataSet,
@@ -13,7 +12,7 @@ export const heapSort = async ({
   if (!dataSet) return null;
   if (!setCurrentIndex2) return null;
   if (!setCurrentIndex3) return null;
-
+  //test commit
   const length = dataSet.length;
   const array = dataSet;
   const moves: any = [];
