@@ -20,19 +20,3 @@
   cursor: pointer;
   padding: 15px;
 }
-.playButton {
-  width: 25px;
-  height: 25px;
-}
-
-.buttonContainer button {
-  border-radius: 50%;
-}
-
-.buttonContainer {
-  display: flex;
-}
-
-select {
-  margin-bottom: 0.5rem;
-}
