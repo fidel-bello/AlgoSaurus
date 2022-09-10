@@ -7,7 +7,7 @@ const codeSnippet = `
 const mergeSort = ({ dataSet }) => {
   const length = dataSet.length;
   const array = dataSet;
-  const temp: any = [];
+  const temp = [];
   const front = 0;
   const back = length - 1;
 
