@@ -8,6 +8,7 @@ export const heapSort = async ({
   setCurrentIndex2,
   setCurrentIndex3,
   delay,
+  setIsAlgorithmRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
   if (!setCurrentIndex2) return null;
@@ -66,6 +67,9 @@ export const heapSort = async ({
     swapElements(array, index, 0);
     await heapify(moves, array, index, 0);
   }
+
   setDataSet([...array]);
+
+  // setIsAlgorithmRunning(false);
   return moves;
 };

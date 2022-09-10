@@ -12,12 +12,14 @@ import HeapSortGraph from "../../components/graphs/heapSortGraph";
 import MergeSortGraph from "../../components/graphs/mergeSortGraph";
 import DefaultGraph from "../../components/graphs/defaultGraph";
 import SelectAlgorithm from "./components/selectAlgorithm";
-import ReturnCorrectInto from "./components/returnCorrectInfo";
+import ReturnCorrectInfo from "./components/returnCorrectInfo";
+import ShellSortGraph from "../../components/graphs/shellSortGraph";
+import { getValue } from "@testing-library/user-event/dist/utils";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
   const [currentAlgo, setCurrentAlgo] = useState<
-    "Bubble" | "Insertion" | "Selection" | "Quick" | "Heap" | "Merge"
+    "Bubble" | "Insertion" | "Selection" | "Quick" | "Heap" | "Merge" | "Shell"
   >("Bubble");
   const [isAlgorithmRunning, setIsAlgorithmRunning] = useState(false);
   const [delay, setDelay] = useState<number>(100);
@@ -46,6 +48,8 @@ const Visualizer = (): JSX.Element | null => {
       setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
     } else if (currentAlgo === "Heap") {
       setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
+    } else if (currentAlgo === "Shell") {
+      setData(generateRandomArray({ total: size || 100, min: 0, max: 100 }));
     }
   };
 
@@ -65,9 +69,28 @@ const Visualizer = (): JSX.Element | null => {
     }
   }, [size]);
 
+  useEffect(() => {
+    if (currentAlgo === "Bubble") {
+      setSize(30);
+    } else if (currentAlgo === "Insertion") {
+      setSize(30);
+    } else if (currentAlgo === "Selection") {
+      setSize(50);
+    } else if (currentAlgo === "Quick") {
+      setSize(300);
+    } else if (currentAlgo === "Merge") {
+      setSize(200);
+    } else if (currentAlgo === "Heap") {
+      setSize(200);
+    } else if (currentAlgo === "Shell") {
+      setSize(100);
+    }
+  }, [currentAlgo]);
+
   const returnCorrectGraph = () => {
     const graphProps = {
       isAlgorithmRunning,
+      setIsAlgorithmRunning,
       data,
       delay,
     };
@@ -84,6 +107,8 @@ const Visualizer = (): JSX.Element | null => {
       return <HeapSortGraph {...graphProps} />;
     } else if (currentAlgo === "Merge") {
       return <MergeSortGraph {...graphProps} />;
+    } else if (currentAlgo === "Shell") {
+      return <ShellSortGraph {...graphProps} />;
     }
   };
 
@@ -98,18 +123,21 @@ const Visualizer = (): JSX.Element | null => {
       </div>
 
       <div className={styles.menu_container}>
-        <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
-        <div className={styles.buttonContainer}>
-          {!isAlgorithmRunning ? (
-            <button onClick={() => setIsAlgorithmRunning(true)}>
-              <BsPlayFill className={styles.playButton} />
-            </button>
-          ) : (
-            <button onClick={() => setIsAlgorithmRunning(false)}>
-              <BiStopCircle className={styles.playButton} />
-            </button>
-          )}
+        <div className={styles.dropdown_play_button_container}>
+          <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
+          <div className={styles.buttonContainer}>
+            {!isAlgorithmRunning ? (
+              <button onClick={() => setIsAlgorithmRunning(true)}>
+                <BsPlayFill className={styles.playButton} />
+              </button>
+            ) : (
+              <button onClick={() => setIsAlgorithmRunning(false)}>
+                <BiStopCircle className={styles.playButton} />
+              </button>
+            )}
+          </div>
         </div>
+
         <div className={styles.slider_container}>
           <input
             onChange={(e) => {
@@ -131,6 +159,7 @@ const Visualizer = (): JSX.Element | null => {
               setSize(e.target.value);
               setIsAlgorithmRunning(false);
             }}
+            value={size || 30}
             type="range"
             min={30}
             max={300}
@@ -140,7 +169,7 @@ const Visualizer = (): JSX.Element | null => {
         </div>
       </div>
       <br></br>
-      <ReturnCorrectInto currentAlgo={currentAlgo} />
+      <ReturnCorrectInfo currentAlgo={currentAlgo} />
     </div>
   );
 };

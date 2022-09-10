@@ -1,34 +1,36 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
 import { VictoryBar } from "victory";
-import { mergeSort } from "../../helpers/algorithms/sorting/mergeSort";
+import { insertionSort } from "../../helpers/algorithms/sorting/insertionSort";
+import { shellSort } from "../../helpers/algorithms/sorting/shellSort";
 import { AlgoGraphInterface } from "../../helpers/interfaces/algoGraphInterface";
 
 import styles from "./graph.module.css";
 
-const MergeSortGraph = ({
+const ShellSortGraph = ({
   isAlgorithmRunning,
-  setIsAlgorithmRunning,
   data,
   delay,
+  setIsAlgorithmRunning,
 }: AlgoGraphInterface): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentIndex2, setCurrentIndex2] = useState<number | null>(0);
   const [currentIndex3, setCurrentIndex3] = useState<number | null>(0);
+
   const [dataSet, setDataSet] = useState(data);
 
   useEffect(() => {
     if (!isAlgorithmRunning) return;
     if (!dataSet) return;
 
-    mergeSort({
+    shellSort({
       dataSet,
-      setDataSet,
       setCurrentIndex,
-      setCurrentIndex2,
-      setCurrentIndex3,
+      setDataSet,
       delay,
       setIsAlgorithmRunning,
+      setCurrentIndex2,
+      setCurrentIndex3,
     });
   }, [isAlgorithmRunning]);
 
@@ -57,4 +59,4 @@ const MergeSortGraph = ({
   );
 };
 
-export default MergeSortGraph;
+export default ShellSortGraph;

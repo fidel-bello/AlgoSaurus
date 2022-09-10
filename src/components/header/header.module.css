@@ -20,17 +20,6 @@
   align-items: center;
 }
 
-select {
-  background-color: rgb(46, 46, 46);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  min-width: 8rem;
-  max-width: 200px;
-  padding: 0.5rem 0.2rem;
-}
 .menuItems {
   display: flex;
   gap: 2rem;
