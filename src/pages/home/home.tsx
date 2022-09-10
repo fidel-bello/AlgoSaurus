@@ -2,14 +2,16 @@
 import React, { useEffect, useState } from "react";
 import BubbleSortGraph from "../../components/graphs/bubleSortGraph";
 import styles from "./home.module.css";
-import { BsPauseFill, BsPlayFill } from "react-icons/bs";
-import { VictoryBar } from "victory";
+import { BsPlayFill } from "react-icons/bs";
+import { BiStopCircle } from "react-icons/bi";
 import { generateRandomArray } from "../../helpers/functions/helperFunctions";
 import InsertionSortGraph from "../../components/graphs/insertionSortGraph";
 import SelectionSortGraph from "../../components/graphs/selectionSortGraph";
 import QuickSortGraph from "../../components/graphs/quickSortGraph";
 import HeapSortGraph from "../../components/graphs/heapSortGraph";
 import MergeSortGraph from "../../components/graphs/mergeSortGraph";
+import DefaultGraph from "../../components/graphs/defaultGraph";
+import SelectAlgorithm from "./components/selectAlgorithm";
 
 const HomePage = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -65,25 +67,15 @@ const HomePage = (): JSX.Element | null => {
     }
   };
 
-  if (!isAlgorithmRunning) {
-    if (!data) return null;
-
-    return (
-      <div>
-        <VictoryBar width={1000} height={500} data={data} />
-        <select
-          onChange={(e) => {
-            // @ts-ignore
-            setCurrentAlgo(e.target.value);
-          }}
-        >
-          <option value="Bubble">Bubble</option>
-          <option value="Insertion">Insertion</option>
-          <option value="Selection">Selection</option>
-          <option value="Quick">Quick Sort</option>
-          <option value="Heap">Heap Sort</option>
-          <option value="Merge">Merge Sort</option>
-        </select>
+  return (
+    <div>
+      {isAlgorithmRunning ? (
+        returnCorrectGraph()
+      ) : (
+        <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
+      )}
+      <div className={styles.menu_container}>
+        <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
         <div className={styles.buttonContainer}>
           {!isAlgorithmRunning ? (
             <button onClick={() => setIsAlgorithmRunning(true)}>
@@ -91,40 +83,10 @@ const HomePage = (): JSX.Element | null => {
             </button>
           ) : (
             <button onClick={() => setIsAlgorithmRunning(false)}>
-              <BsPauseFill className={styles.playButton} />
+              <BiStopCircle className={styles.playButton} />
             </button>
           )}
         </div>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      {returnCorrectGraph()}
-      <select
-        onChange={(e) => {
-          // @ts-ignore
-          setCurrentAlgo(e.target.value);
-        }}
-      >
-        <option value="Bubble">Bubble</option>
-        <option value="Insertion">Insertion</option>
-        <option value="Selection">Selection</option>
-        <option value="Quick">Quick Sort</option>
-        <option value="Heap">Heap Sort</option>
-        <option value="Merge">Merge Sort</option>
-      </select>
-      <div className={styles.buttonContainer}>
-        {!isAlgorithmRunning ? (
-          <button onClick={() => setIsAlgorithmRunning(true)}>
-            <BsPlayFill className={styles.playButton} />
-          </button>
-        ) : (
-          <button onClick={() => setIsAlgorithmRunning(false)}>
-            <BsPauseFill className={styles.playButton} />
-          </button>
-        )}
       </div>
     </div>
   );
