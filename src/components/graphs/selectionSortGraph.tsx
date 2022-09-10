@@ -8,22 +8,14 @@ import styles from "./graph.module.css";
 interface Props {
   isAlgorithmRunning: boolean;
   data: number[] | null;
-  generateArray: () => void;
 }
 
 const SelectionSortGraph = ({
   isAlgorithmRunning,
   data,
-  generateArray,
 }: Props): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [dataSet, setDataSet] = useState(data);
-
-  useEffect(() => {
-    if (dataSet) {
-      generateArray();
-    }
-  }, [dataSet]);
 
   useEffect(() => {
     if (!isAlgorithmRunning) return;
@@ -34,7 +26,6 @@ const SelectionSortGraph = ({
       setCurrentIndex,
       setDataSet,
       delay: 10,
-      isAlgorithmRunning,
     });
   }, [isAlgorithmRunning]);
 

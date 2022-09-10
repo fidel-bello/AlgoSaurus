@@ -8,6 +8,7 @@ import { generateRandomArray } from "../../helpers/functions/helperFunctions";
 import InsertionSortGraph from "../../components/graphs/insertionSortGraph";
 import SelectionSortGraph from "../../components/graphs/selectionSortGraph";
 import QuickSortGraph from "../../components/graphs/quickSortGraph";
+import HeapSortGraph from "../../components/graphs/heapSortGraph";
 
 const HomePage = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -34,7 +35,7 @@ const HomePage = (): JSX.Element | null => {
     } else if (currentAlgo === "Selection") {
       setData(generateRandomArray({ total: 50, min: 0, max: 100 }));
     } else if (currentAlgo === "Quick") {
-      setData(generateRandomArray({ total: 200, min: 0, max: 100 }));
+      setData(generateRandomArray({ total: 300, min: 0, max: 100 }));
     } else if (currentAlgo === "Merge") {
       setData(generateRandomArray({ total: 200, min: 0, max: 100 }));
     } else if (currentAlgo === "Heap") {
@@ -57,6 +58,8 @@ const HomePage = (): JSX.Element | null => {
       return <SelectionSortGraph {...graphProps} />;
     } else if (currentAlgo === "Quick") {
       return <QuickSortGraph {...graphProps} />;
+    } else if (currentAlgo === "Heap") {
+      return <HeapSortGraph {...graphProps} />;
     }
   };
 

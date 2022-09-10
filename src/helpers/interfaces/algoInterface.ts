@@ -8,5 +8,4 @@ export interface AlgoInterface {
   setDataSet: React.Dispatch<React.SetStateAction<number[] | null>>;
   delay: number;
   setIsConfettiRunning?: React.Dispatch<React.SetStateAction<boolean>>;
-  isAlgorithmRunning: boolean;
 }

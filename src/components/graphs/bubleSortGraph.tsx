@@ -9,25 +9,16 @@ import styles from "./graph.module.css";
 interface Props {
   isAlgorithmRunning: boolean;
   data: number[] | null;
-  generateArray: () => void;
 }
 
 const BubbleSortGraph = ({
   isAlgorithmRunning,
   data,
-
-  generateArray,
 }: Props): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [dataSet, setDataSet] = useState(data);
   // Confetti
   const [isConfettiRunning, setIsConfettiRunning] = useState(false);
-
-  useEffect(() => {
-    if (dataSet) {
-      generateArray();
-    }
-  }, [dataSet]);
 
   useEffect(() => {
     if (!isAlgorithmRunning) return;
@@ -39,7 +30,6 @@ const BubbleSortGraph = ({
       setCurrentIndex,
       setDataSet,
       delay: 10,
-      isAlgorithmRunning,
     });
   }, [isAlgorithmRunning]);
 

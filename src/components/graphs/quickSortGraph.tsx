@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
 import { VictoryBar } from "victory";
-import { insertionSort } from "../../helpers/algorithms/sorting/insertionSort";
 import { quickSort } from "../../helpers/algorithms/sorting/quickSort";
 
 import styles from "./graph.module.css";
@@ -9,24 +8,15 @@ import styles from "./graph.module.css";
 interface Props {
   isAlgorithmRunning: boolean;
   data: number[] | null;
-  generateArray: () => void;
 }
 
 const QuickSortGraph = ({
   isAlgorithmRunning,
   data,
-
-  generateArray,
 }: Props): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentIndex2, setCurrentIndex2] = useState<number | null>(0);
   const [dataSet, setDataSet] = useState(data);
-
-  useEffect(() => {
-    if (dataSet) {
-      generateArray();
-    }
-  }, [dataSet]);
 
   useEffect(() => {
     if (!isAlgorithmRunning) return;
@@ -38,7 +28,6 @@ const QuickSortGraph = ({
       setDataSet,
       setCurrentIndex2,
       delay: 10,
-      isAlgorithmRunning,
     });
   }, [isAlgorithmRunning]);
 

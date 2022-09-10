@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
 import { VictoryBar } from "victory";
-import { insertionSort } from "../../helpers/algorithms/sorting/insertionSort";
+import { heapSort } from "../../helpers/algorithms/sorting/heapSort";
 
 import styles from "./graph.module.css";
 
@@ -10,22 +10,26 @@ interface Props {
   data: number[] | null;
 }
 
-const InsertionSortGraph = ({
+const HeapSortGraph = ({
   isAlgorithmRunning,
   data,
 }: Props): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [currentIndex2, setCurrentIndex2] = useState<number | null>(0);
+  const [currentIndex3, setCurrentIndex3] = useState<number | null>(0);
   const [dataSet, setDataSet] = useState(data);
 
   useEffect(() => {
     if (!isAlgorithmRunning) return;
     if (!dataSet) return;
 
-    insertionSort({
+    heapSort({
       dataSet,
-      setCurrentIndex,
       setDataSet,
-      delay: 10,
+      setCurrentIndex,
+      setCurrentIndex2,
+      setCurrentIndex3,
+      delay: 1,
     });
   }, [isAlgorithmRunning]);
 
@@ -40,7 +44,11 @@ const InsertionSortGraph = ({
           style={{
             data: {
               fill: ({ index }) =>
-                index === currentIndex ? "red" : "rgb(70,70,70)",
+                index === currentIndex ||
+                index === currentIndex2 ||
+                index === currentIndex3
+                  ? "red"
+                  : "rgb(70,70,70)",
             },
           }}
           data={dataSet}
@@ -50,4 +58,4 @@ const InsertionSortGraph = ({
   );
 };
 
-export default InsertionSortGraph;
+export default HeapSortGraph;
