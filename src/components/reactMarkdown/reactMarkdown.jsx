@@ -19,7 +19,7 @@ SyntaxHighlighter.registerLanguage("markdown", markdown);
 SyntaxHighlighter.registerLanguage("json", json);
 
 import rangeParser from "parse-numeric-range";
-import oneDark from "react-syntax-highlighter/dist/cjs/styles/prism/one-dark";
+import oneDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 
 const ReactMarkdownComponent = ({ markdown }) => {
   const syntaxTheme = oneDark;
