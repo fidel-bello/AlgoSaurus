@@ -34,7 +34,7 @@ select {
   display: flex;
   gap: 2rem;
 }
-.menuItems h2 {
+.menuItems h1 {
   font-weight: 300;
 }
 

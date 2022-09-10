@@ -1,11 +1,14 @@
 .playButton {
-  border-radius: 50%;
   height: 30px;
   width: 30px;
 }
 
 .buttonContainer button {
   border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0.2rem;
 }
 
 .buttonContainer {

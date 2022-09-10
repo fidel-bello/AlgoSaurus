@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import algoPic from "../algoPic.png";
 import styles from "./home.module.css";
-
 const home = () => {
   return (
     <div className={styles.container}>
@@ -23,6 +23,27 @@ const home = () => {
           <li></li>
           <li></li>
         </ul>
+      </div>
+      <div className={styles.section2}>
+        <h1>Our Tools</h1>
+        <div className={styles.flex}>
+          <div className={styles.project}>
+            <img src={algoPic} alt="algo pic" className={styles.algoPic} />
+            <div className={styles.projectInfo}>
+              <h2>Algorithm Visualizer</h2>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+                tempore, excepturi non repellendus adipisci odit praesentium?
+                Quos officiis minima dicta.
+              </p>
+              <button>Go To</button>
+            </div>
+          </div>
+          <div className={styles.project}>
+            <h2>Pathfinder</h2>
+            <button>Go To</button>
+          </div>
+        </div>
       </div>
     </div>
   );

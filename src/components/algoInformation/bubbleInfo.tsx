@@ -4,6 +4,7 @@ import styles from "./info.module.css";
 const BubbleInfo = () => {
   return (
     <div className={styles.container}>
+      <h1 style={{ margin: "10px 0px" }}>Bubble Sort Simplified</h1>
       <p>
         Bubble sort is a basic algorithm for arranging a string of numbers or
         other elements in the correct order. The method works by examining each

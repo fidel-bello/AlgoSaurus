@@ -4,6 +4,7 @@ import styles from "./info.module.css";
 const HeapInfo = () => {
   return (
     <div className={styles.container}>
+      <h1 style={{ margin: "10px 0px" }}>Heap Sort Simplified</h1>
       <p>
         Heap sort is a comparison-based sorting technique and it is similar to
         the selection sort where we first find the minimum element and place the
