@@ -8,11 +8,13 @@ import styles from "./graph.module.css";
 interface Props {
   isAlgorithmRunning: boolean;
   data: number[] | null;
+  delay: number;
 }
 
 const QuickSortGraph = ({
   isAlgorithmRunning,
   data,
+  delay,
 }: Props): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentIndex2, setCurrentIndex2] = useState<number | null>(0);
@@ -27,7 +29,7 @@ const QuickSortGraph = ({
       setCurrentIndex,
       setDataSet,
       setCurrentIndex2,
-      delay: 10,
+      delay,
     });
   }, [isAlgorithmRunning]);
 
