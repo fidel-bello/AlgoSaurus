@@ -15,6 +15,10 @@
   border-bottom: 1px solid rgb(50, 50, 50);
   margin-bottom: 35px;
 }
+.graph_container svg {
+  /* background-color: red; */
+  padding: 5px;
+}
 
 .buttonContainer {
   display: flex;
@@ -49,7 +53,7 @@
   max-width: 1000px;
   margin: auto;
   position: relative;
-  padding: 20px;
+  padding: 0px;
 }
 .slider_container {
   display: flex;
@@ -70,10 +74,10 @@
   .menu_container {
     flex-direction: column;
   }
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
 }
