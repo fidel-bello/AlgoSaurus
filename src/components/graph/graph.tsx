@@ -8,7 +8,6 @@ import { insertionSort } from "../../helpers/algorithms/sorting/insertionSort";
 import { mergeSort } from "../../helpers/algorithms/sorting/mergeSort";
 import { quickSort } from "../../helpers/algorithms/sorting/quickSort";
 import { selectionSort } from "../../helpers/algorithms/sorting/selectionSort";
-
 import { generateRandomArray } from "../../helpers/functions/helperFunctions";
 import ConfettiComponent from "../confetti/confetti";
 import styles from "./graph.module.css";
@@ -38,7 +37,6 @@ const Graph = (): JSX.Element | null => {
   if (!dataSet) return null;
 
   const handleClick = () => {
-    console.log(isRun);
     switch (currentAlgo) {
       case "Bubble":
         bubbleSort({
@@ -55,6 +53,7 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex,
           setDataSet,
           delay: 10,
+          setRunConfetti,
         });
         break;
       case "Selection":
@@ -63,6 +62,7 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex,
           setDataSet,
           delay: 10,
+          setRunConfetti,
         });
         break;
       case "Quick":
@@ -72,6 +72,7 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex2,
           setDataSet,
           delay: 10,
+          setRunConfetti,
         });
         console.log("went into quick sort");
         break;
@@ -82,7 +83,8 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex2,
           setCurrentIndex3,
           setDataSet,
-          delay: 1,
+          delay: 10,
+          setRunConfetti,
         });
         break;
       case "Merge":
@@ -93,6 +95,7 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex3,
           setDataSet,
           delay: 10,
+          setRunConfetti,
         });
         break;
       default:
