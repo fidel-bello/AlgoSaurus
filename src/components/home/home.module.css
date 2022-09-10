@@ -1,3 +1,11 @@
+.container {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  overflow: hidden;
+}
 .hero {
   position: absolute;
   display: flex;
@@ -35,15 +43,18 @@
   list-style: none;
   width: 0;
   height: 0;
-  border-bottom: 40px solid #c62222;
-  border-left: 20px solid #c71f1f;
-  border-right: 20px solid #ce1b1b;
+  border-bottom: 40px solid #b22424;
+  border-left: 20px solid #b22424;
+  border-right: 20px solid #b22424;
   animation: animate 20s linear infinite;
   bottom: -150px;
 }
 .animationArea {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
+  max-height: 100vh;
 }
 .boxArea {
   z-index: -1;
@@ -120,54 +131,4 @@
     transform: translateY(0%);
     opacity: 1;
   }
-}
-
-.section2 {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  z-index: 10000;
-  background-color: black;
-  align-items: center;
-}
-
-.flex {
-  display: flex;
-  gap: 50px;
-  margin-top: 30px;
-}
-
-.project {
-  display: grid;
-  border-radius: 10px;
-  max-width: 600px;
-  padding: 1rem;
-  background-color: rgb(13, 13, 13);
-  box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.178);
-  grid-template-columns: repeat(12, 1fr);
-}
-.projectImg {
-  grid-column: 1/7;
-  grid-row: 1/2;
-  width: 100%;
-}
-.projectInfo {
-  text-align: center;
-  grid-column: 7/-1;
-  grid-row: 1/2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.project button {
-  background-color: rgb(199, 199, 199);
-  border: none;
-  font-size: 20px;
-  font-weight: 500;
-  border-radius: 5px;
-  padding: 0.2rem 0.4rem;
-  cursor: pointer;
 }
