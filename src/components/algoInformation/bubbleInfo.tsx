@@ -4,7 +4,7 @@ import styles from "./info.module.css";
 
 const codeSnippet = `
 \`\`\`javascript
-function bubbleSort(arr){
+const bubbleSort = ({ arr }) => {
     
   for(var i = 0; i < arr.length; i++){
      
