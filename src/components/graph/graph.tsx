@@ -53,7 +53,7 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex,
           setDataSet,
           delay: 10,
-          setRunConfetti,
+          setIsConfettiRunning,
         });
         break;
       case "Selection":
@@ -62,7 +62,7 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex,
           setDataSet,
           delay: 10,
-          setRunConfetti,
+          setIsConfettiRunning,
         });
         break;
       case "Quick":
@@ -72,7 +72,7 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex2,
           setDataSet,
           delay: 10,
-          setRunConfetti,
+          setIsConfettiRunning,
         });
         console.log("went into quick sort");
         break;
@@ -84,7 +84,7 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex3,
           setDataSet,
           delay: 10,
-          setRunConfetti,
+          setIsConfettiRunning,
         });
         break;
       case "Merge":
@@ -95,7 +95,7 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex3,
           setDataSet,
           delay: 10,
-          setRunConfetti,
+          setIsConfettiRunning,
         });
         break;
       default:
