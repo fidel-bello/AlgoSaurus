@@ -73,7 +73,7 @@
   left: 23%;
   animation-delay: 3.5s;
 }
-button {
+.heroButton {
   background-color: transparent;
   border: 2px solid white;
   font-size: 1rem;
@@ -84,7 +84,7 @@ button {
   transition: 1s ease;
   margin-top: 30px;
 }
-button:hover {
+.heroButton:hover {
   background-color: white;
   color: black;
   transition: 1s ease;
