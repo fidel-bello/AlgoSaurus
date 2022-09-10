@@ -2,19 +2,29 @@ import React from "react";
 import ReactMarkdownComponent from "../reactMarkdown/reactMarkdown";
 import styles from "./info.module.css";
 
-const codeSnippet = `React + marked + highlight.js
-
-**Code Sample:**
+const codeSnippet = `
 \`\`\`javascript
-import marked from "marked";
-
-marked.setOptions({
-  langPrefix: "hljs language-",
-  highlight: function(code) {
-    return require("highlight.js").highlightAuto(code, ["html", "javascript"])
-      .value;
+function bubbleSort(arr){
+    
+  for(var i = 0; i < arr.length; i++){
+     
+    // Last i elements are already in place 
+    for(var j = 0; j < ( arr.length - i -1 ); j++){
+       
+      // Checking if the item at present iteration
+      // is greater than the next iteration
+      if(arr[j] > arr[j+1]){
+         
+        // If the condition is true then swap them
+        var temp = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j+1] = temp
+      }
+    }
   }
-});
+  // Print the sorted array
+  console.log(arr);
+ }
 \`\`\`
 `;
 
@@ -22,6 +32,8 @@ const BubbleInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Bubble Sort</h2>
+      <ReactMarkdownComponent markdown={codeSnippet} />
+      <h2 className={styles.header}>How it works?</h2>
       <p>
         Bubble sort is a basic algorithm for arranging a string of numbers or
         other elements in the correct order. The method works by examining each
@@ -41,7 +53,6 @@ const BubbleInfo = () => {
         for more massive datasets. But it can work well when sorting only a
         small number of elements.
       </p>
-      <ReactMarkdownComponent markdown={codeSnippet} />
     </div>
   );
 };
