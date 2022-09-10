@@ -4,6 +4,9 @@
   padding-top: 15px;
   padding-bottom: 15px;
   border-bottom: 1px solid rgb(50, 50, 50);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 .container h1 {
   font-size: 20px;
