@@ -4,6 +4,7 @@ import styles from "./info.module.css";
 const MergeInfo = () => {
   return (
     <div className={styles.container}>
+      <h2 className={styles.header}>Merge Sort</h2>
       <p>
         The Merge Sort algorithm is a sorting algorithm that is based on the
         Divide and Conquer paradigm. In this algorithm, the array is initially

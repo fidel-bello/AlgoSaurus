@@ -4,6 +4,7 @@ import styles from "./info.module.css";
 const InsertionInfo = () => {
   return (
     <div className={styles.container}>
+      <h2 className={styles.header}>Insertion Sort</h2>
       <p>
         Insertion sort is a simple sorting algorithm that works similar to the
         way you sort playing cards in your hands. The array is virtually split
