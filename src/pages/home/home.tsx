@@ -11,6 +11,7 @@ import QuickSortGraph from "../../components/graphs/quickSortGraph";
 import HeapSortGraph from "../../components/graphs/heapSortGraph";
 import MergeSortGraph from "../../components/graphs/mergeSortGraph";
 import DefaultGraph from "../../components/graphs/defaultGraph";
+import SelectAlgorithm from "./components/selectAlgorithm";
 
 const HomePage = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -72,19 +73,8 @@ const HomePage = (): JSX.Element | null => {
     return (
       <div>
         <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
-        <select
-          onChange={(e) => {
-            // @ts-ignore
-            setCurrentAlgo(e.target.value);
-          }}
-        >
-          <option value="Bubble">Bubble</option>
-          <option value="Insertion">Insertion</option>
-          <option value="Selection">Selection</option>
-          <option value="Quick">Quick Sort</option>
-          <option value="Heap">Heap Sort</option>
-          <option value="Merge">Merge Sort</option>
-        </select>
+        <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
+
         <div className={styles.buttonContainer}>
           {!isAlgorithmRunning ? (
             <button onClick={() => setIsAlgorithmRunning(true)}>
@@ -103,19 +93,7 @@ const HomePage = (): JSX.Element | null => {
   return (
     <div>
       {returnCorrectGraph()}
-      <select
-        onChange={(e) => {
-          // @ts-ignore
-          setCurrentAlgo(e.target.value);
-        }}
-      >
-        <option value="Bubble">Bubble</option>
-        <option value="Insertion">Insertion</option>
-        <option value="Selection">Selection</option>
-        <option value="Quick">Quick Sort</option>
-        <option value="Heap">Heap Sort</option>
-        <option value="Merge">Merge Sort</option>
-      </select>
+      <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
       <div className={styles.buttonContainer}>
         {!isAlgorithmRunning ? (
           <button onClick={() => setIsAlgorithmRunning(true)}>
