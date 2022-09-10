@@ -15,7 +15,7 @@ const Header = (): JSX.Element => {
         </Link>
         <div>
           <Link to="/algorithm-visualizer" className={styles.menuItems}>
-            <h1>Visualizer</h1>
+            <h1 className={styles.menuHeader}>Visualizer</h1>
           </Link>
         </div>
       </div>
