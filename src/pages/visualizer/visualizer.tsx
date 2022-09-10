@@ -12,12 +12,13 @@ import HeapSortGraph from "../../components/graphs/heapSortGraph";
 import MergeSortGraph from "../../components/graphs/mergeSortGraph";
 import DefaultGraph from "../../components/graphs/defaultGraph";
 import SelectAlgorithm from "./components/selectAlgorithm";
-import ReturnCorrectInto from "./components/returnCorrectInfo";
+import ReturnCorrectInfo from "./components/returnCorrectInfo";
+import ShellSortGraph from "../../components/graphs/shellSortGraph";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
   const [currentAlgo, setCurrentAlgo] = useState<
-    "Bubble" | "Insertion" | "Selection" | "Quick" | "Heap" | "Merge"
+    "Bubble" | "Insertion" | "Selection" | "Quick" | "Heap" | "Merge" | "Shell"
   >("Bubble");
   const [isAlgorithmRunning, setIsAlgorithmRunning] = useState(false);
   const [delay, setDelay] = useState<number>(100);
@@ -46,6 +47,8 @@ const Visualizer = (): JSX.Element | null => {
       setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
     } else if (currentAlgo === "Heap") {
       setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
+    } else if (currentAlgo === "Shell") {
+      setData(generateRandomArray({ total: size || 100, min: 0, max: 100 }));
     }
   };
 
@@ -85,6 +88,8 @@ const Visualizer = (): JSX.Element | null => {
       return <HeapSortGraph {...graphProps} />;
     } else if (currentAlgo === "Merge") {
       return <MergeSortGraph {...graphProps} />;
+    } else if (currentAlgo === "Shell") {
+      return <ShellSortGraph {...graphProps} />;
     }
   };
 
@@ -144,7 +149,7 @@ const Visualizer = (): JSX.Element | null => {
         </div>
       </div>
       <br></br>
-      <ReturnCorrectInto currentAlgo={currentAlgo} />
+      <ReturnCorrectInfo currentAlgo={currentAlgo} />
     </div>
   );
 };

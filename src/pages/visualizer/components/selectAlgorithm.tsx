@@ -4,7 +4,13 @@ import React from "react";
 interface Props {
   setCurrentAlgo: React.Dispatch<
     React.SetStateAction<
-      "Bubble" | "Insertion" | "Selection" | "Quick" | "Heap" | "Merge"
+      | "Bubble"
+      | "Insertion"
+      | "Selection"
+      | "Quick"
+      | "Heap"
+      | "Merge"
+      | "Shell"
     >
   >;
 }
@@ -23,6 +29,8 @@ const SelectAlgorithm = ({ setCurrentAlgo }: Props) => {
       <option value="Quick">Quick Sort</option>
       <option value="Heap">Heap Sort</option>
       <option value="Merge">Merge Sort</option>
+      <option value="Merge">Merge Sort</option>
+      <option value="Shell">Shell Sort</option>
     </select>
   );
 };
