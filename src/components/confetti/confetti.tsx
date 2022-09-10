@@ -10,13 +10,13 @@ function getWindowDimensions() {
 import Confetti from "react-confetti";
 
 interface Props {
-  runConfetti: boolean;
-  setRunConfetti: React.Dispatch<React.SetStateAction<boolean>>;
+  isConfettiRunning: boolean;
+  setIsConfettiRunning: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ConfettiComponent = ({
-  runConfetti,
-  setRunConfetti,
+  isConfettiRunning,
+  setIsConfettiRunning,
 }: Props): JSX.Element | null => {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
@@ -32,15 +32,15 @@ const ConfettiComponent = ({
   }, []);
 
   useEffect(() => {
-    if (!runConfetti) return;
+    if (!setIsConfettiRunning) return;
 
     setTimeout(() => {
-      setRunConfetti(false);
+      setIsConfettiRunning(false);
     }, 5000);
-  }, [runConfetti]);
+  }, [isConfettiRunning]);
 
   if (!windowDimensions) return null;
-  if (!runConfetti) return null;
+  if (!isConfettiRunning) return null;
 
   return (
     <div>

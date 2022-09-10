@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { VictoryBar } from "victory";
@@ -17,10 +18,14 @@ const Graph = (): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentIndex2, setCurrentIndex2] = useState<number | null>(null);
   const [currentIndex3, setCurrentIndex3] = useState<number | null>(null);
-  const [currentAlgo, setCurrentAlgo] = useState("");
+  const [currentAlgo, setCurrentAlgo] = useState<
+    "Bubble" | "Insertion" | "Selection" | "Quick" | "Heap" | "Merge"
+  >("Bubble");
+
   // Confetti
   const [runConfetti, setRunConfetti] = useState<boolean>(false);
-  const [isRun, setIsRun] = useState(false);
+  const [isConfettiRunning, setIsConfettiRunning] = useState(false);
+
   useEffect(() => {
     generateArray();
     setCurrentAlgo("Bubble");
@@ -36,6 +41,7 @@ const Graph = (): JSX.Element | null => {
     switch (currentAlgo) {
       case "Bubble":
         bubbleSort({
+          setIsConfettiRunning,
           dataSet,
           setCurrentIndex,
           setDataSet,
@@ -91,14 +97,13 @@ const Graph = (): JSX.Element | null => {
       default:
         alert("Error");
     }
-    setIsRun(!isRun);
   };
 
   return (
     <div className={styles.container}>
       <ConfettiComponent
-        setRunConfetti={setRunConfetti}
-        runConfetti={runConfetti}
+        setIsConfettiRunning={setIsConfettiRunning}
+        isConfettiRunning={isConfettiRunning}
       />
       <div className={styles.graph_container}>
         <VictoryBar
@@ -116,6 +121,7 @@ const Graph = (): JSX.Element | null => {
         />
         <select
           onChange={(e) => {
+            // @ts-ignore
             setCurrentAlgo(e.target.value);
           }}
         >
@@ -127,7 +133,7 @@ const Graph = (): JSX.Element | null => {
           <option value="Merge">Merge Sort</option>
         </select>
         <div className={styles.buttonContainer}>
-          {!isRun ? (
+          {!isConfettiRunning ? (
             <button onClick={handleClick}>
               <BsPlayFill className={styles.playButton} />
             </button>
