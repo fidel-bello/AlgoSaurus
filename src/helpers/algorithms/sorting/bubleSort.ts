@@ -14,7 +14,6 @@ export const bubbleSort = async ({
   const length = dataSet.length;
 
   const array = dataSet;
-  console.log(isRunning);
 
   for (let i = 0; i < length; i++) {
     for (let j = 0; j < length - i; j++) {
