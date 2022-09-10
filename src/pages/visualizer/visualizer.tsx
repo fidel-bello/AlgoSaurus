@@ -113,7 +113,6 @@ const Visualizer = (): JSX.Element | null => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.visHeader}>Algorithm Visualizer</h1>
       <div className={styles.graph_container}>
         {isAlgorithmRunning ? (
           returnCorrectGraph()
