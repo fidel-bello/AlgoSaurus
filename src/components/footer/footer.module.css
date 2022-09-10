@@ -9,6 +9,9 @@
   width: 100%;
   padding-bottom: 50px;
 }
+.container p {
+  text-align: center;
+}
 .dino {
-  width: 250px;
+  width: 200px;
 }
