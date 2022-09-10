@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./header.module.css";
 
 const Header = (): JSX.Element => {
@@ -7,15 +8,15 @@ const Header = (): JSX.Element => {
       <div className={styles.content}>
         <h1>Algorithm Visualization</h1>
         <div className={styles.menuItems}>
-          <a href="/">
+          <Link to="/">
             <h2>Home</h2>
-          </a>
-          <a href="/algorithm-visualizer">
+          </Link>
+          <Link to="/algorithm-visualizer">
             <h2>Algorithm Visualizer</h2>
-          </a>
-          <a href="/pathfinder">
+          </Link>
+          <Link to="/pathfinder">
             <h2>Pathfinder</h2>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
