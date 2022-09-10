@@ -51,7 +51,6 @@ const QuicksortInfo = () => {
       <h2 className={styles.header}>Quick Sort</h2>
       <ReactMarkdownComponent markdown={codeSnippet} />
       <h2 className={styles.header}>How it works?</h2>
-
       <p>
         Quicksort is a fast sorting algorithm that works by splitting a large
         array of data into smaller sub-arrays. This implies that each iteration
