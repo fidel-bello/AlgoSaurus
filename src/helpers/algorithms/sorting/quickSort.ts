@@ -10,6 +10,7 @@ export const quickSort = async ({
   setCurrentIndex2,
   setDataSet,
   delay,
+  setIsAlgorithmRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
   if (!setCurrentIndex2) return null;
@@ -41,6 +42,8 @@ export const quickSort = async ({
   };
 
   await divider(moves, array, curr, end);
+
+  // setIsAlgorithmRunning(false);
 };
 
 const partition = async (

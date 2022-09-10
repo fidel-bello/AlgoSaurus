@@ -2,20 +2,16 @@
 import React, { useEffect, useState } from "react";
 import { VictoryBar } from "victory";
 import { heapSort } from "../../helpers/algorithms/sorting/heapSort";
+import { AlgoGraphInterface } from "../../helpers/interfaces/algoGraphInterface";
 
 import styles from "./graph.module.css";
-
-interface Props {
-  isAlgorithmRunning: boolean;
-  data: number[] | null;
-  delay: number;
-}
 
 const HeapSortGraph = ({
   isAlgorithmRunning,
   data,
   delay,
-}: Props): JSX.Element | null => {
+  setIsAlgorithmRunning,
+}: AlgoGraphInterface): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentIndex2, setCurrentIndex2] = useState<number | null>(0);
   const [currentIndex3, setCurrentIndex3] = useState<number | null>(0);
@@ -32,6 +28,7 @@ const HeapSortGraph = ({
       setCurrentIndex2,
       setCurrentIndex3,
       delay,
+      setIsAlgorithmRunning,
     });
   }, [isAlgorithmRunning]);
 

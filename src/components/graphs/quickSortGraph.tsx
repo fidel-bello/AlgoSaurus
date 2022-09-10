@@ -2,20 +2,16 @@
 import React, { useEffect, useState } from "react";
 import { VictoryBar } from "victory";
 import { quickSort } from "../../helpers/algorithms/sorting/quickSort";
+import { AlgoGraphInterface } from "../../helpers/interfaces/algoGraphInterface";
 
 import styles from "./graph.module.css";
 
-interface Props {
-  isAlgorithmRunning: boolean;
-  data: number[] | null;
-  delay: number;
-}
-
 const QuickSortGraph = ({
   isAlgorithmRunning,
+  setIsAlgorithmRunning,
   data,
   delay,
-}: Props): JSX.Element | null => {
+}: AlgoGraphInterface): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentIndex2, setCurrentIndex2] = useState<number | null>(0);
   const [dataSet, setDataSet] = useState(data);
@@ -30,6 +26,7 @@ const QuickSortGraph = ({
       setDataSet,
       setCurrentIndex2,
       delay,
+      setIsAlgorithmRunning,
     });
   }, [isAlgorithmRunning]);
 

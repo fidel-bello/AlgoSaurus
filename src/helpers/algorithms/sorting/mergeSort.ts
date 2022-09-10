@@ -8,6 +8,7 @@ export const mergeSort = async ({
   setCurrentIndex3,
   setDataSet,
   delay,
+  setIsAlgorithmRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
   if (!setCurrentIndex2) return null;
@@ -98,5 +99,7 @@ export const mergeSort = async ({
 
   await divide(array, temp, front, back);
   setDataSet([...array]);
+
+  // setIsAlgorithmRunning(false);
   return temp;
 };
