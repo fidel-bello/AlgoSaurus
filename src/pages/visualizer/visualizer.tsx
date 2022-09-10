@@ -14,6 +14,7 @@ import DefaultGraph from "../../components/graphs/defaultGraph";
 import SelectAlgorithm from "./components/selectAlgorithm";
 import ReturnCorrectInfo from "./components/returnCorrectInfo";
 import ShellSortGraph from "../../components/graphs/shellSortGraph";
+import { getValue } from "@testing-library/user-event/dist/utils";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -67,6 +68,24 @@ const Visualizer = (): JSX.Element | null => {
       generateArray(size);
     }
   }, [size]);
+
+  useEffect(() => {
+    if (currentAlgo === "Bubble") {
+      setSize(30);
+    } else if (currentAlgo === "Insertion") {
+      setSize(30);
+    } else if (currentAlgo === "Selection") {
+      setSize(50);
+    } else if (currentAlgo === "Quick") {
+      setSize(300);
+    } else if (currentAlgo === "Merge") {
+      setSize(200);
+    } else if (currentAlgo === "Heap") {
+      setSize(200);
+    } else if (currentAlgo === "Shell") {
+      setSize(100);
+    }
+  }, [currentAlgo]);
 
   const returnCorrectGraph = () => {
     const graphProps = {
@@ -140,6 +159,7 @@ const Visualizer = (): JSX.Element | null => {
               setSize(e.target.value);
               setIsAlgorithmRunning(false);
             }}
+            value={size || 30}
             type="range"
             min={30}
             max={300}
