@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
 import { VictoryBar } from "victory";
+import { bubbleSort } from "../../helpers/algorithms/sorting/bubleSort";
 import { selectionSort } from "../../helpers/algorithms/sorting/selectionSort";
 
 import styles from "./graph.module.css";

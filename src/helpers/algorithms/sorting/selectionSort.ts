@@ -22,8 +22,6 @@ export const selectionSort = async ({
         minValue = j;
       }
 
-      setDataSet([...array]);
-
       await sleep(delay);
     }
 
@@ -33,5 +31,9 @@ export const selectionSort = async ({
       array[i] = array[minValue];
       array[minValue] = tmp;
     }
+
+    setDataSet([...array]);
+
+    await sleep(delay);
   }
 };
