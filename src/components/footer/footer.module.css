@@ -1,14 +1,14 @@
 .container {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(30, 30, 30);
-  width: 100%;
-  padding-bottom: 50px;
+  width: calc(100% - 100px);
+  padding: 50px;
+}
+.container p {
+  text-align: center;
 }
 .dino {
-  width: 250px;
+  width: 200px;
 }

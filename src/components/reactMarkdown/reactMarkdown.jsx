@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import styles from "./reactMarkdown.module.css";
 
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import tsx from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
@@ -18,7 +19,7 @@ SyntaxHighlighter.registerLanguage("markdown", markdown);
 SyntaxHighlighter.registerLanguage("json", json);
 
 import rangeParser from "parse-numeric-range";
-import oneDark from "react-syntax-highlighter/dist/cjs/styles/prism/one-dark";
+import oneDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 
 const ReactMarkdownComponent = ({ markdown }) => {
   const syntaxTheme = oneDark;
@@ -46,10 +47,10 @@ const ReactMarkdownComponent = ({ markdown }) => {
 
       return match ? (
         <SyntaxHighlighter
+          className={styles.code}
           style={syntaxTheme}
           language={match[1]}
           PreTag="div"
-          className="codeStyle"
           showLineNumbers={true}
           wrapLines={hasMeta ? true : false}
           useInlineStyles={true}
@@ -57,13 +58,15 @@ const ReactMarkdownComponent = ({ markdown }) => {
           {...props}
         />
       ) : (
-        <code className={className} {...props} />
+        <code className={styles.code} {...props} />
       );
     },
   };
 
   return (
-    <ReactMarkdown components={MarkdownComponents}>{markdown}</ReactMarkdown>
+    <ReactMarkdown className={styles.container} components={MarkdownComponents}>
+      {markdown}
+    </ReactMarkdown>
   );
 };
 

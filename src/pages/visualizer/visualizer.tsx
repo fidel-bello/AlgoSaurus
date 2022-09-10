@@ -15,6 +15,7 @@ import ReturnCorrectInfo from "./components/returnCorrectInfo";
 import SelectAlgorithm from "./components/selectAlgorithm";
 import styles from "./visualizer.module.css";
 import { motion } from "framer-motion";
+import ReactSlider from "react-slider";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -149,31 +150,37 @@ const Visualizer = (): JSX.Element | null => {
         </div>
 
         <div className={styles.slider_container}>
-          <input
-            onChange={(e) => {
+          <ReactSlider
+            onChange={(value) => {
               // @ts-ignore
-              setDelay(e.target.value);
+              setDelay(value);
               setIsAlgorithmRunning(false);
             }}
-            type="range"
+            value={delay}
             min={1}
             max={200}
             step={1}
+            className="horizontal-slider"
+            thumbClassName="thumb"
+            trackClassName="track"
           />
+
           <span>{delay} (delay msec)</span>
         </div>
         <div className={styles.slider_container}>
-          <input
-            onChange={(e) => {
+          <ReactSlider
+            onChange={(value) => {
               // @ts-ignore
-              setSize(e.target.value);
+              setSize(value);
               setIsAlgorithmRunning(false);
             }}
             value={size || 30}
-            type="range"
             min={30}
             max={300}
             step={1}
+            className="horizontal-slider"
+            thumbClassName="thumb"
+            trackClassName="track"
           />
           <span>{size} (size)</span>
         </div>

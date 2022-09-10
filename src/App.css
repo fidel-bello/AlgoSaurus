@@ -22,3 +22,18 @@ a {
     padding: 20px;
   }
 }
+.horizontal-slider {
+  height: 20px;
+  background-color: rgb(50, 50, 50);
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.thumb {
+  background-color: rgb(200, 200, 200);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
