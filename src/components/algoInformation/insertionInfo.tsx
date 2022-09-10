@@ -1,29 +1,26 @@
 import React from "react";
+import ReactMarkdownComponent from "../reactMarkdown/reactMarkdown";
 import styles from "./info.module.css";
 
 const codeSnippet = `
 \`\`\`javascript
-const bubbleSort = ({ arr }) => {
-    
-  for(var i = 0; i < arr.length; i++){
-     
-    // Last i elements are already in place 
-    for(var j = 0; j < ( arr.length - i -1 ); j++){
-       
-      // Checking if the item at present iteration
-      // is greater than the next iteration
-      if(arr[j] > arr[j+1]){
-         
-        // If the condition is true then swap them
-        var temp = arr[j]
-        arr[j] = arr[j + 1]
-        arr[j+1] = temp
-      }
+const insertionSort = ({ dataSet }) => {
+  const length = dataSet.length;
+  const array = dataSet;
+
+  for (let i = 0; i < length; i++) {
+    const current = array[i];
+    let j = i - 1;
+
+    while (j > -1 && current < array[j]) {
+      array[j + 1] = array[j];
+      j--;
     }
+    array[j + 1] = current;
   }
-  // Print the sorted array
-  console.log(arr);
- }
+
+  return array;
+};
 \`\`\`
 `;
 
@@ -31,6 +28,9 @@ const InsertionInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Insertion Sort</h2>
+      <ReactMarkdownComponent markdown={codeSnippet} />
+      <h2 className={styles.header}>How it works?</h2>
+
       <p>
         Insertion sort is a simple sorting algorithm that works similar to the
         way you sort playing cards in your hands. The array is virtually split

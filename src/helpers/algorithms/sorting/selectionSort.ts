@@ -37,6 +37,4 @@ export const selectionSort = async ({
 
     await sleep(delay);
   }
-
-  // setIsAlgorithmRunning(false);
 };

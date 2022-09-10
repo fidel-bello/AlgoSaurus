@@ -1,10 +1,42 @@
 import React from "react";
+import ReactMarkdownComponent from "../reactMarkdown/reactMarkdown";
 import styles from "./info.module.css";
+
+const codeSnippet = `
+\`\`\`js
+const selectionSort = ({ dataSet }) => {
+  const length = dataSet.length;
+  const array = dataSet;
+
+  for (let i = 0; i < length; i++) {
+    let minValue = i;
+
+    for (let j = i + 1; j < length; j++) {
+      if (array[j] < array[minValue]) {
+        minValue = j;
+      }
+    }
+
+    if (minValue != i) {
+      // Swapping the elements
+      const tmp = array[i];
+      array[i] = array[minValue];
+      array[minValue] = tmp;
+    }
+  }
+
+  return array;
+}
+\`\`\`
+`;
 
 const SelectionInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Selection Sort</h2>
+      <ReactMarkdownComponent markdown={codeSnippet} />
+      <h2 className={styles.header}>How it works?</h2>
+
       <p>
         The selection sort algorithm is a simple, yet effective sorting
         algorithm. A selection-based sorting algorithm is described as an
