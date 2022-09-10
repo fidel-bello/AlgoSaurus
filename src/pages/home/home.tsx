@@ -6,6 +6,7 @@ import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { VictoryBar } from "victory";
 import { generateRandomArray } from "../../helpers/functions/helperFunctions";
 import InsertionSortGraph from "../../components/graphs/insertionSortGraph";
+import SelectionSortGraph from "../../components/graphs/selectionSortGraph";
 
 const HomePage = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -19,27 +20,27 @@ const HomePage = (): JSX.Element | null => {
   }, []);
 
   const generateArray = () => {
-    setData(generateRandomArray({ total: 100, min: 0, max: 100 }));
+    setData(generateRandomArray({ total: 30, min: 0, max: 100 }));
   };
 
+  useEffect(() => {
+    generateArray();
+    setIsAlgorithmRunning(false);
+  }, [currentAlgo]);
+
   const returnCorrectGraph = () => {
+    const graphProps = {
+      isAlgorithmRunning,
+      data,
+      generateArray,
+    };
+
     if (currentAlgo === "Bubble") {
-      return (
-        <BubbleSortGraph
-          isAlgorithmRunning={isAlgorithmRunning}
-          data={data}
-          generateArray={generateArray}
-        />
-      );
-    }
-    if (currentAlgo === "Insertion") {
-      return (
-        <InsertionSortGraph
-          isAlgorithmRunning={isAlgorithmRunning}
-          data={data}
-          generateArray={generateArray}
-        />
-      );
+      return <BubbleSortGraph {...graphProps} />;
+    } else if (currentAlgo === "Insertion") {
+      return <InsertionSortGraph {...graphProps} />;
+    } else if (currentAlgo === "Selection") {
+      return <SelectionSortGraph {...graphProps} />;
     }
   };
 
