@@ -10,3 +10,4 @@ export interface AlgoInterface {
   target?: number;
   setIsConfettiRunning?: React.Dispatch<React.SetStateAction<boolean>>;
 }
+//binary
