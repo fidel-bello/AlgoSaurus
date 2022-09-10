@@ -23,7 +23,6 @@ const Graph = (): JSX.Element | null => {
   >("Bubble");
 
   // Confetti
-  const [runConfetti, setRunConfetti] = useState<boolean>(false);
   const [isConfettiRunning, setIsConfettiRunning] = useState(false);
 
   useEffect(() => {
@@ -32,7 +31,7 @@ const Graph = (): JSX.Element | null => {
   }, []);
 
   const generateArray = () => {
-    setDataSet(generateRandomArray({ total: 30, min: 0, max: 100 }));
+    setDataSet(generateRandomArray({ total: 100, min: 0, max: 100 }));
   };
 
   if (!dataSet) return null;
@@ -70,7 +69,7 @@ const Graph = (): JSX.Element | null => {
           setCurrentIndex,
           setCurrentIndex2,
           setDataSet,
-          delay: 10,
+          delay: 70,
         });
         console.log("went into quick sort");
         break;
