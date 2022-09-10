@@ -1,6 +1,6 @@
-import { swapElements } from "./../../functions/helperFunctions";
-import { AlgoInterface } from "../../interfaces/algoInterface";
 import { sleep } from "../../functions/helperFunctions";
+import { AlgoInterface } from "../../interfaces/algoInterface";
+import { swapElements } from "./../../functions/helperFunctions";
 
 export const bubbleSort = async ({
   dataSet,
@@ -8,17 +8,18 @@ export const bubbleSort = async ({
   setDataSet,
   delay,
   setRunConfetti,
+  isRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
 
   const length = dataSet.length;
 
   const array = dataSet;
+  console.log(isRunning);
 
   for (let i = 0; i < length; i++) {
     for (let j = 0; j < length - i; j++) {
       setCurrentIndex(j);
-
       if (array[j] > array[j + 1]) {
         swapElements(array, j, j + 1);
       }
