@@ -33,9 +33,9 @@
   list-style: none;
   width: 0;
   height: 0;
-  border-bottom: 40px solid #bc5858;
-  border-left: 20px solid #bc5858;
-  border-right: 20px solid #bc5858;
+  border-bottom: 40px solid #845454;
+  border-left: 20px solid #845454;
+  border-right: 20px solid #845454;
   animation: animate 20s linear infinite;
   bottom: -150px;
 }
@@ -99,13 +99,18 @@
   }
 }
 
-.hero h1 {
-  animation: hero 2s ease;
+.heroHeader {
+  animation: heroAnimate 2s ease;
 }
-@keyframes hero {
+.heroPara {
+  animation: heroAnimate 2s ease;
+}
+.heroButton {
+  animation: heroAnimate 2s ease;
+}
+@keyframes heroAnimate {
   0% {
-    transform: translateY(-30%);
-    color: transparent;
+    transform: translateY(-25%);
   }
   100% {
     transform: translateY(0%);
