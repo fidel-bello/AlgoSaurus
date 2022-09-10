@@ -29,7 +29,6 @@ const SelectAlgorithm = ({ setCurrentAlgo }: Props) => {
       <option value="Quick">Quick Sort</option>
       <option value="Heap">Heap Sort</option>
       <option value="Merge">Merge Sort</option>
-      <option value="Merge">Merge Sort</option>
       <option value="Shell">Shell Sort</option>
     </select>
   );

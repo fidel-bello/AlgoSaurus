@@ -1,20 +1,19 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
-import BubbleSortGraph from "../../components/graphs/bubleSortGraph";
-import styles from "./visualizer.module.css";
-import { BsPlayFill } from "react-icons/bs";
 import { BiStopCircle } from "react-icons/bi";
-import { generateRandomArray } from "../../helpers/functions/helperFunctions";
-import InsertionSortGraph from "../../components/graphs/insertionSortGraph";
-import SelectionSortGraph from "../../components/graphs/selectionSortGraph";
-import QuickSortGraph from "../../components/graphs/quickSortGraph";
-import HeapSortGraph from "../../components/graphs/heapSortGraph";
-import MergeSortGraph from "../../components/graphs/mergeSortGraph";
+import { BsPlayFill } from "react-icons/bs";
+import BubbleSortGraph from "../../components/graphs/bubleSortGraph";
 import DefaultGraph from "../../components/graphs/defaultGraph";
-import SelectAlgorithm from "./components/selectAlgorithm";
-import ReturnCorrectInfo from "./components/returnCorrectInfo";
+import HeapSortGraph from "../../components/graphs/heapSortGraph";
+import InsertionSortGraph from "../../components/graphs/insertionSortGraph";
+import MergeSortGraph from "../../components/graphs/mergeSortGraph";
+import QuickSortGraph from "../../components/graphs/quickSortGraph";
+import SelectionSortGraph from "../../components/graphs/selectionSortGraph";
 import ShellSortGraph from "../../components/graphs/shellSortGraph";
-import { getValue } from "@testing-library/user-event/dist/utils";
+import { generateRandomArray } from "../../helpers/functions/helperFunctions";
+import ReturnCorrectInfo from "./components/returnCorrectInfo";
+import SelectAlgorithm from "./components/selectAlgorithm";
+import styles from "./visualizer.module.css";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -114,6 +113,7 @@ const Visualizer = (): JSX.Element | null => {
 
   return (
     <div className={styles.container}>
+      <h1 className={styles.visHeader}>Algorithm Visualizer</h1>
       <div className={styles.graph_container}>
         {isAlgorithmRunning ? (
           returnCorrectGraph()
