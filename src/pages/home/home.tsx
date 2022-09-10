@@ -10,6 +10,7 @@ import SelectionSortGraph from "../../components/graphs/selectionSortGraph";
 import QuickSortGraph from "../../components/graphs/quickSortGraph";
 import HeapSortGraph from "../../components/graphs/heapSortGraph";
 import MergeSortGraph from "../../components/graphs/mergeSortGraph";
+import DefaultGraph from "../../components/graphs/defaultGraph";
 
 const HomePage = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -70,7 +71,7 @@ const HomePage = (): JSX.Element | null => {
 
     return (
       <div>
-        <VictoryBar width={1000} height={500} data={data} />
+        <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
         <select
           onChange={(e) => {
             // @ts-ignore
