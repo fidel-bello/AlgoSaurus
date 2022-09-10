@@ -1,5 +1,6 @@
 .container {
-  background-color: rgb(20, 20, 20);
+  background-color: rgba(20, 20, 20, 0.87);
+  backdrop-filter: blur(10px);
   padding: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -34,7 +35,7 @@ select {
   display: flex;
   gap: 2rem;
 }
-.menuItems h2 {
+.menuItems h1 {
   font-weight: 300;
 }
 

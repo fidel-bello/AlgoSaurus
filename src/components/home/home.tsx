@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import algoPic from "../algoPic.png";
 import styles from "./home.module.css";
-
 const home = () => {
   return (
     <div className={styles.container}>
@@ -23,6 +23,29 @@ const home = () => {
           <li></li>
           <li></li>
         </ul>
+      </div>
+      <div className={styles.section2}>
+        <h1>Our Tools</h1>
+        <div className={styles.flex}>
+          <div className={styles.project}>
+            <img src={algoPic} alt="" className={styles.projectImg} />
+            <div className={styles.projectInfo}>
+              <h2>Algorithm Visualization</h2>
+              <Link to="/algorithm-visualizer">
+                <button>Explore</button>
+              </Link>
+            </div>
+          </div>
+          <div className={styles.project}>
+            <img src={algoPic} alt="" className={styles.projectImg} />
+            <div className={styles.projectInfo}>
+              <h2>Pathfinder</h2>
+              <Link to="/pathfinder">
+                <button>Explore</button>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
