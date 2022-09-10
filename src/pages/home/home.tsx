@@ -25,8 +25,21 @@ const HomePage = (): JSX.Element | null => {
   };
 
   useEffect(() => {
-    generateArray();
     setIsAlgorithmRunning(false);
+    console.log("Hello");
+    if (currentAlgo === "Bubble") {
+      setData(generateRandomArray({ total: 30, min: 0, max: 100 }));
+    } else if (currentAlgo === "Insertion") {
+      setData(generateRandomArray({ total: 30, min: 0, max: 100 }));
+    } else if (currentAlgo === "Selection") {
+      setData(generateRandomArray({ total: 50, min: 0, max: 100 }));
+    } else if (currentAlgo === "Quick") {
+      setData(generateRandomArray({ total: 200, min: 0, max: 100 }));
+    } else if (currentAlgo === "Merge") {
+      setData(generateRandomArray({ total: 200, min: 0, max: 100 }));
+    } else if (currentAlgo === "Heap") {
+      setData(generateRandomArray({ total: 200, min: 0, max: 100 }));
+    }
   }, [currentAlgo]);
 
   const returnCorrectGraph = () => {
