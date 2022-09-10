@@ -1,0 +1,19 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  margin: 0px;
+}
+
+.page-container {
+  padding: 10px;
+}
+
+@media only screen and (min-width: 900px) {
+  .page-container {
+    padding: 20px;
+  }
+}
