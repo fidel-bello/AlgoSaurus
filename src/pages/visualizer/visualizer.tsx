@@ -12,6 +12,7 @@ import HeapSortGraph from "../../components/graphs/heapSortGraph";
 import MergeSortGraph from "../../components/graphs/mergeSortGraph";
 import DefaultGraph from "../../components/graphs/defaultGraph";
 import SelectAlgorithm from "./components/selectAlgorithm";
+import ReturnCorrectInto from "./components/returnCorrectInfo";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -68,7 +69,7 @@ const Visualizer = (): JSX.Element | null => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       {isAlgorithmRunning ? (
         returnCorrectGraph()
       ) : (
@@ -88,6 +89,8 @@ const Visualizer = (): JSX.Element | null => {
           )}
         </div>
       </div>
+      <br></br>
+      <ReturnCorrectInto currentAlgo={currentAlgo} />
     </div>
   );
 };

@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./info.module.css";
 
-const quicksortInfo = () => {
+const QuicksortInfo = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <p>
         Quicksort is a fast sorting algorithm that works by splitting a large
         array of data into smaller sub-arrays. This implies that each iteration
@@ -23,4 +24,4 @@ const quicksortInfo = () => {
   );
 };
 
-export default quicksortInfo;
+export default QuicksortInfo;

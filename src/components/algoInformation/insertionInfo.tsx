@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./info.module.css";
 
-const insertionInfo = () => {
+const InsertionInfo = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <p>
         Insertion sort is a simple sorting algorithm that works similar to the
         way you sort playing cards in your hands. The array is virtually split
@@ -19,4 +20,4 @@ const insertionInfo = () => {
   );
 };
 
-export default insertionInfo;
+export default InsertionInfo;

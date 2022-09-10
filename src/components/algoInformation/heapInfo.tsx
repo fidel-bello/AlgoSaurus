@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./info.module.css";
 
-const heapInfo = () => {
+const HeapInfo = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <p>
         Heap sort is a comparison-based sorting technique and it is similar to
         the selection sort where we first find the minimum element and place the
@@ -36,4 +37,4 @@ const heapInfo = () => {
   );
 };
 
-export default heapInfo;
+export default HeapInfo;

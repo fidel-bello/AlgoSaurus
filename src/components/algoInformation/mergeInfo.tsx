@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./info.module.css";
 
-const mergeInfo = () => {
+const MergeInfo = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <p>
         The Merge Sort algorithm is a sorting algorithm that is based on the
         Divide and Conquer paradigm. In this algorithm, the array is initially
@@ -24,4 +25,4 @@ const mergeInfo = () => {
   );
 };
 
-export default mergeInfo;
+export default MergeInfo;
