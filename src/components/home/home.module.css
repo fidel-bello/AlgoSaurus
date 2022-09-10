@@ -33,9 +33,9 @@
   list-style: none;
   width: 0;
   height: 0;
-  border-bottom: 40px solid #796856;
-  border-left: 20px solid #796856;
-  border-right: 20px solid #796856;
+  border-bottom: 40px solid #bc5858;
+  border-left: 20px solid #bc5858;
+  border-right: 20px solid #bc5858;
   animation: animate 20s linear infinite;
   bottom: -150px;
 }

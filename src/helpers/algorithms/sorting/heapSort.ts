@@ -1,12 +1,6 @@
 import { sleep, swapElements } from "../../functions/helperFunctions";
 import { AlgoInterface } from "../../interfaces/algoInterface";
-<<<<<<< HEAD
-//**************************** FIX ME ****************************** */
-//**************************** FIX ME ****************************** */
-//**************************** FIX ME ****************************** */
-=======
 
->>>>>>> 17c3f03ce4e29638af2c16f29f342b8862298c0a
 export const heapSort = async ({
   dataSet,
   setDataSet,
