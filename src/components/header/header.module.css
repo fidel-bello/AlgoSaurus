@@ -39,7 +39,7 @@ select {
   font-weight: 300;
 }
 
-.menuItems a {
+a {
   text-decoration: none;
   color: white;
 }
