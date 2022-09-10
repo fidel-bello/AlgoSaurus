@@ -13,8 +13,8 @@ const Header = (): JSX.Element => {
             <h1>Saurus</h1>
           </div>
         </Link>
-        <div className={styles.menuItems}>
-          <Link to="/algorithm-visualizer">
+        <div>
+          <Link to="/algorithm-visualizer" className={styles.menuItems}>
             <h1>Visualizer</h1>
           </Link>
         </div>
