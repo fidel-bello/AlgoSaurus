@@ -1,7 +1,7 @@
 .playButton {
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  height: 30px;
+  width: 30px;
 }
 
 .buttonContainer button {
@@ -12,10 +12,13 @@
   display: flex;
 }
 
-select {
-  margin-bottom: 0.5rem;
+.menu_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.algoButtons {
-  display: none;
+.menu_container select {
+  margin: 0px;
+  margin-right: 10px;
+  width: 200px;
 }
