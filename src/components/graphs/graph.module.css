@@ -22,25 +22,3 @@
   margin-right: 10px;
   cursor: pointer;
 }
-
-.playButton {
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-}
-
-.buttonContainer button {
-  border-radius: 50%;
-}
-
-.buttonContainer {
-  display: flex;
-}
-
-select {
-  margin-bottom: 0.5rem;
-}
-
-.algoButtons {
-  display: none;
-}
