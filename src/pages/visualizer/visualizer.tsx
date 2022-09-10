@@ -14,7 +14,6 @@ import DefaultGraph from "../../components/graphs/defaultGraph";
 import SelectAlgorithm from "./components/selectAlgorithm";
 import ReturnCorrectInfo from "./components/returnCorrectInfo";
 import ShellSortGraph from "../../components/graphs/shellSortGraph";
-import { getValue } from "@testing-library/user-event/dist/utils";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
