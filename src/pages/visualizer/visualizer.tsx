@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
 import BubbleSortGraph from "../../components/graphs/bubleSortGraph";
-import styles from "./home.module.css";
+import styles from "./visualizer.module.css";
 import { BsPlayFill } from "react-icons/bs";
 import { BiStopCircle } from "react-icons/bi";
 import { generateRandomArray } from "../../helpers/functions/helperFunctions";
@@ -13,7 +13,7 @@ import MergeSortGraph from "../../components/graphs/mergeSortGraph";
 import DefaultGraph from "../../components/graphs/defaultGraph";
 import SelectAlgorithm from "./components/selectAlgorithm";
 
-const HomePage = (): JSX.Element | null => {
+const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
   const [currentAlgo, setCurrentAlgo] = useState<
     "Bubble" | "Insertion" | "Selection" | "Quick" | "Heap" | "Merge"
@@ -92,4 +92,4 @@ const HomePage = (): JSX.Element | null => {
   );
 };
 
-export default HomePage;
+export default Visualizer;
