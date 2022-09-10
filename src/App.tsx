@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 
 // Components
 import Error from "./components/error/error";
+import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
 import Home from "./components/home/home";
 import Visualizer from "./pages/visualizer/visualizer";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/*" element={<Error />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
