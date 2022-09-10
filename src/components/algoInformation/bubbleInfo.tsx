@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./info.module.css";
 
-const bubbleInfo = () => {
+const BubbleInfo = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <p>
         Bubble sort is a basic algorithm for arranging a string of numbers or
         other elements in the correct order. The method works by examining each
@@ -26,4 +27,4 @@ const bubbleInfo = () => {
   );
 };
 
-export default bubbleInfo;
+export default BubbleInfo;

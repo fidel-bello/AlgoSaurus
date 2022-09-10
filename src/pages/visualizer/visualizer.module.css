@@ -22,3 +22,7 @@
   margin-right: 10px;
   width: 200px;
 }
+.container {
+  max-width: 1000px;
+  margin: auto;
+}

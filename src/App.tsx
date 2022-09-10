@@ -16,12 +16,8 @@ function App() {
       <Header />
       <div className="page-container">
         <Routes>
-
           <Route path="/" element={<Home />} />
-          <Route
-            path="/algorithm-visualizer"
-            element={<AlgorithmVisualizer />}
-          />
+          <Route path="/algorithm-visualizer" element={<Visualizer />} />
           <Route path="/pathfinder" element={<PathFinder />} />
           <Route path="/test" element={<Test />} />
         </Routes>

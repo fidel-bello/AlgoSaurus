@@ -1,0 +1,17 @@
+.container p {
+  color: rgb(200, 200, 200);
+  line-height: 32px;
+  font-size: 20px;
+  text-indent: 30px;
+  margin-bottom: 30px;
+}
+.container li {
+  color: rgb(200, 200, 200);
+  line-height: 32px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.container h2 {
+  font-size: 40px;
+  margin-top: 50px;
+}

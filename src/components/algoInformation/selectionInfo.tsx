@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./info.module.css";
 
-const selectionInfo = () => {
+const SelectionInfo = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <p>
         The selection sort algorithm is a simple, yet effective sorting
         algorithm. A selection-based sorting algorithm is described as an
@@ -22,4 +23,4 @@ const selectionInfo = () => {
   );
 };
 
-export default selectionInfo;
+export default SelectionInfo;
