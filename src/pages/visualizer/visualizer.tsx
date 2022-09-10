@@ -150,7 +150,7 @@ const Visualizer = (): JSX.Element | null => {
 
         <div className={styles.slider_container}>
           <input
-            onChange={(e) => {
+            onInput={(e) => {
               // @ts-ignore
               setDelay(e.target.value);
               setIsAlgorithmRunning(false);
@@ -164,7 +164,7 @@ const Visualizer = (): JSX.Element | null => {
         </div>
         <div className={styles.slider_container}>
           <input
-            onChange={(e) => {
+            onInput={(e) => {
               // @ts-ignore
               setSize(e.target.value);
               setIsAlgorithmRunning(false);
