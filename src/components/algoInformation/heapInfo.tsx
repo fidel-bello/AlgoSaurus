@@ -1,10 +1,56 @@
 import React from "react";
+import ReactMarkdownComponent from "../reactMarkdown/reactMarkdown";
 import styles from "./info.module.css";
+
+const codeSnippet = `
+\`\`\`javascript
+const heapSort = ({ dataSet }) => {
+  const length = dataSet.length;
+  const array = dataSet;
+  const moves = [];
+
+  const heapify = (temp, array, length, index) => {
+    let largest = index;
+    const left = 2 * index + 1;
+    const right = 2 * index + 2;
+
+    if (left < length && array[left] > array[largest]) {
+      largest = left;
+    }
+
+    if (right < length && array[right] > array[largest]) {
+      largest = right;
+    }
+
+    if (largest !== index) {
+      temp.push([index, largest]);
+      swapElements(array, index, largest);
+
+      heapify(temp, array, length, largest);
+    }
+  };
+
+  for (let i = Math.ceil(length / 2) - 1; i >= 0; --i) {
+    heapify(moves, array, length, i);
+  }
+
+  for (let index = length - 1; index >= 0; --index) {
+    moves.push([index, 0]);
+    swapElements(array, index, 0);
+    heapify(moves, array, index, 0);
+  }
+
+  return moves;
+};
+\`\`\`
+`;
 
 const HeapInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Heap Sort</h2>
+      <ReactMarkdownComponent markdown={codeSnippet} />
+      <h2 className={styles.header}>How it works?</h2>
       <p>
         Heap sort is a comparison-based sorting technique and it is similar to
         the selection sort where we first find the minimum element and place the
@@ -15,7 +61,7 @@ const HeapInfo = () => {
         Heap sort is typically 2-3 times slower than well-implemented QuickSort.
         The reason for slowness is a lack of locality of reference.
       </p>
-      <h2>Benefits of Heap Sort</h2>
+      <h2 className={styles.header}>Benefits of Heap Sort</h2>
       <ul>
         <li>
           <strong>Efficiency - </strong>The time required to perform Heap sort
