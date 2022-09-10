@@ -20,37 +20,56 @@ const Visualizer = (): JSX.Element | null => {
     "Bubble" | "Insertion" | "Selection" | "Quick" | "Heap" | "Merge"
   >("Bubble");
   const [isAlgorithmRunning, setIsAlgorithmRunning] = useState(false);
+  const [delay, setDelay] = useState<number>(100);
+  const [size, setSize] = useState<number | null>(null);
 
   useEffect(() => {
-    if (!isAlgorithmRunning) generateArray();
+    if (!isAlgorithmRunning) {
+      if (size) {
+        return generateArray(size);
+      }
+
+      generateArray();
+    }
   }, [isAlgorithmRunning]);
 
-  const generateArray = () => {
+  const generateArray = (size?: number) => {
     if (currentAlgo === "Bubble") {
-      setData(generateRandomArray({ total: 30, min: 0, max: 100 }));
+      setData(generateRandomArray({ total: size || 30, min: 0, max: 100 }));
     } else if (currentAlgo === "Insertion") {
-      setData(generateRandomArray({ total: 30, min: 0, max: 100 }));
+      setData(generateRandomArray({ total: size || 30, min: 0, max: 100 }));
     } else if (currentAlgo === "Selection") {
-      setData(generateRandomArray({ total: 50, min: 0, max: 100 }));
+      setData(generateRandomArray({ total: size || 50, min: 0, max: 100 }));
     } else if (currentAlgo === "Quick") {
-      setData(generateRandomArray({ total: 300, min: 0, max: 100 }));
+      setData(generateRandomArray({ total: size || 300, min: 0, max: 100 }));
     } else if (currentAlgo === "Merge") {
-      setData(generateRandomArray({ total: 200, min: 0, max: 100 }));
+      setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
     } else if (currentAlgo === "Heap") {
-      setData(generateRandomArray({ total: 200, min: 0, max: 100 }));
+      setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
     }
   };
 
   useEffect(() => {
     setIsAlgorithmRunning(false);
 
+    if (size) {
+      return generateArray(size);
+    }
+
     generateArray();
   }, [currentAlgo]);
+
+  useEffect(() => {
+    if (size) {
+      generateArray(size);
+    }
+  }, [size]);
 
   const returnCorrectGraph = () => {
     const graphProps = {
       isAlgorithmRunning,
       data,
+      delay,
     };
 
     if (currentAlgo === "Bubble") {
@@ -70,11 +89,14 @@ const Visualizer = (): JSX.Element | null => {
 
   return (
     <div className={styles.container}>
-      {isAlgorithmRunning ? (
-        returnCorrectGraph()
-      ) : (
-        <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
-      )}
+      <div className={styles.graph_container}>
+        {isAlgorithmRunning ? (
+          returnCorrectGraph()
+        ) : (
+          <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
+        )}
+      </div>
+
       <div className={styles.menu_container}>
         <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
         <div className={styles.buttonContainer}>
@@ -87,6 +109,34 @@ const Visualizer = (): JSX.Element | null => {
               <BiStopCircle className={styles.playButton} />
             </button>
           )}
+        </div>
+        <div className={styles.slider_container}>
+          <input
+            onChange={(e) => {
+              // @ts-ignore
+              setDelay(e.target.value);
+              setIsAlgorithmRunning(false);
+            }}
+            type="range"
+            min={1}
+            max={200}
+            step={1}
+          />
+          <span>{delay} (delay msec)</span>
+        </div>
+        <div className={styles.slider_container}>
+          <input
+            onChange={(e) => {
+              // @ts-ignore
+              setSize(e.target.value);
+              setIsAlgorithmRunning(false);
+            }}
+            type="range"
+            min={30}
+            max={300}
+            step={1}
+          />
+          <span>{size} (size)</span>
         </div>
       </div>
       <br></br>

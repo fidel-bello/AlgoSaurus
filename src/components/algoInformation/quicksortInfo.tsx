@@ -4,7 +4,7 @@ import styles from "./info.module.css";
 const QuicksortInfo = () => {
   return (
     <div className={styles.container}>
-      <h1 style={{ margin: "10px 0px" }}>Quick Sort Simplified</h1>
+      <h2 className={styles.header}>Quick Sort</h2>
       <p>
         Quicksort is a fast sorting algorithm that works by splitting a large
         array of data into smaller sub-arrays. This implies that each iteration

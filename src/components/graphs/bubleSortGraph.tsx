@@ -9,11 +9,13 @@ import styles from "./graph.module.css";
 interface Props {
   isAlgorithmRunning: boolean;
   data: number[] | null;
+  delay: number;
 }
 
 const BubbleSortGraph = ({
   isAlgorithmRunning,
   data,
+  delay,
 }: Props): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [dataSet, setDataSet] = useState(data);
@@ -29,7 +31,7 @@ const BubbleSortGraph = ({
       dataSet,
       setCurrentIndex,
       setDataSet,
-      delay: 10,
+      delay,
     });
   }, [isAlgorithmRunning]);
 
