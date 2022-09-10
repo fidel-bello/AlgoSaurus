@@ -98,18 +98,21 @@ const Visualizer = (): JSX.Element | null => {
       </div>
 
       <div className={styles.menu_container}>
-        <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
-        <div className={styles.buttonContainer}>
-          {!isAlgorithmRunning ? (
-            <button onClick={() => setIsAlgorithmRunning(true)}>
-              <BsPlayFill className={styles.playButton} />
-            </button>
-          ) : (
-            <button onClick={() => setIsAlgorithmRunning(false)}>
-              <BiStopCircle className={styles.playButton} />
-            </button>
-          )}
+        <div className={styles.dropdown_play_button_container}>
+          <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
+          <div className={styles.buttonContainer}>
+            {!isAlgorithmRunning ? (
+              <button onClick={() => setIsAlgorithmRunning(true)}>
+                <BsPlayFill className={styles.playButton} />
+              </button>
+            ) : (
+              <button onClick={() => setIsAlgorithmRunning(false)}>
+                <BiStopCircle className={styles.playButton} />
+              </button>
+            )}
+          </div>
         </div>
+
         <div className={styles.slider_container}>
           <input
             onChange={(e) => {
