@@ -27,6 +27,18 @@ select {
   max-width: 200px;
   padding: 0.5rem 0.2rem;
 }
+.menuItems {
+  display: flex;
+  gap: 2rem;
+}
+.menuItems h2 {
+  font-weight: 300;
+}
+
+.menuItems a {
+  text-decoration: none;
+  color: white;
+}
 @media only screen and (min-width: 900px) {
   .container {
     padding: 20px;

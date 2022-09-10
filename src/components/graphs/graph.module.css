@@ -17,8 +17,6 @@
   background-color: rgb(20, 20, 20);
   color: white;
   border: 1px solid rgb(60, 60, 60);
-  padding: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
   cursor: pointer;
+  padding: 15px;
 }
