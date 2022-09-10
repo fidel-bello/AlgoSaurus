@@ -2,20 +2,16 @@
 import React, { useEffect, useState } from "react";
 import { VictoryBar } from "victory";
 import { insertionSort } from "../../helpers/algorithms/sorting/insertionSort";
+import { AlgoGraphInterface } from "../../helpers/interfaces/algoGraphInterface";
 
 import styles from "./graph.module.css";
-
-interface Props {
-  isAlgorithmRunning: boolean;
-  data: number[] | null;
-  delay: number;
-}
 
 const InsertionSortGraph = ({
   isAlgorithmRunning,
   data,
   delay,
-}: Props): JSX.Element | null => {
+  setIsAlgorithmRunning,
+}: AlgoGraphInterface): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [dataSet, setDataSet] = useState(data);
 
@@ -28,6 +24,7 @@ const InsertionSortGraph = ({
       setCurrentIndex,
       setDataSet,
       delay,
+      setIsAlgorithmRunning,
     });
   }, [isAlgorithmRunning]);
 

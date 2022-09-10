@@ -68,6 +68,7 @@ const Visualizer = (): JSX.Element | null => {
   const returnCorrectGraph = () => {
     const graphProps = {
       isAlgorithmRunning,
+      setIsAlgorithmRunning,
       data,
       delay,
     };

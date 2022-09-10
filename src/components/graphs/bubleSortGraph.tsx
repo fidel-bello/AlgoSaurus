@@ -2,21 +2,16 @@
 import React, { useEffect, useState } from "react";
 import { VictoryBar } from "victory";
 import { bubbleSort } from "../../helpers/algorithms/sorting/bubleSort";
-
+import { AlgoGraphInterface } from "../../helpers/interfaces/algoGraphInterface";
 import ConfettiComponent from "../confetti/confetti";
 import styles from "./graph.module.css";
 
-interface Props {
-  isAlgorithmRunning: boolean;
-  data: number[] | null;
-  delay: number;
-}
-
 const BubbleSortGraph = ({
   isAlgorithmRunning,
+  setIsAlgorithmRunning,
   data,
   delay,
-}: Props): JSX.Element | null => {
+}: AlgoGraphInterface): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [dataSet, setDataSet] = useState(data);
   // Confetti
@@ -32,6 +27,7 @@ const BubbleSortGraph = ({
       setCurrentIndex,
       setDataSet,
       delay,
+      setIsAlgorithmRunning,
     });
   }, [isAlgorithmRunning]);
 

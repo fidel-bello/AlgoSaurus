@@ -6,6 +6,7 @@ export const selectionSort = async ({
   setCurrentIndex,
   setDataSet,
   delay,
+  setIsAlgorithmRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
 
@@ -36,4 +37,6 @@ export const selectionSort = async ({
 
     await sleep(delay);
   }
+
+  // setIsAlgorithmRunning(false);
 };
