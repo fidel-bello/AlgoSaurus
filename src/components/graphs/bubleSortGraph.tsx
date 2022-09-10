@@ -35,10 +35,13 @@ const BubbleSortGraph = ({
 
   return (
     <div className={styles.container}>
-      <ConfettiComponent
-        setIsConfettiRunning={setIsConfettiRunning}
-        isConfettiRunning={isConfettiRunning}
-      />
+      <div className={styles.confetti_container}>
+        <ConfettiComponent
+          setIsConfettiRunning={setIsConfettiRunning}
+          isConfettiRunning={isConfettiRunning}
+        />
+      </div>
+
       <div className={styles.graph_container}>
         <VictoryBar
           width={1000}
