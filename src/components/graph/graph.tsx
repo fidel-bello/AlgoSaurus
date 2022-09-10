@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { VictoryBar } from "victory";
@@ -17,7 +18,9 @@ const Graph = (): JSX.Element | null => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentIndex2, setCurrentIndex2] = useState<number | null>(null);
   const [currentIndex3, setCurrentIndex3] = useState<number | null>(null);
-  const [currentAlgo, setCurrentAlgo] = useState("");
+  const [currentAlgo, setCurrentAlgo] = useState<
+    "Bubble" | "Insertion" | "Selection" | "Quick" | "Heap" | "Merge"
+  >("Bubble");
 
   // Confetti
   const [runConfetti, setRunConfetti] = useState<boolean>(false);
@@ -118,6 +121,7 @@ const Graph = (): JSX.Element | null => {
         />
         <select
           onChange={(e) => {
+            // @ts-ignore
             setCurrentAlgo(e.target.value);
           }}
         >
