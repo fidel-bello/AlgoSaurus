@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import BubbleSortGraph from "../../components/graphs/bubleSortGraph";
 import styles from "./home.module.css";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
-import { VictoryBar } from "victory";
 import { generateRandomArray } from "../../helpers/functions/helperFunctions";
 import InsertionSortGraph from "../../components/graphs/insertionSortGraph";
 import SelectionSortGraph from "../../components/graphs/selectionSortGraph";
@@ -67,32 +66,14 @@ const HomePage = (): JSX.Element | null => {
     }
   };
 
-  if (!isAlgorithmRunning) {
-    if (!data) return null;
-
-    return (
-      <div>
-        <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
-        <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
-
-        <div className={styles.buttonContainer}>
-          {!isAlgorithmRunning ? (
-            <button onClick={() => setIsAlgorithmRunning(true)}>
-              <BsPlayFill className={styles.playButton} />
-            </button>
-          ) : (
-            <button onClick={() => setIsAlgorithmRunning(false)}>
-              <BsPauseFill className={styles.playButton} />
-            </button>
-          )}
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div>
-      {returnCorrectGraph()}
+      {isAlgorithmRunning ? (
+        returnCorrectGraph()
+      ) : (
+        <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
+      )}
+      <div></div>
       <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
       <div className={styles.buttonContainer}>
         {!isAlgorithmRunning ? (
