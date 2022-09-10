@@ -28,20 +28,22 @@ const home = () => {
         <h1>Our Tools</h1>
         <div className={styles.flex}>
           <div className={styles.project}>
-            <img src={algoPic} alt="algo pic" className={styles.algoPic} />
+            <img src={algoPic} alt="" className={styles.projectImg} />
             <div className={styles.projectInfo}>
-              <h2>Algorithm Visualizer</h2>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
-                tempore, excepturi non repellendus adipisci odit praesentium?
-                Quos officiis minima dicta.
-              </p>
-              <button>Go To</button>
+              <h2>Algorithm Visualization</h2>
+              <Link to="/algorithm-visualizer">
+                <button>Explore</button>
+              </Link>
             </div>
           </div>
           <div className={styles.project}>
-            <h2>Pathfinder</h2>
-            <button>Go To</button>
+            <img src={algoPic} alt="" className={styles.projectImg} />
+            <div className={styles.projectInfo}>
+              <h2>Pathfinder</h2>
+              <Link to="/pathfinder">
+                <button>Explore</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
