@@ -6,7 +6,7 @@ const Footer = () => {
     <div className={styles.container}>
       <img src={dino} alt="" className={styles.dino} />
       <h2>AlgoSaurus</h2>
-      <p>The power of the AlgoSaurus will help you understand algorithms</p>
+      <p>The power of the AlgoSaurus will help you understand algorithms!</p>
     </div>
   );
 };
