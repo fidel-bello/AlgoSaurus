@@ -1,5 +1,5 @@
-import { sleep, swapElements } from "../functions/helperFunctions";
-import { AlgoInterface } from "../interfaces/algoInterface";
+import { sleep, swapElements } from "../../functions/helperFunctions";
+import { AlgoInterface } from "../../interfaces/algoInterface";
 
 export const heapSort = async ({
   dataSet,

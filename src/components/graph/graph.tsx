@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { VictoryBar } from "victory";
-import { bubbleSort } from "../../helpers/algorithms/bubleSort";
-import { heapSort } from "../../helpers/algorithms/heapSort";
-import { insertionSort } from "../../helpers/algorithms/insertionSort";
-import { mergeSort } from "../../helpers/algorithms/mergeSort";
-import { quickSort } from "../../helpers/algorithms/quickSort";
-import { selectionSort } from "../../helpers/algorithms/selectionSort";
+import { bubbleSort } from "../../helpers/algorithms/sorting/bubleSort";
+import { heapSort } from "../../helpers/algorithms/sorting/heapSort";
+import { insertionSort } from "../../helpers/algorithms/sorting/insertionSort";
+import { mergeSort } from "../../helpers/algorithms/sorting/mergeSort";
+import { quickSort } from "../../helpers/algorithms/sorting/quickSort";
+import { selectionSort } from "../../helpers/algorithms/sorting/selectionSort";
+
 import { generateRandomArray } from "../../helpers/functions/helperFunctions";
 import ConfettiComponent from "../confetti/confetti";
 import styles from "./graph.module.css";

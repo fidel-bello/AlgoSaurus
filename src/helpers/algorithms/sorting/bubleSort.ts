@@ -1,6 +1,6 @@
-import { AlgoInterface } from "./../interfaces/algoInterface";
-import { sleep } from "./../functions/helperFunctions";
-import { swapElements } from "../functions/helperFunctions";
+import { swapElements } from "./../../functions/helperFunctions";
+import { AlgoInterface } from "../../interfaces/algoInterface";
+import { sleep } from "../../functions/helperFunctions";
 
 export const bubbleSort = async ({
   dataSet,

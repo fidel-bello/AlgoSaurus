@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { swapElements } from "../functions/helperFunctions";
-import { AlgoInterface } from "./../interfaces/algoInterface";
-import { sleep } from "../functions/helperFunctions";
+import { swapElements } from "../../functions/helperFunctions";
+import { AlgoInterface } from "../../interfaces/algoInterface";
+import { sleep } from "../../functions/helperFunctions";
 
 export const quickSort = async ({
   dataSet,

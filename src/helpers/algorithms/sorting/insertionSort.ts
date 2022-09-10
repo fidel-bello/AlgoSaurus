@@ -1,5 +1,5 @@
-import { sleep } from "./../functions/helperFunctions";
-import { AlgoInterface } from "./../interfaces/algoInterface";
+import { sleep } from "../../functions/helperFunctions";
+import { AlgoInterface } from "../../interfaces/algoInterface";
 
 export const insertionSort = async ({
   dataSet,
