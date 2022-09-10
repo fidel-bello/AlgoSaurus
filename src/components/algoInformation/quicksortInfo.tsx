@@ -7,7 +7,7 @@ const codeSnippet = `
 const quickSort = ({ dataSet }) => {
   const length = dataSet.length;
   const array = dataSet;
-  const moves: any = [];
+  const moves = [];
   const curr = 0;
   const end = length - 1;
 
