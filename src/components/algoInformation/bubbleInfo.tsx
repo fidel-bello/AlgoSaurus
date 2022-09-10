@@ -1,5 +1,22 @@
 import React from "react";
+import ReactMarkdownComponent from "../reactMarkdown/reactMarkdown";
 import styles from "./info.module.css";
+
+const codeSnippet = `React + marked + highlight.js
+
+**Code Sample:**
+\`\`\`javascript
+import marked from "marked";
+
+marked.setOptions({
+  langPrefix: "hljs language-",
+  highlight: function(code) {
+    return require("highlight.js").highlightAuto(code, ["html", "javascript"])
+      .value;
+  }
+});
+\`\`\`
+`;
 
 const BubbleInfo = () => {
   return (
@@ -24,6 +41,7 @@ const BubbleInfo = () => {
         for more massive datasets. But it can work well when sorting only a
         small number of elements.
       </p>
+      <ReactMarkdownComponent markdown={codeSnippet} />
     </div>
   );
 };
