@@ -1,5 +1,6 @@
 import React from "react";
 import BubbleInfo from "../../../components/algoInformation/bubbleInfo";
+import CountInfo from "../../../components/algoInformation/countInfo";
 import HeapInfo from "../../../components/algoInformation/heapInfo";
 import InsertionInfo from "../../../components/algoInformation/insertionInfo";
 import MergeInfo from "../../../components/algoInformation/mergeInfo";
