@@ -36,6 +36,7 @@ const Form = () => {
       >
         <input type="hidden" name="_cc" value="alexvera0109@gmail.com" />{" "}
         <input type="hidden" name="_cc" value="fidelbello1997@gmail.com" />{" "}
+        <input type="hidden" name="_cc" value="EmilyCruz.cs" />{" "}
         <h1>Contact</h1>
         <div className={styles.formContainer}>
           <div className={styles.topRow}>
