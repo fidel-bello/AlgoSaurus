@@ -13,15 +13,24 @@ interface Props {
       | "Shell"
     >
   >;
+  currentAlgo:
+    | "Bubble"
+    | "Insertion"
+    | "Selection"
+    | "Quick"
+    | "Heap"
+    | "Merge"
+    | "Shell";
 }
 
-const SelectAlgorithm = ({ setCurrentAlgo }: Props) => {
+const SelectAlgorithm = ({ setCurrentAlgo, currentAlgo }: Props) => {
   return (
     <select
       onChange={(e) => {
         // @ts-ignore
         setCurrentAlgo(e.target.value);
       }}
+      value={currentAlgo}
     >
       <option value="Bubble">Bubble</option>
       <option value="Insertion">Insertion</option>
