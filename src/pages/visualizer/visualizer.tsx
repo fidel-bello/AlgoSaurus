@@ -16,6 +16,7 @@ import SelectAlgorithm from "./components/selectAlgorithm";
 import styles from "./visualizer.module.css";
 import { motion } from "framer-motion";
 import ReactSlider from "react-slider";
+import { useSearchParams } from "react-router-dom";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -25,6 +26,39 @@ const Visualizer = (): JSX.Element | null => {
   const [isAlgorithmRunning, setIsAlgorithmRunning] = useState(false);
   const [delay, setDelay] = useState<number>(100);
   const [size, setSize] = useState<number | null>(null);
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (!searchParams) return;
+
+    const algo = searchParams.get("algo");
+
+    switch (algo) {
+      case "bubble":
+        setCurrentAlgo("Bubble");
+        break;
+      case "insertion":
+        setCurrentAlgo("Insertion");
+        break;
+      case "selection":
+        setCurrentAlgo("Selection");
+        break;
+      case "quick":
+        setCurrentAlgo("Quick");
+        break;
+      case "heap":
+        setCurrentAlgo("Heap");
+        break;
+      case "merge":
+        setCurrentAlgo("Merge");
+        break;
+      case "shell":
+        setCurrentAlgo("Shell");
+        break;
+      default:
+        setCurrentAlgo("Bubble");
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     if (!isAlgorithmRunning) {
@@ -35,7 +69,6 @@ const Visualizer = (): JSX.Element | null => {
       generateArray();
     }
   }, [isAlgorithmRunning]);
-
 
   const generateArray = (size?: number) => {
     switch (currentAlgo) {
@@ -62,9 +95,7 @@ const Visualizer = (): JSX.Element | null => {
         break;
       default:
     }
-
   };
-
 
   useEffect(() => {
     setIsAlgorithmRunning(false);
@@ -83,25 +114,25 @@ const Visualizer = (): JSX.Element | null => {
   }, [size]);
 
   useEffect(() => {
-    switch (currentAlgo){
+    switch (currentAlgo) {
       case "Bubble":
         setSize(30);
-      break;
+        break;
       case "Selection":
         setSize(30);
         break;
       case "Quick":
         setSize(300);
-      break;
+        break;
       case "Merge":
         setSize(200);
-      break;
+        break;
       case "Heap":
         setSize(200);
         break;
       case "Shell":
         setSize(100);
-        break
+        break;
       default:
     }
   }, [currentAlgo]);
@@ -114,9 +145,9 @@ const Visualizer = (): JSX.Element | null => {
       delay,
     };
 
-    switch(currentAlgo){
+    switch (currentAlgo) {
       case "Bubble":
-        return <BubbleSortGraph { ...graphProps} />;
+        return <BubbleSortGraph {...graphProps} />;
       case "Insertion":
         return <InsertionSortGraph {...graphProps} />;
       case "Selection":
@@ -126,7 +157,7 @@ const Visualizer = (): JSX.Element | null => {
       case "Merge":
         return <MergeSortGraph {...graphProps} />;
       case "Heap":
-        return <HeapSortGraph { ...graphProps} />;
+        return <HeapSortGraph {...graphProps} />;
       case "Shell":
         return <ShellSortGraph {...graphProps} />;
     }
@@ -160,7 +191,10 @@ const Visualizer = (): JSX.Element | null => {
 
       <div className={styles.menu_container}>
         <div className={styles.dropdown_play_button_container}>
-          <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
+          <SelectAlgorithm
+            currentAlgo={currentAlgo}
+            setCurrentAlgo={setCurrentAlgo}
+          />
           <div className={styles.buttonContainer}>
             {!isAlgorithmRunning ? (
               <div className={styles.play_button_container}>
