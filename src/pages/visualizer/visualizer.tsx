@@ -36,23 +36,36 @@ const Visualizer = (): JSX.Element | null => {
     }
   }, [isAlgorithmRunning]);
 
+
   const generateArray = (size?: number) => {
-    if (currentAlgo === "Bubble") {
-      setData(generateRandomArray({ total: size || 30, min: 0, max: 100 }));
-    } else if (currentAlgo === "Insertion") {
-      setData(generateRandomArray({ total: size || 30, min: 0, max: 100 }));
-    } else if (currentAlgo === "Selection") {
-      setData(generateRandomArray({ total: size || 50, min: 0, max: 100 }));
-    } else if (currentAlgo === "Quick") {
-      setData(generateRandomArray({ total: size || 300, min: 0, max: 100 }));
-    } else if (currentAlgo === "Merge") {
-      setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
-    } else if (currentAlgo === "Heap") {
-      setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
-    } else if (currentAlgo === "Shell") {
-      setData(generateRandomArray({ total: size || 100, min: 0, max: 100 }));
+    switch (currentAlgo) {
+      case "Bubble":
+        setData(generateRandomArray({ total: size || 30, min: 0, max: 100 }));
+        break;
+      case "Insertion":
+        setData(generateRandomArray({ total: size || 50, min: 0, max: 100 }));
+        break;
+      case "Selection":
+        setData(generateRandomArray({ total: size || 50, min: 0, max: 100 }));
+        break;
+      case "Quick":
+        setData(generateRandomArray({ total: size || 300, min: 0, max: 100 }));
+        break;
+      case "Merge":
+        generateRandomArray({ total: size || 200, min: 0, max: 100 });
+        break;
+      case "Heap":
+        generateRandomArray({ total: size || 200, min: 0, max: 100 });
+        break;
+      case "Shell":
+        generateRandomArray({ total: size || 200, min: 0, max: 100 });
+        break;
+      default:
+        break;
     }
+
   };
+
 
   useEffect(() => {
     setIsAlgorithmRunning(false);
@@ -71,20 +84,27 @@ const Visualizer = (): JSX.Element | null => {
   }, [size]);
 
   useEffect(() => {
-    if (currentAlgo === "Bubble") {
-      setSize(30);
-    } else if (currentAlgo === "Insertion") {
-      setSize(30);
-    } else if (currentAlgo === "Selection") {
-      setSize(50);
-    } else if (currentAlgo === "Quick") {
-      setSize(300);
-    } else if (currentAlgo === "Merge") {
-      setSize(200);
-    } else if (currentAlgo === "Heap") {
-      setSize(200);
-    } else if (currentAlgo === "Shell") {
-      setSize(100);
+    switch (currentAlgo){
+      case "Bubble":
+        setSize(30);
+      break;
+      case "Selection":
+        setSize(30);
+        break;
+      case "Quick":
+        setSize(300);
+      break;
+      case "Merge":
+        setSize(200);
+      break;
+      case "Heap":
+        setSize(200);
+        break;
+      case "Shell":
+        setSize(100);
+        break
+      default:
+        break;
     }
   }, [currentAlgo]);
 
@@ -96,20 +116,22 @@ const Visualizer = (): JSX.Element | null => {
       delay,
     };
 
-    if (currentAlgo === "Bubble") {
-      return <BubbleSortGraph {...graphProps} />;
-    } else if (currentAlgo === "Insertion") {
-      return <InsertionSortGraph {...graphProps} />;
-    } else if (currentAlgo === "Selection") {
-      return <SelectionSortGraph {...graphProps} />;
-    } else if (currentAlgo === "Quick") {
-      return <QuickSortGraph {...graphProps} />;
-    } else if (currentAlgo === "Heap") {
-      return <HeapSortGraph {...graphProps} />;
-    } else if (currentAlgo === "Merge") {
-      return <MergeSortGraph {...graphProps} />;
-    } else if (currentAlgo === "Shell") {
-      return <ShellSortGraph {...graphProps} />;
+    switch(currentAlgo){
+      case "Bubble":
+        return <BubbleSortGraph { ...graphProps} />;
+      case "Insertion":
+        return <InsertionSortGraph {...graphProps} />;
+      case "Selection":
+        return <SelectionSortGraph {...graphProps} />;
+      case "Quick":
+        return <QuickSortGraph {...graphProps} />;
+      case "Merge":
+        return <MergeSortGraph {...graphProps} />;
+      case "Heap":
+        return <HeapSortGraph { ...graphProps} />;
+      case "Shell":
+        return <ShellSortGraph {...graphProps} />;
+      default:
     }
   };
 
