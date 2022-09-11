@@ -1,16 +1,34 @@
 import React, { useState } from "react";
 import styles from "./form.module.css";
+import { motion } from "framer-motion";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
+
   const handleSubmit = () => {
     console.log("" + name + email + text);
   };
-  console.log(name);
+
+  const variants = {
+    hidden: { opacity: 0, y: -100 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
   return (
-    <div className={styles.container}>
+    <motion.div
+      initial="hidden"
+      animate="show"
+      variants={variants}
+      className={styles.container}
+    >
       <div className={styles.wholeDiv}>
         <h1>Contact</h1>
         <div className={styles.formContainer}>
@@ -23,7 +41,6 @@ const Form = () => {
                 setName(e.target.value);
               }}
             />
-
             <input
               value={email}
               type="text"
@@ -48,7 +65,7 @@ const Form = () => {
         </div>
         <button onSubmit={handleSubmit}>Submit</button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
