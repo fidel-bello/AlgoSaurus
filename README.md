@@ -10,20 +10,19 @@ Learning alorithms made easier with visualizing. Woundering how?
 Check us out:
 
 ## Table of Contents
-* Algorithms Featured  
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [license](#License)
-* [Contributing](#Contributing)
-* [Test](#Test)
+   * Algorithms Featured 
+   * [Installation](#Installation)
+   * [Usage](#Usage)
+   * [license](#License)
+   * [Contributing](#Contributing)
 
 ## Algorithms Featured 
-* Bubble Sort
-* heap sort
-* heap sort
-* insertion sort
-* merge sort 
-* Merge sort
+* [Bubble Sort](https://algo-saurus.web.app/algorithm-visualizer?algo=buble)
+* [Insertion sort](https://algo-saurus.web.app/algorithm-visualizer?algo=insertion)
+* [Selection sort](https://algo-saurus.web.app/algorithm-visualizer?algo=selection)
+* [Heap sort](https://algo-saurus.web.app/algorithm-visualizer?algo=heap)
+* [Merge sort](https://algo-saurus.web.app/algorithm-visualizer?algo=merge)
+* [Shell sort](https://algo-saurus.web.app/algorithm-visualizer?algo=shell)
 
 ### Installation
 * This app uses npm packages
@@ -35,10 +34,12 @@ Check us out:
  * This application is covered by MIT
 
 ## Contributing
-   * fidel-bello
-   * EmilyCruzcs
    * anthony-fdez
    * AlejandroV01
+   * fidel-bello
+   * EmilyCruzcs
+   
+   
 
 
 
