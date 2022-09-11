@@ -5,7 +5,9 @@ const home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
-        <h1 className={styles.heroHeader}>Algorithm Visualizer!</h1>
+        <h1 className={styles.heroHeader}>
+          Algorithm <span>Visualizer</span>!
+        </h1>
         <p className={styles.heroPara}>
           A tool for explaining concept of sorting algorithms in computing.
         </p>

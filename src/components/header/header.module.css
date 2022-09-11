@@ -44,6 +44,7 @@ a {
 .logo {
   display: flex;
   align-items: center;
+  user-select: none;
 }
 .dino {
   width: 60px;
