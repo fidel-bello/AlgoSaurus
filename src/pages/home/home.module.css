@@ -20,6 +20,7 @@
 
 .hero h1 {
   font-size: 4rem;
+  color: #b22424;
 }
 .hero:nth-child(2) {
   margin-bottom: 2rem;
