@@ -114,37 +114,54 @@ const Visualizer = (): JSX.Element | null => {
   };
 
   const variants = {
-    visible: { opacity: 1 },
     hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
+  const container = {
+    hidden: { opacity: 0, y: -100 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
   };
 
   return (
     <motion.div
       initial="hidden"
-      animate="visible"
-      variants={variants}
+      animate="show"
+      variants={container}
       className={styles.container}
     >
-      <div className={styles.graph_container}>
+      <motion.div className={styles.graph_container}>
         {isAlgorithmRunning ? (
           returnCorrectGraph()
         ) : (
           <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
         )}
-      </div>
+      </motion.div>
 
       <div className={styles.menu_container}>
         <div className={styles.dropdown_play_button_container}>
           <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
           <div className={styles.buttonContainer}>
             {!isAlgorithmRunning ? (
-              <button onClick={() => setIsAlgorithmRunning(true)}>
-                <BsPlayFill className={styles.playButton} />
-              </button>
+              <div className={styles.play_button_container}>
+                <button onClick={() => setIsAlgorithmRunning(true)}>
+                  <BsPlayFill className={styles.playButton} />
+                </button>
+                <span className={styles.label}>Start</span>
+              </div>
             ) : (
-              <button onClick={() => setIsAlgorithmRunning(false)}>
-                <BiStopCircle className={styles.playButton} />
-              </button>
+              <div className={styles.play_button_container}>
+                <button onClick={() => setIsAlgorithmRunning(false)}>
+                  <BiStopCircle className={styles.playButton} />
+                </button>
+                <span className={styles.label}>Stop</span>
+              </div>
             )}
           </div>
         </div>
