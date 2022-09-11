@@ -8,7 +8,7 @@ const Form = () => {
   const handleSubmit = () => {
     console.log("" + name + email + text);
   };
-
+  console.log(name);
   return (
     <div className={styles.container}>
       <div className={styles.wholeDiv}>
