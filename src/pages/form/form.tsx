@@ -29,22 +29,30 @@ const Form = () => {
       variants={variants}
       className={styles.container}
     >
-      <div className={styles.wholeDiv}>
+      <form
+        action="https://formsubmit.co/anthonyfdez23@gmail.com"
+        method="POST"
+        className={styles.content}
+      >
+        <input type="hidden" name="_cc" value="alexvera0109@gmail.com" />{" "}
+        <input type="hidden" name="_cc" value="fidelbello1997@gmail.com" />{" "}
         <h1>Contact</h1>
         <div className={styles.formContainer}>
           <div className={styles.topRow}>
             <input
               value={name}
               type="text"
+              name="Name"
               placeholder="Full Name..."
               onChange={(e) => {
                 setName(e.target.value);
               }}
             />
             <input
+              name="Email"
               value={email}
-              type="text"
-              placeholder="Email..."
+              type="email"
+              placeholder="test@gmail.com"
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -53,7 +61,8 @@ const Form = () => {
           <div className={styles.bottomRow}>
             <textarea
               value={text}
-              placeholder="Enter any information here..."
+              name="Feedback"
+              placeholder="Send us your thoughts and feedback, we appreciate it :)"
               className={styles.bigBox}
               rows={10}
               cols={15}
@@ -63,8 +72,12 @@ const Form = () => {
             />
           </div>
         </div>
-        <button onSubmit={handleSubmit}>Submit</button>
-      </div>
+        <div className={styles.button_container}>
+          <button type="submit" onSubmit={handleSubmit}>
+            Submit
+          </button>
+        </div>
+      </form>
     </motion.div>
   );
 };
