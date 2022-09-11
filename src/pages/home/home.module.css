@@ -1,0 +1,116 @@
+.container {
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  overflow-x: hidden;
+}
+.hero {
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  bottom: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+}
+.hero:nth-child(2) {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.hero p {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+.animationArea,
+.boxArea {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+.animationArea .boxArea li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 0;
+  height: 0;
+  border-bottom: 40px solid #b22424;
+  border-left: 20px solid #b22424;
+  border-right: 20px solid #b22424;
+  animation: animate 20s linear infinite;
+  bottom: -150px;
+}
+.animationArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100vh;
+}
+.boxArea {
+  z-index: -1;
+  overflow: hidden;
+}
+.boxArea li:nth-child(1) {
+  left: 86%;
+  animation-delay: 0s;
+}
+.boxArea li:nth-child(2) {
+  left: 12%;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+.boxArea li:nth-child(3) {
+  left: 70%;
+  animation-delay: 5.5s;
+}
+.boxArea li:nth-child(4) {
+  left: 42%;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+.boxArea li:nth-child(5) {
+  left: 65%;
+  animation-delay: 0s;
+}
+.boxArea li:nth-child(6) {
+  left: 23%;
+  animation-delay: 3.5s;
+}
+.heroButton {
+  background-color: transparent;
+  border: 2px solid white;
+  font-size: 1rem;
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+  transition: 0.3s ease;
+  margin-top: 30px;
+  backdrop-filter: blur(10px);
+}
+.heroButton:hover {
+  background-color: white;
+  color: black;
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.495);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) scale(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-800px) scale(2) rotate(360deg);
+    opacity: 0;
+  }
+}

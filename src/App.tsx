@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import Error from "./components/error/error";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
-import Home from "./components/home/home";
+import Home from "./pages/home/home";
 import Visualizer from "./pages/visualizer/visualizer";
 
 function App() {
