@@ -76,8 +76,7 @@ const HeapInfo = () => {
         </li>
         <li>
           <strong>Simplicity - </strong>It is simpler to understand than other
-          equally efficient sorting algorithms because it does not use advanced
-          computer science concepts such as recursion
+          equally efficient sorting algorithms.
         </li>
       </ul>
     </div>
