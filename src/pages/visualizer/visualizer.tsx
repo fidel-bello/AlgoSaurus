@@ -14,6 +14,8 @@ import { generateRandomArray } from "../../helpers/functions/helperFunctions";
 import ReturnCorrectInfo from "./components/returnCorrectInfo";
 import SelectAlgorithm from "./components/selectAlgorithm";
 import styles from "./visualizer.module.css";
+import { motion } from "framer-motion";
+import ReactSlider from "react-slider";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -111,66 +113,98 @@ const Visualizer = (): JSX.Element | null => {
     }
   };
 
+  const variants = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
+  const container = {
+    hidden: { opacity: 0, y: -100 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
   return (
-    <div className={styles.container}>
-      <h1 className={styles.visHeader}>Algorithm Visualizer</h1>
-      <div className={styles.graph_container}>
+    <motion.div
+      initial="hidden"
+      animate="show"
+      variants={container}
+      className={styles.container}
+    >
+      <motion.div className={styles.graph_container}>
         {isAlgorithmRunning ? (
           returnCorrectGraph()
         ) : (
           <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
         )}
-      </div>
+      </motion.div>
 
       <div className={styles.menu_container}>
         <div className={styles.dropdown_play_button_container}>
           <SelectAlgorithm setCurrentAlgo={setCurrentAlgo} />
           <div className={styles.buttonContainer}>
             {!isAlgorithmRunning ? (
-              <button onClick={() => setIsAlgorithmRunning(true)}>
-                <BsPlayFill className={styles.playButton} />
-              </button>
+              <div className={styles.play_button_container}>
+                <button onClick={() => setIsAlgorithmRunning(true)}>
+                  <BsPlayFill className={styles.playButton} />
+                </button>
+                <span className={styles.label}>Start</span>
+              </div>
             ) : (
-              <button onClick={() => setIsAlgorithmRunning(false)}>
-                <BiStopCircle className={styles.playButton} />
-              </button>
+              <div className={styles.play_button_container}>
+                <button onClick={() => setIsAlgorithmRunning(false)}>
+                  <BiStopCircle className={styles.playButton} />
+                </button>
+                <span className={styles.label}>Stop</span>
+              </div>
             )}
           </div>
         </div>
 
         <div className={styles.slider_container}>
-          <input
-            onChange={(e) => {
+          <ReactSlider
+            onChange={(value) => {
               // @ts-ignore
-              setDelay(e.target.value);
+              setDelay(value);
               setIsAlgorithmRunning(false);
             }}
-            type="range"
+            value={delay}
             min={1}
             max={200}
             step={1}
+            className="horizontal-slider"
+            thumbClassName="thumb"
+            trackClassName="track"
           />
+
           <span>{delay} (delay msec)</span>
         </div>
         <div className={styles.slider_container}>
-          <input
-            onChange={(e) => {
+          <ReactSlider
+            onChange={(value) => {
               // @ts-ignore
-              setSize(e.target.value);
+              setSize(value);
               setIsAlgorithmRunning(false);
             }}
             value={size || 30}
-            type="range"
             min={30}
             max={300}
             step={1}
+            className="horizontal-slider"
+            thumbClassName="thumb"
+            trackClassName="track"
           />
           <span>{size} (size)</span>
         </div>
       </div>
       <br></br>
       <ReturnCorrectInfo currentAlgo={currentAlgo} />
-    </div>
+    </motion.div>
   );
 };
 

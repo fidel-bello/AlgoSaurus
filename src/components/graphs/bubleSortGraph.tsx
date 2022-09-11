@@ -45,7 +45,7 @@ const BubbleSortGraph = ({
       <div className={styles.graph_container}>
         <VictoryBar
           width={1000}
-          height={500}
+          height={1000}
           style={{
             data: {
               fill: ({ index }) =>
