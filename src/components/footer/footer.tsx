@@ -1,6 +1,7 @@
 import React from "react";
 import dino from "../dino.gif";
 import styles from "./footer.module.css";
+
 const Footer = () => {
   return (
     <div className={styles.container}>
