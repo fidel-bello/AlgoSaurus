@@ -52,16 +52,15 @@ const Visualizer = (): JSX.Element | null => {
         setData(generateRandomArray({ total: size || 300, min: 0, max: 100 }));
         break;
       case "Merge":
-        generateRandomArray({ total: size || 200, min: 0, max: 100 });
+        setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
         break;
       case "Heap":
-        generateRandomArray({ total: size || 200, min: 0, max: 100 });
+        setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
         break;
       case "Shell":
-        generateRandomArray({ total: size || 200, min: 0, max: 100 });
+        setData(generateRandomArray({ total: size || 200, min: 0, max: 100 }));
         break;
       default:
-        break;
     }
 
   };
@@ -104,7 +103,6 @@ const Visualizer = (): JSX.Element | null => {
         setSize(100);
         break
       default:
-        break;
     }
   }, [currentAlgo]);
 
@@ -131,7 +129,6 @@ const Visualizer = (): JSX.Element | null => {
         return <HeapSortGraph { ...graphProps} />;
       case "Shell":
         return <ShellSortGraph {...graphProps} />;
-      default:
     }
   };
 
