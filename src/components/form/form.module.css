@@ -1,0 +1,71 @@
+.container {
+  height: calc(100vh - 100px);
+  padding: 0 30px;
+  font-family: "Quicksand", "sans-serif";
+}
+.wholeDiv {
+  margin-left: 50px;
+  margin-top: 100px;
+  max-width: 1000px;
+  margin: auto;
+}
+.wholeDiv h1 {
+  font-size: 2.5rem;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.topRow input:first-child {
+  grid-column: 1/2;
+  font-family: "Quicksand", "sans-serif";
+}
+.topRow input:last-child {
+  grid-column: 2/-1;
+  font-family: "Quicksand", "sans-serif";
+}
+.topRow input {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+input {
+  background-color: rgb(35, 35, 35);
+  padding: 5px 10px;
+}
+
+.bottomRow {
+  width: 100%;
+}
+.bigBox {
+  resize: none;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(35, 35, 35);
+  color: white;
+  outline: none;
+  width: calc(100% - 20px);
+  padding: 5px 10px;
+  font-family: "Quicksand", "sans-serif";
+}
+
+.wholeDiv button {
+  background-color: #b22424;
+  border: none;
+  color: white;
+  font-weight: 500;
+  float: right;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-family: "Quicksand", "sans-serif";
+  cursor: pointer;
+}
