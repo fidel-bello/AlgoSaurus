@@ -1,0 +1,59 @@
+.container {
+  height: calc(100vh - 100px);
+}
+.wholeDiv {
+  margin-left: 100px;
+  margin-top: 100px;
+  max-width: 500px;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.topRow input:first-child {
+  grid-column: 1/2;
+}
+.topRow input:last-child {
+  grid-column: 2/-1;
+}
+.topRow input {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+input {
+  background-color: rgb(57, 57, 57);
+  padding: 5px 10px;
+}
+textarea {
+  background-color: rgb(57, 57, 57);
+}
+
+.bigBox {
+  resize: none;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(57, 57, 57);
+  color: white;
+  outline: none;
+  width: 100%;
+}
+
+.wholeDiv button {
+  background-color: #b22424;
+  border: none;
+  color: white;
+  font-weight: 500;
+  float: right;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 0.7rem;
+}
