@@ -11,10 +11,9 @@ Check us out:
 
 ## Table of Contents
    * Algorithms Featured 
-   * [Installation](#Installation)
-   * [Usage](#Usage)
-   * [license](#License)
-   * [Contributing](#Contributing)
+   * Installation 
+   * license 
+   * Contributing
 
 ## Algorithms Featured 
 * [Bubble Sort](https://algo-saurus.web.app/algorithm-visualizer?algo=buble)
