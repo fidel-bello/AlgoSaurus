@@ -14,6 +14,7 @@ Check us out:
    * Installation 
    * license 
    * Contributing
+   * Deployed
 
 ## Algorithms Featured 
 * [Bubble Sort](https://algo-saurus.web.app/algorithm-visualizer?algo=buble)
@@ -37,6 +38,9 @@ Check us out:
    * AlejandroV01
    * fidel-bello
    * EmilyCruzcs
+
+## Deployed
+   https://algo-saurus.web.app/ 
    
    
 
