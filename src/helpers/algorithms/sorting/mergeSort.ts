@@ -8,7 +8,6 @@ export const mergeSort = async ({
   setCurrentIndex3,
   setDataSet,
   delay,
-  setIsAlgorithmRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
   if (!setCurrentIndex2) return null;
@@ -16,13 +15,15 @@ export const mergeSort = async ({
 
   const length = dataSet.length;
   const array = dataSet;
-  const temp: any = [];
+
+  const temp: number[] = [];
   const front = 0;
   const back = length - 1;
 
   const divide = async (
-    array: any[],
-    temp: any[],
+    array: number[],
+
+    temp: number[],
     front: number,
     end: number
   ) => {
@@ -36,8 +37,8 @@ export const mergeSort = async ({
     }
   };
   const merge = async (
-    array: any[],
-    temp: any[],
+    array: number[],
+    temp: number[],
     start: number,
     mid: number,
     end: number
@@ -85,6 +86,8 @@ export const mergeSort = async ({
 
     for (let i = start; i <= end; ++i) {
       array[i] = sorted[i - start];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       temp.push([i, array[i], indexes]);
 
       setCurrentIndex(i);

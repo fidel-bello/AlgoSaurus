@@ -6,7 +6,6 @@ export const insertionSort = async ({
   setCurrentIndex,
   setDataSet,
   delay,
-  setIsAlgorithmRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
 

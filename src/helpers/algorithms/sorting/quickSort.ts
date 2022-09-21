@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { swapElements } from "../../functions/helperFunctions";
+import { sleep, swapElements } from "../../functions/helperFunctions";
 import { AlgoInterface } from "../../interfaces/algoInterface";
-import { sleep } from "../../functions/helperFunctions";
 
 export const quickSort = async ({
   dataSet,
@@ -10,7 +9,6 @@ export const quickSort = async ({
   setCurrentIndex2,
   setDataSet,
   delay,
-  setIsAlgorithmRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
   if (!setCurrentIndex2) return null;
