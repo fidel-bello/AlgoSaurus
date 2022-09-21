@@ -67,4 +67,30 @@ a {
 .menuItemDiv {
   display: flex;
   gap: 15px;
+  align-items: center;
+}
+
+.hamburgerIcon {
+  display: none;
+}
+@media (max-width: 600px) {
+  .menuItems {
+    display: none;
+  }
+  .hamburgerIcon {
+    display: block;
+    width: 27px;
+    height: 27px;
+  }
+
+  .dropMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+  }
+
+  .dropMenu a {
+    text-align: center;
+  }
 }
