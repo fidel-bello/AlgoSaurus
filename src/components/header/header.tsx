@@ -17,6 +17,9 @@ const Header = (): JSX.Element => {
           <Link to="/algorithm-visualizer" className={styles.menuItems}>
             <h1 className={styles.menuHeader}>Visualizer</h1>
           </Link>
+          <Link to="/about" className={styles.menuItems}>
+            <h1 className={styles.menuHeader}>About</h1>
+          </Link>
           <Link to="/contact" className={styles.menuItems}>
             <h1 className={styles.menuHeader}>Contact</h1>
           </Link>

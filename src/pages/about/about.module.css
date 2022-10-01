@@ -1,0 +1,19 @@
+.container {
+  min-height: 100vh;
+  padding: 10px;
+}
+.content {
+  max-width: 1000px;
+  margin: auto;
+}
+.content h1 {
+  font-size: 3rem;
+}
+.content h2 {
+  margin-top: 30px;
+}
+.content p {
+  color: rgb(200, 200, 200);
+  line-height: 30px;
+  font-size: 18px;
+}
