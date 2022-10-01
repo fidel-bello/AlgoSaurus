@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styles from "./form.module.css";
+import styles from "./contact.module.css";
 import { motion } from "framer-motion";
 
-const Form = () => {
+const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
@@ -30,14 +30,14 @@ const Form = () => {
       className={styles.container}
     >
       <form
-        action="https://formsubmit.co/anthonyfdez23@gmail.com"
+        action="https://getform.io/f/0cd2a2c4-a198-4b7c-84a2-e42a39237409"
         method="POST"
         className={styles.content}
       >
-        <input type="hidden" name="_cc" value="alexvera0109@gmail.com" />{" "}
-        <input type="hidden" name="_cc" value="fidelbello1997@gmail.com" />{" "}
-        <input type="hidden" name="_cc" value="EmilyCruz.cs" />{" "}
-        <h1>Contact</h1>
+        {/* <input type="hidden" name="_cc" value="alexvera0109@gmail.com" />{" "} */}
+        {/* <input type="hidden" name="_cc" value="fidelbello1997@gmail.com" />{" "} */}
+        {/* <input type="hidden" name="_cc" value="EmilyCruz.cs" /> */}
+        <h1>Contact Us</h1>
         <div className={styles.formContainer}>
           <div className={styles.topRow}>
             <input
@@ -53,7 +53,7 @@ const Form = () => {
               name="Email"
               value={email}
               type="email"
-              placeholder="test@gmail.com"
+              placeholder="email@gmail.com"
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -83,4 +83,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Contact;
