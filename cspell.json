@@ -3,7 +3,11 @@
   "ignorePaths": [],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": ["algo", "saurus"],
+  "words": [
+    "algo",
+    "chakra",
+    "saurus"
+  ],
   "ignoreWords": [],
   "import": []
 }

@@ -17,3 +17,7 @@
   line-height: 30px;
   font-size: 18px;
 }
+.accordion_header {
+  transition: 200ms;
+  color: white;
+}
