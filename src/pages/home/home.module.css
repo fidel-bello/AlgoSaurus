@@ -1,93 +1,24 @@
 .container {
   height: 100vh;
-  top: 0px;
-  left: 0px;
   width: 100%;
   overflow-x: hidden;
 }
 .hero {
+  width: calc(100% - 20px);
   position: absolute;
-  margin: auto;
-  top: 0px;
-  bottom: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  width: 100%;
+  top: -10%;
 }
 
 .hero h1 {
   font-size: 4rem;
   color: #b22424;
-}
-.hero:nth-child(2) {
-  margin-bottom: 2rem;
-  margin-top: 1rem;
+  line-height: 3.5rem;
 }
 .hero p {
-  font-size: 1.3rem;
-  margin-top: 0.5rem;
+  font-size: 18px;
+  margin-top: 5px;
 }
-.animationArea,
-.boxArea {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  pointer-events: none;
-}
-.animationArea .boxArea li {
-  position: absolute;
-  display: block;
-  list-style: none;
-  width: 0;
-  height: 0;
-  border-bottom: 40px solid #b22424;
-  border-left: 20px solid #b22424;
-  border-right: 20px solid #b22424;
-  animation: animate 20s linear infinite;
-  bottom: -150px;
-}
-.animationArea {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-height: 100vh;
-}
-.boxArea {
-  z-index: -1;
-  overflow: hidden;
-}
-.boxArea li:nth-child(1) {
-  left: 86%;
-  animation-delay: 0s;
-}
-.boxArea li:nth-child(2) {
-  left: 12%;
-  animation-delay: 1.5s;
-  animation-duration: 10s;
-}
-.boxArea li:nth-child(3) {
-  left: 70%;
-  animation-delay: 5.5s;
-}
-.boxArea li:nth-child(4) {
-  left: 42%;
-  animation-delay: 0s;
-  animation-duration: 15s;
-}
-.boxArea li:nth-child(5) {
-  left: 65%;
-  animation-delay: 0s;
-}
-.boxArea li:nth-child(6) {
-  left: 23%;
-  animation-delay: 3.5s;
-}
+
 .heroButton {
   background-color: transparent;
   border: 2px solid white;
@@ -101,19 +32,17 @@
   backdrop-filter: blur(10px);
 }
 
-@keyframes animate {
-  0% {
-    transform: translateY(0) scale(0) rotate(0deg);
+@media only screen and (min-width: 900px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0px;
   }
-  100% {
-    transform: translateY(-800px) scale(2) rotate(360deg);
-    opacity: 0;
+  .hero h1 {
+    font-size: 5rem;
   }
-}
-
-@media only screen and (max-width: 900px) {
-  .animationArea,
-  .boxArea {
-    display: none;
+  .hero p {
+    margin-top: 25px;
   }
 }

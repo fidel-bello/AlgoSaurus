@@ -29,7 +29,7 @@ const home = () => {
         className={styles.hero}
       >
         <motion.h1 variants={item} className={styles.heroHeader}>
-          Algorithm Visualizer!
+          Algorithm Visualizer
         </motion.h1>
         <motion.p variants={item} className={styles.heroPara}>
           A tool for explaining concept of sorting algorithms in computing.
@@ -41,16 +41,6 @@ const home = () => {
           </Link>
         </motion.div>
       </motion.div>
-      <div className={styles.animationArea}>
-        <ul className={styles.boxArea}>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
     </div>
   );
 };
