@@ -14,9 +14,9 @@ import { generateRandomArray } from "../../helpers/functions/helperFunctions";
 import ReturnCorrectInfo from "./components/returnCorrectInfo";
 import SelectAlgorithm from "./components/selectAlgorithm";
 import styles from "./visualizer.module.css";
-import { motion } from "framer-motion";
 import ReactSlider from "react-slider";
 import { useSearchParams } from "react-router-dom";
+import AnimateOnScreenLoad from "../../components/animateOnScreenLoad/animateOnScreenLoad";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);
@@ -163,96 +163,82 @@ const Visualizer = (): JSX.Element | null => {
     }
   };
 
-  const container = {
-    hidden: { opacity: 0, y: -100 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
   return (
-    <motion.div
-      initial="hidden"
-      animate="show"
-      variants={container}
-      className={styles.container}
-    >
-      <motion.div className={styles.graph_container}>
-        {isAlgorithmRunning ? (
-          returnCorrectGraph()
-        ) : (
-          <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
-        )}
-      </motion.div>
+    <AnimateOnScreenLoad>
+      <div className={styles.container}>
+        <div className={styles.graph_container}>
+          {isAlgorithmRunning ? (
+            returnCorrectGraph()
+          ) : (
+            <DefaultGraph data={data} isAlgorithmRunning={isAlgorithmRunning} />
+          )}
+        </div>
 
-      <div className={styles.menu_container}>
-        <div className={styles.dropdown_play_button_container}>
-          <SelectAlgorithm
-            currentAlgo={currentAlgo}
-            setCurrentAlgo={setCurrentAlgo}
-          />
-          <div className={styles.buttonContainer}>
-            {!isAlgorithmRunning ? (
-              <div className={styles.play_button_container}>
-                <button onClick={() => setIsAlgorithmRunning(true)}>
-                  <BsPlayFill className={styles.playButton} />
-                </button>
-                <span className={styles.label}>Start</span>
-              </div>
-            ) : (
-              <div className={styles.play_button_container}>
-                <button onClick={() => setIsAlgorithmRunning(false)}>
-                  <BiStopCircle className={styles.playButton} />
-                </button>
-                <span className={styles.label}>Stop</span>
-              </div>
-            )}
+        <div className={styles.menu_container}>
+          <div className={styles.dropdown_play_button_container}>
+            <SelectAlgorithm
+              currentAlgo={currentAlgo}
+              setCurrentAlgo={setCurrentAlgo}
+            />
+            <div className={styles.buttonContainer}>
+              {!isAlgorithmRunning ? (
+                <div className={styles.play_button_container}>
+                  <button onClick={() => setIsAlgorithmRunning(true)}>
+                    <BsPlayFill className={styles.playButton} />
+                  </button>
+                  <span className={styles.label}>Start</span>
+                </div>
+              ) : (
+                <div className={styles.play_button_container}>
+                  <button onClick={() => setIsAlgorithmRunning(false)}>
+                    <BiStopCircle className={styles.playButton} />
+                  </button>
+                  <span className={styles.label}>Stop</span>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className={styles.slider_container}>
+            <ReactSlider
+              onChange={(value) => {
+                // @ts-ignore
+                setDelay(value);
+                setIsAlgorithmRunning(false);
+              }}
+              value={delay}
+              min={1}
+              max={200}
+              step={1}
+              className="horizontal-slider"
+              thumbClassName="thumb"
+              trackClassName="track"
+            />
+
+            <span>{delay} (delay msec)</span>
+          </div>
+          <div className={styles.slider_container}>
+            <ReactSlider
+              onChange={(value) => {
+                // @ts-ignore
+                setSize(value);
+                setIsAlgorithmRunning(false);
+              }}
+              value={size || 30}
+              min={30}
+              max={300}
+              step={1}
+              className="horizontal-slider"
+              thumbClassName="thumb"
+              trackClassName="track"
+            />
+            <span>{size} (size)</span>
           </div>
         </div>
-
-        <div className={styles.slider_container}>
-          <ReactSlider
-            onChange={(value) => {
-              // @ts-ignore
-              setDelay(value);
-              setIsAlgorithmRunning(false);
-            }}
-            value={delay}
-            min={1}
-            max={200}
-            step={1}
-            className="horizontal-slider"
-            thumbClassName="thumb"
-            trackClassName="track"
-          />
-
-          <span>{delay} (delay msec)</span>
-        </div>
-        <div className={styles.slider_container}>
-          <ReactSlider
-            onChange={(value) => {
-              // @ts-ignore
-              setSize(value);
-              setIsAlgorithmRunning(false);
-            }}
-            value={size || 30}
-            min={30}
-            max={300}
-            step={1}
-            className="horizontal-slider"
-            thumbClassName="thumb"
-            trackClassName="track"
-          />
-          <span>{size} (size)</span>
-        </div>
+        <br></br>
+        <ReturnCorrectInfo currentAlgo={currentAlgo} />
       </div>
-      <br></br>
-      <ReturnCorrectInfo currentAlgo={currentAlgo} />
-    </motion.div>
+    </AnimateOnScreenLoad>
   );
 };
 
