@@ -15,6 +15,7 @@ const Header = (): JSX.Element => {
         isOpen={isMobileMenuOpen}
         handleClose={() => setIsMobileMenuOpen(false)}
       />
+
       <div className={styles.content}>
         <Link to="/">
           <div className={styles.logo}>
@@ -32,21 +33,8 @@ const Header = (): JSX.Element => {
           </Link>
           <Link to="/contact" className={styles.menuItems}>
             <span className={styles.menuHeader}>Contact</span>
-
           </Link>
-          <div className={styles.menuItemDiv}>
-            <Link to="/algorithm-visualizer" className={styles.menuItems}>
-              <h1 className={styles.menuHeader}>Visualizer</h1>
-            </Link>
-            <Link to="/contact" className={styles.menuItems}>
-              <h1 className={styles.menuHeader}>Contact</h1>
-            </Link>
-            <div className="hamburgerIcon" onClick={handleMenu}>
-              <FaBars className={styles.hamburgerIcon} />
-            </div>
-          </div>
         </div>
-
         <div className={styles.menuItemDivMobile}>
           <GiHamburgerMenu
             onClick={() => setIsMobileMenuOpen(true)}
@@ -54,7 +42,6 @@ const Header = (): JSX.Element => {
           />
         </div>
       </div>
-
     </div>
   );
 };
