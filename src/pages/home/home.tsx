@@ -63,7 +63,7 @@ const home = () => {
           <br></br>
           <motion.div variants={item}>
             <Link to="/algorithm-visualizer">
-              <button className={styles.heroButton}>Learn More</button>
+              <button className={styles.heroButton}>Start Visualizing!</button>
             </Link>
           </motion.div>
         </motion.div>
