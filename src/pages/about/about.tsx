@@ -7,6 +7,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import { BsChevronDown } from "react-icons/bs";
 import CustomAccordionItem from "./customAccordionItem/customAccordionItem";
+import TheTeam from "./theTeam/theTeam";
 
 const About = (): JSX.Element => {
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -31,7 +32,10 @@ const About = (): JSX.Element => {
           tempora odit! Nemo corrupti quae consectetur, dolorem doloribus ea
           nisi?
         </p>
-        <h2>More things about us and the project</h2>
+        <TheTeam />
+        <h2 className={styles.h2_header}>
+          More things about us and the project
+        </h2>
         <br></br>
         <CustomAccordionItem
           {...genericCustomAccordionProps}

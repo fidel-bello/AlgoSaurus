@@ -1,0 +1,33 @@
+.container {
+  margin-top: 50px;
+}
+.swiper {
+  padding-bottom: 40px;
+  margin-top: 10px;
+}
+.person_card {
+  background-color: rgb(30, 30, 30);
+  padding: 10px;
+  border-radius: 5px;
+}
+.header {
+  font-size: 30px;
+}
+.slide_image {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  height: 300px;
+  object-fit: cover;
+}
+.about_list {
+  margin: 0px;
+  padding-left: 20px;
+}
+.about_list a {
+  text-decoration: underline;
+}
+.about_list li {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
