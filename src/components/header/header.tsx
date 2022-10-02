@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import dino from "../dino.gif";
 import styles from "./header.module.css";
+
 const Header = (): JSX.Element => {
   return (
     <div className={styles.container}>
