@@ -30,9 +30,7 @@ const About = (): JSX.Element => {
             ea nisi?
           </p>
           <TheTeam />
-          <h2 className={styles.h2_header}>
-            More things about us and the project
-          </h2>
+          <h2 className={styles.h2_header}>More about the project</h2>
           <br></br>
           <CustomAccordionItem
             {...genericCustomAccordionProps}
@@ -150,6 +148,18 @@ const About = (): JSX.Element => {
                   <li>ReactJS</li>
                   <li>TypeScript</li>
                 </ul>
+                <p>
+                  You can check the codebase{" "}
+                  <a
+                    style={{ color: "red", textDecoration: "underline" }}
+                    target="_blank"
+                    href="https://github.com/fidel-bello/shellhacks-visualizer"
+                    rel="noreferrer"
+                  >
+                    here
+                  </a>
+                  , feel free to contribute and make AlgoSaurus even better!
+                </p>
               </>
             }
           />

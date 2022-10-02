@@ -25,7 +25,12 @@ const MobileMenu = ({ isOpen, handleClose }: Props) => {
           <motion.div
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
-            exit={{ x: "105%" }}
+            exit={{
+              x: "105%",
+              transition: {
+                duration: 0.2,
+              },
+            }}
             transition={{ duration: 0.5, type: "spring" }}
             className={styles.menu}
           >

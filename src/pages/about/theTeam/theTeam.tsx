@@ -61,7 +61,7 @@ const TheTeam = () => {
             <img
               className={styles.slide_image}
               alt="Anthony Fernandez Dev"
-              src="/team/fidel.png"
+              src="/team/anthony.jpg"
             />
             <h2>Anthony Fernandez</h2>
             <p>Frontend Dev</p>
