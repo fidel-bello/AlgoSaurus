@@ -41,7 +41,7 @@
   background-color: rgb(15, 15, 15);
   color: white;
   outline: none;
-  width: calc(100% - 20px);
+  width: calc(100% - 30px);
   padding: 15px;
   border: 1px solid rgb(50, 50, 50);
   font-size: 16px;
