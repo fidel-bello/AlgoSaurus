@@ -1,3 +1,7 @@
+.menuItemDivMobile {
+  display: none;
+}
+
 .container {
   background-color: rgba(20, 20, 20, 0.5);
   backdrop-filter: blur(10px);
@@ -36,16 +40,6 @@ a {
   color: white;
 }
 
-@media only screen and (min-width: 900px) {
-  .container {
-    padding: 20px;
-  }
-
-  .container h1 {
-    font-size: 26px;
-  }
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -67,4 +61,27 @@ a {
 .menuItemDiv {
   display: flex;
   gap: 15px;
+}
+
+@media only screen and (min-width: 900px) {
+  .container {
+    padding: 20px;
+  }
+
+  .container h1 {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .menuItemDiv {
+    display: none;
+  }
+  .menuItemDivMobile {
+    display: block;
+  }
+  .mobile_icon {
+    font-size: 30px;
+    padding-top: 5px;
+    padding-right: 15px;
+  }
 }

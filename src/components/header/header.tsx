@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import dino from "../dino.gif";
 import styles from "./header.module.css";
+import { GiHamburgerMenu } from "react-icons/gi";
+import MobileMenu from "./mobileMenu/mobileMenu";
 
 const Header = (): JSX.Element => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className={styles.container}>
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        handleClose={() => setIsMobileMenuOpen(false)}
+      />
       <div className={styles.content}>
         <Link to="/">
           <div className={styles.logo}>
@@ -16,14 +24,20 @@ const Header = (): JSX.Element => {
         </Link>
         <div className={styles.menuItemDiv}>
           <Link to="/algorithm-visualizer" className={styles.menuItems}>
-            <h1 className={styles.menuHeader}>Visualizer</h1>
+            <span className={styles.menuHeader}>Visualizer</span>
           </Link>
           <Link to="/about" className={styles.menuItems}>
-            <h1 className={styles.menuHeader}>About</h1>
+            <span className={styles.menuHeader}>About</span>
           </Link>
           <Link to="/contact" className={styles.menuItems}>
-            <h1 className={styles.menuHeader}>Contact</h1>
+            <span className={styles.menuHeader}>Contact</span>
           </Link>
+        </div>
+        <div className={styles.menuItemDivMobile}>
+          <GiHamburgerMenu
+            onClick={() => setIsMobileMenuOpen(true)}
+            className={styles.mobile_icon}
+          />
         </div>
       </div>
     </div>
