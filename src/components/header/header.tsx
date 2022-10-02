@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { Link } from "react-router-dom";
 import dino from "../dino.gif";
 import styles from "./header.module.css";
@@ -31,8 +32,21 @@ const Header = (): JSX.Element => {
           </Link>
           <Link to="/contact" className={styles.menuItems}>
             <span className={styles.menuHeader}>Contact</span>
+
           </Link>
+          <div className={styles.menuItemDiv}>
+            <Link to="/algorithm-visualizer" className={styles.menuItems}>
+              <h1 className={styles.menuHeader}>Visualizer</h1>
+            </Link>
+            <Link to="/contact" className={styles.menuItems}>
+              <h1 className={styles.menuHeader}>Contact</h1>
+            </Link>
+            <div className="hamburgerIcon" onClick={handleMenu}>
+              <FaBars className={styles.hamburgerIcon} />
+            </div>
+          </div>
         </div>
+
         <div className={styles.menuItemDivMobile}>
           <GiHamburgerMenu
             onClick={() => setIsMobileMenuOpen(true)}
@@ -40,6 +54,7 @@ const Header = (): JSX.Element => {
           />
         </div>
       </div>
+
     </div>
   );
 };

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { sleep } from "../../functions/helperFunctions";
 import { AlgoInterface } from "../../interfaces/algoInterface";
-import { swapElements } from "./../../functions/helperFunctions";
 
 export const shellSort = async ({
   dataSet,
@@ -10,8 +9,6 @@ export const shellSort = async ({
   setCurrentIndex3,
   setDataSet,
   delay,
-  setIsConfettiRunning,
-  setIsAlgorithmRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
   if (!setCurrentIndex2) return null;
