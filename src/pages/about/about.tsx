@@ -24,10 +24,11 @@ const About = (): JSX.Element => {
         <div className={styles.content}>
           <h1>About AlgoSaurus</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            ab, praesentium, illum itaque rerum aliquid in, dolores animi nulla
-            sunt tempora odit! Nemo corrupti quae consectetur, dolorem doloribus
-            ea nisi?
+            Hello! We are the team behind AlgoSaurus, an award winning top 3
+            project built in ShellHacks 2022 Hackathon. We are all so excited to
+            construct such an amazing project that can showcase some of our
+            skills as programmers. We continue to expand details on this project
+            even after the Hackathon and hope to make it better day by day.
           </p>
           <TheTeam />
           <h2 className={styles.h2_header}>More about the project</h2>
