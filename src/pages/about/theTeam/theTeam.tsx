@@ -36,7 +36,7 @@ const TheTeam = () => {
             <img
               className={styles.slide_image}
               alt="Fidel Bello Dev"
-              src="/team/fidel.png"
+              src="/team/fidel.jpg"
             />
             <h2>Fidel Bello</h2>
             <p>Algorithms Master</p>
