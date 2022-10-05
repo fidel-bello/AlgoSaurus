@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
 import styles from "./snippetsLanguages.module.css";
+import ReactMarkdownComponent from "../../reactMarkdown/reactMarkdown";
 
 interface Props {
   snippets: any;
@@ -20,9 +22,25 @@ const SnippetsLanguages = ({ snippets }: Props): JSX.Element | null => {
 
   return (
     <div className={styles.container}>
-      {languages.map((language, index) => {
-        return <div key={`${language}-${index}`}>{language}</div>;
-      })}
+      <div className={styles.list}>
+        {languages.map((language, index) => {
+          return (
+            <div
+              onClick={() => setSelectedLanguage(language)}
+              className={
+                selectedLanguage === language
+                  ? styles.list_item_selected
+                  : styles.list_item
+              }
+              key={`${language}-${index}`}
+            >
+              {language}
+            </div>
+          );
+        })}
+      </div>
+      {/* @ts-ignore */}
+      <ReactMarkdownComponent markdown={snippets[`${selectedLanguage}`]} />
     </div>
   );
 };

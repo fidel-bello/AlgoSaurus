@@ -12,6 +12,7 @@
   .container {
     font-size: 16px;
     max-width: 1000px;
+    margin-left: 0px;
   }
   .code span {
     font-size: 16px;
