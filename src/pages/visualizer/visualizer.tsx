@@ -186,7 +186,6 @@ const Visualizer = (): JSX.Element | null => {
                   <button onClick={() => setIsAlgorithmRunning(true)}>
                     <BsPlayFill className={styles.playButton} />
                   </button>
-                  <span className={styles.label}>Start</span>
                 </div>
               ) : (
                 <div className={styles.play_button_container}>

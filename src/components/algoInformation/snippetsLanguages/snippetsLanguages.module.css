@@ -1,0 +1,30 @@
+.container {
+}
+.list {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-bottom: 0px;
+}
+
+.list_item,
+.list_item_selected {
+  min-width: 70px;
+  font-size: 18px;
+  padding: 15px;
+  cursor: pointer;
+  text-align: center;
+  transition: 100ms;
+  margin-bottom: -1px;
+  border-bottom: 5px solid transparent;
+}
+
+.list_item:hover {
+  transform: translateY(-5px);
+  transition: 100ms;
+}
+.list_item_selected {
+  border-bottom: 5px solid red;
+}

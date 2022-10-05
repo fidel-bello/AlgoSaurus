@@ -6,8 +6,6 @@
   background-color: rgb(30, 30, 30);
   width: calc(100% - 100px);
   padding: 50px;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
   margin-top: 70px;
 }
 .container p {
