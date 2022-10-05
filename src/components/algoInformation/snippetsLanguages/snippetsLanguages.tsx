@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import styles from "./snippetsLanguages.module.css";
-import ReactMarkdownComponent from "../../reactMarkdown/reactMarkdown";
 
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 interface Props {
   snippets: any;
 }
@@ -40,7 +42,9 @@ const SnippetsLanguages = ({ snippets }: Props): JSX.Element | null => {
         })}
       </div>
       {/* @ts-ignore */}
-      <ReactMarkdownComponent markdown={snippets[`${selectedLanguage}`]} />
+      <SyntaxHighlighter language={selectedLanguage} style={gruvboxDark}>
+        {snippets[`${selectedLanguage}`]}
+      </SyntaxHighlighter>
     </div>
   );
 };

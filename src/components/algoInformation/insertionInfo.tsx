@@ -1,34 +1,13 @@
 import React from "react";
-import ReactMarkdownComponent from "../reactMarkdown/reactMarkdown";
+import { insertionSnippets } from "./codeSnippets/insertion";
 import styles from "./info.module.css";
-
-const codeSnippet = `
-\`\`\`javascript
-const insertionSort = ({ dataSet }) => {
-  const length = dataSet.length;
-  const array = dataSet;
-
-  for (let i = 0; i < length; i++) {
-    const current = array[i];
-    let j = i - 1;
-
-    while (j > -1 && current < array[j]) {
-      array[j + 1] = array[j];
-      j--;
-    }
-    array[j + 1] = current;
-  }
-
-  return array;
-};
-\`\`\`
-`;
+import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
 
 const InsertionInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Insertion Sort</h2>
-      <ReactMarkdownComponent markdown={codeSnippet} />
+      <SnippetsLanguages snippets={insertionSnippets} />
       <h2 className={styles.header}>How it works?</h2>
 
       <p>
