@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import styles from "./snippetsLanguages.module.css";
 
 import SyntaxHighlighter from "react-syntax-highlighter";

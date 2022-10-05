@@ -1,6 +1,5 @@
 export const shellSnippets = {
   js: `
-    \`\`\`javascript
     const shellSort= ({ dataSet }) => {
       let increment = dataSet.length / 2;
       const arr = dataSet;
@@ -38,6 +37,5 @@ export const shellSnippets = {
         setDataSet([...arr]);
         // setIsAlgorithmRunning(false);
       }
-    \`\`\`
     `,
 };

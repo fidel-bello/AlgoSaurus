@@ -1,6 +1,5 @@
 export const mergeSnippets = {
   js: `
-    \`\`\`javascript
     const mergeSort = ({ dataSet }) => {
       const length = dataSet.length;
       const array = dataSet;
@@ -59,6 +58,5 @@ export const mergeSnippets = {
     
       return array;
     };
-    \`\`\`
     `,
 };

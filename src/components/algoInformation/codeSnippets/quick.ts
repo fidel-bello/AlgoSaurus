@@ -1,6 +1,5 @@
 export const quickSnippets = {
   js: `
-    \`\`\`javascript
     const quickSort = ({ dataSet }) => {
       const length = dataSet.length;
       const array = dataSet;
@@ -39,6 +38,5 @@ export const quickSnippets = {
       moves.push([end, prv + 1]);
       return prv + 1;
     };
-    \`\`\`
     `,
 };
