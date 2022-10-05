@@ -1,7 +1,8 @@
 .container {
-  max-width: 95vw;
   overflow-x: scroll;
   font-size: 10px;
+  width: calc(100vw + 40px);
+  margin-left: -40px;
 }
 .code span {
   font-size: 14px;
@@ -10,6 +11,7 @@
 @media only screen and (min-width: 900px) {
   .container {
     font-size: 16px;
+    max-width: 1000px;
   }
   .code span {
     font-size: 16px;
