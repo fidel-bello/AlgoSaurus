@@ -192,7 +192,6 @@ const Visualizer = (): JSX.Element | null => {
                   <button onClick={() => setIsAlgorithmRunning(false)}>
                     <BiStopCircle className={styles.playButton} />
                   </button>
-                  <span className={styles.label}>Stop</span>
                 </div>
               )}
             </div>
