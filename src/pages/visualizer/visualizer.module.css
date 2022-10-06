@@ -26,6 +26,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .graph_container svg {
   /* background-color: red; */
   padding: 5px;
@@ -43,13 +44,24 @@
   width: 100%;
 }
 .dropdown_play_button_container {
+  width: 100%;
+  border-top: 1px solid rgb(70, 70, 70);
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+.dropdown_play_button_content {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  width: calc(100%);
+  max-width: 1000px;
+  padding: 20px;
+  margin: auto;
 }
-.dropdown_play_button_container > select {
+
+.dropdown_play_button_content > select {
   margin: 0px;
   margin-right: 20px;
   padding: 15px;
