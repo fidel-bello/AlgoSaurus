@@ -16,9 +16,11 @@
   margin-bottom: 30px;
 }
 .container h2 {
-  font-size: 40px;
   margin-top: 50px;
 }
-.header {
-  text-align: center;
+.container h2 {
+  font-size: 32px;
+}
+.applications_list li {
+  margin: 0px;
 }

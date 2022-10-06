@@ -1,0 +1,17 @@
+.header {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.table {
+  background-color: rgb(40, 40, 40);
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.table td {
+  text-align: center;
+  padding-top: 10px;
+}

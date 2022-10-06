@@ -2,12 +2,14 @@ import React from "react";
 import { insertionSnippets } from "./codeSnippets/insertion";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const InsertionInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Insertion Sort</h2>
       <SnippetsLanguages snippets={insertionSnippets} />
+      <TimeComplexity best="O(n)" worst="O(n2)" average="O(n2)" stable="YES" />
       <h2 className={styles.header}>How it works?</h2>
 
       <p>
@@ -22,6 +24,12 @@ const InsertionInfo = () => {
         values. Insertion sort is adaptive in nature, i.e. it is appropriate for
         data sets which are already partially sorted.
       </p>
+      <h2>Insertion Sort application</h2>
+      <p>The insertion sort is used when:</p>
+      <ul className={styles.applications_list}>
+        <li>the array is has a small number of elements</li>
+        <li>there are only a few elements left to be sorted</li>
+      </ul>
     </div>
   );
 };

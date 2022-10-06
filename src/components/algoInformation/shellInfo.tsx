@@ -2,12 +2,20 @@ import React from "react";
 import { shellSnippets } from "./codeSnippets/shell";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const shellInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Shell Sort</h2>
       <SnippetsLanguages snippets={shellSnippets} />
+      <TimeComplexity
+        best="O(nlog n)"
+        worst="O(n2)"
+        average="O(nlog n)"
+        stable="NO"
+      />
+
       <h2 className={styles.header}>How it works?</h2>
       <p>
         The Shell sort is an in-place comparison sort. It can be seen as either
@@ -29,6 +37,19 @@ const shellInfo = () => {
         for a decreasing sequence of h values ending in 1 is guaranteed to leave
         a sorted list in the end.
       </p>
+      <h2>Shell Sort application</h2>
+      <p>The shell sort is used when:</p>
+      <ul className={styles.applications_list}>
+        <li>calling a stack is overhead</li>
+        <li>recursion exceeds a limit</li>
+        <li>cost of swapping does not matter</li>
+        <li>
+          Insertion sort does not perform well when the close elements are far
+          apart. Shell sort helps in reducing the distance between the close
+          elements. Thus, there will be less number of swappings to be
+          performed.
+        </li>
+      </ul>
     </div>
   );
 };

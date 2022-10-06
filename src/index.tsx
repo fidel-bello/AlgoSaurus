@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import ScrollToTop from "./helpers/functions/scrollToTop";
 
 const darkTheme = createTheme({
   palette: {
@@ -18,6 +19,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <ThemeProvider theme={darkTheme}>
+      <ScrollToTop />
       <App />
     </ThemeProvider>
   </BrowserRouter>

@@ -2,12 +2,20 @@ import React from "react";
 import { mergeSnippets } from "./codeSnippets/merge";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const MergeInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Merge Sort</h2>
       <SnippetsLanguages snippets={mergeSnippets} />
+      <TimeComplexity
+        best="O(n*log n)"
+        worst="O(n*log n)"
+        average="O(n*log n)"
+        stable="YES"
+      />
+
       <h2 className={styles.header}>How it works?</h2>
 
       <p>
@@ -27,6 +35,13 @@ const MergeInfo = () => {
         smaller sorted arrays and combining them to eventually make a larger
         one.
       </p>
+      <h2>Merge Sort application</h2>
+      <p>The merge sort is used on:</p>
+      <ul className={styles.applications_list}>
+        <li>Inversion count problem</li>
+        <li>External sorting</li>
+        <li>E-commerce applications</li>
+      </ul>
     </div>
   );
 };

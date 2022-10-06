@@ -2,12 +2,14 @@ import React from "react";
 import { bubbleSnippets } from "./codeSnippets/bubble";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const BubbleInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Bubble Sort</h2>
       <SnippetsLanguages snippets={bubbleSnippets} />
+      <TimeComplexity best="O(n)" worst="O(n2)" average="O(n2)" stable="YES" />
       <h2 className={styles.header}>How it works?</h2>
       <p>
         Bubble sort is a basic algorithm for arranging a string of numbers or
@@ -28,6 +30,16 @@ const BubbleInfo = () => {
         for more massive datasets. But it can work well when sorting only a
         small number of elements.
       </p>
+      <h2>Bubble Sort application</h2>
+      <p>
+        Bubble sort is pretty slow, almost the slowest (thats why we throw a
+        little party when it manages to finish sorting the data hehe), this
+        sorting algorithm is only used if:
+      </p>
+      <ul className={styles.applications_list}>
+        <li>complexity does not matter</li>
+        <li>short and simple code is preferred</li>
+      </ul>
     </div>
   );
 };

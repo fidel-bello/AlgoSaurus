@@ -1,5 +1,5 @@
 export const bubbleSnippets = {
-  js: `
+  javascript: `
   const bubbleSort = ({ arr }) => {
         
     for(var i = 0; i < arr.length; i++){
