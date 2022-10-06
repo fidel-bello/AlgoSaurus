@@ -27,6 +27,17 @@ const SelectionInfo = () => {
         right) until you find the smallest one. The first item in the array is
         now sorted, while the rest of the array is unsorted.
       </p>
+      <h2>Selection Sort application</h2>
+      <p>The selection sort is used when:</p>
+      <ul className={styles.applications_list}>
+        <li>checking of all the elements is compulsory</li>
+        <li>a small list is to be sorted</li>
+        <li>cost of swapping does not matter</li>
+        <li>
+          cost of writing to a memory matters like in flash memory (number of
+          writes/swaps is O(n) as compared to O(n2) of bubble sort)
+        </li>
+      </ul>
     </div>
   );
 };

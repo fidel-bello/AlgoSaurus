@@ -37,6 +37,19 @@ const shellInfo = () => {
         for a decreasing sequence of h values ending in 1 is guaranteed to leave
         a sorted list in the end.
       </p>
+      <h2>Shell Sort application</h2>
+      <p>The shell sort is used when:</p>
+      <ul className={styles.applications_list}>
+        <li>calling a stack is overhead</li>
+        <li>recursion exceeds a limit</li>
+        <li>cost of swapping does not matter</li>
+        <li>
+          Insertion sort does not perform well when the close elements are far
+          apart. Shell sort helps in reducing the distance between the close
+          elements. Thus, there will be less number of swappings to be
+          performed.
+        </li>
+      </ul>
     </div>
   );
 };

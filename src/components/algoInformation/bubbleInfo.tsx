@@ -30,6 +30,16 @@ const BubbleInfo = () => {
         for more massive datasets. But it can work well when sorting only a
         small number of elements.
       </p>
+      <h2>Bubble Sort application</h2>
+      <p>
+        Bubble sort is pretty slow, almost the slowest (thats why we throw a
+        little party when it manages to finish sorting the data hehe), this
+        sorting algorithm is only used if:
+      </p>
+      <ul className={styles.applications_list}>
+        <li>complexity does not matter</li>
+        <li>short and simple code is preferred</li>
+      </ul>
     </div>
   );
 };

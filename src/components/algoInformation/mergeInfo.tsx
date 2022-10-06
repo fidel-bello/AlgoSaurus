@@ -35,6 +35,13 @@ const MergeInfo = () => {
         smaller sorted arrays and combining them to eventually make a larger
         one.
       </p>
+      <h2>Merge Sort application</h2>
+      <p>The merge sort is used on:</p>
+      <ul className={styles.applications_list}>
+        <li>Inversion count problem</li>
+        <li>External sorting</li>
+        <li>E-commerce applications</li>
+      </ul>
     </div>
   );
 };

@@ -24,6 +24,12 @@ const InsertionInfo = () => {
         values. Insertion sort is adaptive in nature, i.e. it is appropriate for
         data sets which are already partially sorted.
       </p>
+      <h2>Insertion Sort application</h2>
+      <p>The insertion sort is used when:</p>
+      <ul className={styles.applications_list}>
+        <li>the array is has a small number of elements</li>
+        <li>there are only a few elements left to be sorted</li>
+      </ul>
     </div>
   );
 };
