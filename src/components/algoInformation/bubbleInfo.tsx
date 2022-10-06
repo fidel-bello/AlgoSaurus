@@ -2,12 +2,14 @@ import React from "react";
 import { bubbleSnippets } from "./codeSnippets/bubble";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const BubbleInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Bubble Sort</h2>
       <SnippetsLanguages snippets={bubbleSnippets} />
+      <TimeComplexity best="O(n)" worst="O(n2)" average="O(n2)" stable="YES" />
       <h2 className={styles.header}>How it works?</h2>
       <p>
         Bubble sort is a basic algorithm for arranging a string of numbers or
