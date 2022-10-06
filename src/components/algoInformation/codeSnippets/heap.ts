@@ -1,5 +1,5 @@
 export const heapSnippets = {
-  js: `
+  javascript: `
     const heapSort = ({ dataSet }) => {
       const length = dataSet.length;
       const array = dataSet;

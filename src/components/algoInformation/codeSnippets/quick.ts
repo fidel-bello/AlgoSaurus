@@ -1,5 +1,5 @@
 export const quickSnippets = {
-  js: `
+  javascript: `
     const quickSort = ({ dataSet }) => {
       const length = dataSet.length;
       const array = dataSet;

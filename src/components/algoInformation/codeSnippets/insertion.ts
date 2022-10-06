@@ -1,5 +1,5 @@
 export const insertionSnippets = {
-  js: `
+  javascript: `
     const insertionSort = ({ dataSet }) => {
       const length = dataSet.length;
       const array = dataSet;

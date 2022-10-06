@@ -1,5 +1,5 @@
 export const selectionSnippets = {
-  js: `
+  javascript: `
     const selectionSort = ({ dataSet }) => {
       const length = dataSet.length;
       const array = dataSet;
