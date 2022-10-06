@@ -40,10 +40,12 @@ const SnippetsLanguages = ({ snippets }: Props): JSX.Element | null => {
           );
         })}
       </div>
-      {/* @ts-ignore */}
-      <SyntaxHighlighter language={selectedLanguage} style={gruvboxDark}>
-        {snippets[`${selectedLanguage}`]}
-      </SyntaxHighlighter>
+      <div className={styles.code_container}>
+        {/* @ts-ignore */}
+        <SyntaxHighlighter language={selectedLanguage} style={gruvboxDark}>
+          {snippets[`${selectedLanguage}`]}
+        </SyntaxHighlighter>
+      </div>
     </div>
   );
 };

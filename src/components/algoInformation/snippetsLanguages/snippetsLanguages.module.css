@@ -1,5 +1,3 @@
-.container {
-}
 .list {
   display: flex;
   align-items: center;
@@ -27,4 +25,7 @@
 }
 .list_item_selected {
   border-bottom: 5px solid red;
+}
+.code_container {
+  max-width: 100%;
 }
