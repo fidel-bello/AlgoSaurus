@@ -2,12 +2,14 @@ import React from "react";
 import { insertionSnippets } from "./codeSnippets/insertion";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const InsertionInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Insertion Sort</h2>
       <SnippetsLanguages snippets={insertionSnippets} />
+      <TimeComplexity best="O(n)" worst="O(n2)" average="O(n2)" stable="YES" />
       <h2 className={styles.header}>How it works?</h2>
 
       <p>

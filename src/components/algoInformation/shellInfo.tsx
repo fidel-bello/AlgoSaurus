@@ -2,12 +2,20 @@ import React from "react";
 import { shellSnippets } from "./codeSnippets/shell";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const shellInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Shell Sort</h2>
       <SnippetsLanguages snippets={shellSnippets} />
+      <TimeComplexity
+        best="O(nlog n)"
+        worst="O(n2)"
+        average="O(nlog n)"
+        stable="NO"
+      />
+
       <h2 className={styles.header}>How it works?</h2>
       <p>
         The Shell sort is an in-place comparison sort. It can be seen as either

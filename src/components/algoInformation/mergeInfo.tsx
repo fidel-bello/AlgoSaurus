@@ -2,12 +2,20 @@ import React from "react";
 import { mergeSnippets } from "./codeSnippets/merge";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const MergeInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Merge Sort</h2>
       <SnippetsLanguages snippets={mergeSnippets} />
+      <TimeComplexity
+        best="O(n*log n)"
+        worst="O(n*log n)"
+        average="O(n*log n)"
+        stable="YES"
+      />
+
       <h2 className={styles.header}>How it works?</h2>
 
       <p>

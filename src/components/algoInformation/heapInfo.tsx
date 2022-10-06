@@ -2,12 +2,20 @@ import React from "react";
 import { heapSnippets } from "./codeSnippets/heap";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const HeapInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Heap Sort</h2>
       <SnippetsLanguages snippets={heapSnippets} />
+      <TimeComplexity
+        best="O(nlog n)"
+        worst="O(nlog n)"
+        average="O(nlog n)"
+        stable="NO"
+      />
+
       <h2 className={styles.header}>How it works?</h2>
       <p>
         Heap sort is a comparison-based sorting technique and it is similar to

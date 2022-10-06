@@ -2,12 +2,19 @@ import React from "react";
 import { quickSnippets } from "./codeSnippets/quick";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const QuicksortInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Quick Sort</h2>
       <SnippetsLanguages snippets={quickSnippets} />
+      <TimeComplexity
+        best="O(n*log n)"
+        worst="O(n2)"
+        average="O(n*log n)"
+        stable="NO"
+      />
       <h2 className={styles.header}>How it works?</h2>
       <p>
         Quicksort is a fast sorting algorithm that works by splitting a large

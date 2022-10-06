@@ -2,12 +2,14 @@ import React from "react";
 import { selectionSnippets } from "./codeSnippets/selection";
 import styles from "./info.module.css";
 import SnippetsLanguages from "./snippetsLanguages/snippetsLanguages";
+import TimeComplexity from "./timeComplexity/timeComplexity";
 
 const SelectionInfo = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Selection Sort</h2>
       <SnippetsLanguages snippets={selectionSnippets} />
+      <TimeComplexity best="O(n2)" worst="O(n2)" average="O(n2)" stable="NO" />
       <h2 className={styles.header}>How it works?</h2>
 
       <p>
