@@ -27,9 +27,7 @@ export const insertionSnippets = {
         for step in range(1, len(array)):
             key = array[step]
             j = step - 1
-            
-            # Compare key with each element on the left of it until an element smaller than it is found
-            # For descending order, change key<array[j] to key>array[j].        
+                 
             while j >= 0 and key < array[j]:
                 array[j + 1] = array[j]
                 j = j - 1
@@ -154,4 +152,62 @@ export const insertionSnippets = {
       printArray(data, size);
     }
   `,
+  csharp: `
+  using System;
+  namespace InsertionSortDemo {
+     class Example {
+        static void Main(string[] args) {
+           int[] arr = new int[10] { 23, 9, 85, 12, 99, 34, 60, 15, 100, 1 };
+           int n = 10, i, j, val, flag;
+           Console.WriteLine("Insertion Sort");
+           Console.Write("Initial array is: ");
+           for (i = 0; i < n; i++) {
+              Console.Write(arr[i] + " ");
+           }
+           for (i = 1; i < n; i++) {
+              val = arr[i];
+              flag = 0;
+              for (j = i - 1; j >= 0 && flag != 1; ) {
+                 if (val < arr[j]) {
+                    arr[j + 1] = arr[j];
+                    j--;
+                    arr[j + 1] = val;
+                 }
+                 else flag = 1;
+              }
+           }
+           Console.Write("\\nSorted Array is: ");
+           for (i = 0; i < n; i++) {
+              Console.Write(arr[i] + " ");
+           }
+        }
+     }
+  }`,
+  rust: `
+  pub fn insertion_sort(arr: &mut [i32]) {
+    for i in 1..arr.len() {
+        let mut j = i;
+        while j > 0 && arr[j - 1] > arr[j] {
+            arr.swap(j - 1, j);
+            j -= 1;
+        }
+    }
+  }
+  
+  /// Binary insertion sort.
+  /// Binary insertion sort is a insertion sort variant that utilizes binary
+  /// search to reduce comparisons in a normal insertion sort.
+
+  pub fn binary_insertion_sort(arr: &mut [i32]) {
+    for i in 1..arr.len() {
+        let val = arr[i];
+        let mut j = i;
+        let pos = arr[..i].binary_search(&val).unwrap_or_else(|pos| pos);
+        // Swap all elements until specific position.
+        while j > pos {
+            arr.swap(j - 1, j);
+            j -= 1;
+        }
+    }
+  }`,
 };

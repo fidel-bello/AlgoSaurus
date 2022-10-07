@@ -176,25 +176,26 @@ const Visualizer = (): JSX.Element | null => {
 
         <div className={styles.menu_container}>
           <div className={styles.dropdown_play_button_container}>
-            <SelectAlgorithm
-              currentAlgo={currentAlgo}
-              setCurrentAlgo={setCurrentAlgo}
-            />
-            <div className={styles.buttonContainer}>
-              {!isAlgorithmRunning ? (
-                <div className={styles.play_button_container}>
-                  <button onClick={() => setIsAlgorithmRunning(true)}>
-                    <BsPlayFill className={styles.playButton} />
-                  </button>
-                </div>
-              ) : (
-                <div className={styles.play_button_container}>
-                  <button onClick={() => setIsAlgorithmRunning(false)}>
-                    <BiStopCircle className={styles.playButton} />
-                  </button>
-                  <span className={styles.label}>Stop</span>
-                </div>
-              )}
+            <div className={styles.dropdown_play_button_content}>
+              <SelectAlgorithm
+                currentAlgo={currentAlgo}
+                setCurrentAlgo={setCurrentAlgo}
+              />
+              <div className={styles.buttonContainer}>
+                {!isAlgorithmRunning ? (
+                  <div className={styles.play_button_container}>
+                    <button onClick={() => setIsAlgorithmRunning(true)}>
+                      <BsPlayFill className={styles.playButton} />
+                    </button>
+                  </div>
+                ) : (
+                  <div className={styles.play_button_container}>
+                    <button onClick={() => setIsAlgorithmRunning(false)}>
+                      <BiStopCircle className={styles.playButton} />
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 

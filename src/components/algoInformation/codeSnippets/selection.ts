@@ -174,4 +174,79 @@ export const selectionSnippets = {
     cout << "Sorted array in Ascending Order:\\n";
     printArray(data, size);
   }`,
+  csharp: `
+  // C# program for implementation
+
+  using System;
+  
+  class GFG
+  {
+    static void sort(int []arr)
+    {
+      int n = arr.Length;
+  
+      // One by one move boundary of unsorted subarray
+      for (int i = 0; i < n - 1; i++)
+      {
+        // Find the minimum element in unsorted array
+        int min_idx = i;
+        for (int j = i + 1; j < n; j++)
+          if (arr[j] < arr[min_idx])
+            min_idx = j;
+  
+        // Swap the found minimum element with the first
+        // element
+        int temp = arr[min_idx];
+        arr[min_idx] = arr[i];
+        arr[i] = temp;
+      }
+    }
+  
+    // Prints the array
+    static void printArray(int []arr)
+    {
+      int n = arr.Length;
+      for (int i=0; i<n; ++i)
+        Console.Write(arr[i]+" ");
+      Console.WriteLine();
+    }
+  
+    // Driver code
+    public static void Main()
+    {
+      int []arr = {64,25,12,22,11};
+      sort(arr);
+      Console.WriteLine("Sorted array");
+      printArray(arr);
+    }
+  
+  }
+  `,
+  rust: `
+  pub fn selection_sort<T: Ord>(arr: &mut [T]) {
+    let len = arr.len();
+    for left in 0..len {
+        let mut smallest = left;
+        for right in (left + 1)..len {
+            if arr[right] < arr[smallest] {
+                smallest = right;
+            }
+        }
+        arr.swap(smallest, left);
+    }
+  }
+
+  fn main() {
+    println!("Sort numbers ascending");
+    let mut numbers = [4, 65, 2, -31, 0, 99, 2, 83, 782, 1];
+    println!("Before: {:?}", numbers);
+    selection_sort(&mut numbers);
+    println!("After:  {:?}\\n", numbers);
+
+    println!("Sort strings alphabetically");
+    let mut strings = ["beach", "hotel", "airplane", "car", "house", "art"];
+    println!("Before: {:?}", strings);
+    selection_sort(&mut strings);
+    println!("After:  {:?}\\n", strings);
+  }`,
 };

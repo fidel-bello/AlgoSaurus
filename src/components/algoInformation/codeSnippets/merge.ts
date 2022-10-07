@@ -375,4 +375,169 @@ export const mergeSnippets = {
     printArray(arr, size);
     return 0;
   }`,
+  csharp: `
+  // C# program for Merge Sort
+  
+  using System;
+  class MergeSort {
+  
+    // Merges two sub arrays of []arr.
+    // First subarray is arr[l..m]
+    // Second subarray is arr[m+1..r]
+    void merge(int[] arr, int l, int m, int r)
+    {
+      // Find sizes of two
+      // sub arrays to be merged
+      int n1 = m - l + 1;
+      int n2 = r - m;
+  
+      // Create temp arrays
+      int[] L = new int[n1];
+      int[] R = new int[n2];
+      int i, j;
+  
+      // Copy data to temp arrays
+      for (i = 0; i < n1; ++i)
+        L[i] = arr[l + i];
+      for (j = 0; j < n2; ++j)
+        R[j] = arr[m + 1 + j];
+  
+      // Merge the temp arrays
+  
+      // Initial indexes of first
+      // and second sub arrays
+      i = 0;
+      j = 0;
+  
+      // Initial index of merged
+      // subarray array
+      int k = l;
+      while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+          arr[k] = L[i];
+          i++;
+        }
+        else {
+          arr[k] = R[j];
+          j++;
+        }
+        k++;
+      }
+  
+      // Copy remaining elements
+      // of L[] if any
+      while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+      }
+  
+      // Copy remaining elements
+      // of R[] if any
+      while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+      }
+    }
+  
+    // Main function that
+    // sorts arr[l..r] using
+    // merge()
+    void sort(int[] arr, int l, int r)
+    {
+      if (l < r) {
+        // Find the middle
+        // point
+        int m = l + (r - l) / 2;
+  
+        // Sort first and
+        // second halves
+        sort(arr, l, m);
+        sort(arr, m + 1, r);
+  
+        // Merge the sorted halves
+        merge(arr, l, m, r);
+      }
+    }
+  
+    // A utility function to
+    // print array of size n */
+    static void printArray(int[] arr)
+    {
+      int n = arr.Length;
+      for (int i = 0; i < n; ++i)
+        Console.Write(arr[i] + " ");
+      Console.WriteLine();
+    }
+  
+    // Driver code
+    public static void Main(String[] args)
+    {
+      int[] arr = { 12, 11, 13, 5, 6, 7 };
+      Console.WriteLine("Given Array");
+      printArray(arr);
+      MergeSort ob = new MergeSort();
+      ob.sort(arr, 0, arr.Length - 1);
+      Console.WriteLine("\\nSorted array");
+      printArray(arr);
+    }
+  }
+  `,
+  rust: `
+  fn merge<T: Copy + PartialOrd>(x1: &[T], x2: &[T], y: &mut [T]) {
+    assert_eq!(x1.len() + x2.len(), y.len());
+    let mut i = 0;
+    let mut j = 0;
+    let mut k = 0;
+    while i < x1.len() && j < x2.len() {
+        if x1[i] < x2[j] {
+            y[k] = x1[i];
+            k += 1;
+            i += 1;
+        } else {
+            y[k] = x2[j];
+            k += 1;
+            j += 1;
+        }
+    }
+    if i < x1.len() {
+        y[k..].copy_from_slice(&x1[i..]);
+    }
+    if j < x2.len() {
+        y[k..].copy_from_slice(&x2[j..]);
+    }
+  }
+
+  fn merge_sort<T: Copy + Ord>(x: &mut [T]) {
+	  let n = x.len();
+	  let m = n / 2;
+ 
+	  if n <= 1 {
+		  return;
+	  }
+ 
+	  merge_sort(&mut x[0..m]);
+  	merge_sort(&mut x[m..n]);
+ 
+	  let mut y: Vec<T> = x.to_vec();
+ 
+	  merge(&x[0..m], &x[m..n], &mut y[..]);
+ 
+	  x.copy_from_slice(&y);
+  }
+
+  fn main() {
+    println!("Sort numbers ascending");
+    let mut numbers = [4, 65, 2, -31, 0, 99, 2, 83, 782, 1];
+    println!("Before: {:?}", numbers);
+    merge_sort(&mut numbers);
+    println!("After:  {:?}\n", numbers);
+
+    println!("Sort strings alphabetically");
+    let mut strings = ["beach", "hotel", "airplane", "car", "house", "art"];
+    println!("Before: {:?}", strings);
+    merge_sort(&mut strings);
+    println!("After:  {:?}\n", strings);
+  }`,
 };

@@ -167,4 +167,81 @@ export const shellSnippets = {
     cout << "Sorted array: \\n";
     printArray(data, size);
   }`,
+  csharp: `
+  using System;
+
+  namespace ShellSortDemo {
+     public class Example {
+        static void shellSort(int[] arr, int n) {
+           int i, j, pos, temp;
+           pos = 3;
+           while (pos > 0) {
+              for (i = 0; i < n; i++) {
+                 j = i;
+                 temp = arr[i];
+                 while ((j >= pos) && (arr[j - pos] > temp)) {
+                    arr[j] = arr[j - pos];
+                    j = j - pos;
+                 }
+                 arr[j] = temp;
+              }
+              if (pos / 2 != 0)
+              pos = pos / 2;
+              else if (pos == 1)
+              pos = 0;
+              else
+              pos = 1;
+           }
+        }
+        static void Main(string[] args) {
+           int[] arr = new int[] { 56, 12, 99, 32, 1, 95, 25, 5, 100, 84 };
+           int n = arr.Length;
+           int i;
+           Console.WriteLine("Shell Sort");
+           Console.Write("Initial array is: ");
+           for (i = 0; i < n; i++) {
+              Console.Write(arr[i] + " ");
+           }
+           shellSort(arr, n);
+           Console.Write("\\nSorted Array is: ");
+           for (i = 0; i < n; i++) {
+              Console.Write(arr[i] + " ");
+           }
+        }
+     }
+  }`,
+  rust: `
+  pub fn shell_sort<T: Ord + Copy>(arr: &mut [T]) {
+    let len = arr.len();
+    let mut gap = len as i32 / 2;
+
+    while gap > 0 {
+        for i in gap..len as i32 {
+            let temp = arr[i as usize];
+            let mut j = i;
+
+            while j >= gap && arr[j as usize - gap as usize] > temp {
+                arr.swap(j as usize, j as usize - gap as usize);
+                j -= gap;
+            }
+
+            arr[j as usize] = temp;
+        }
+        gap /= 2;
+    }
+  }
+
+  fn main() {
+     println!("Sort numbers ascending");
+     let mut numbers = [4, 65, 2, -31, 0, 99, 2, 83, 782, 1];
+     println!("Before: {:?}", numbers);
+     shell_sort(&mut numbers);
+     println!("After:  {:?}\\n", numbers);
+
+     println!("Sort strings alphabetically");
+     let mut strings = ["beach", "hotel", "airplane", "car", "house", "art"];
+     println!("Before: {:?}", strings);
+     shell_sort(&mut strings);
+     println!("After:  {:?}\\n", strings);
+  }`,
 };
