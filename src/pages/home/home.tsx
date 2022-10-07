@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./home.module.css";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 // Particles background
 import { tsParticles } from "tsparticles-engine";
@@ -23,20 +23,27 @@ const home = () => {
     []
   );
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0, y: 0 },
     show: {
       opacity: 1,
-      y: 200,
+      y: 20,
       transition: {
+        duration: 1,
         staggerChildren: 0.3,
       },
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, y: 100 },
+    show: {
+      opacity: 1,
+      y: 20,
+      transition: {
+        duration: 0.5,
+      },
+    },
   };
 
   return (
