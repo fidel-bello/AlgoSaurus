@@ -39,7 +39,7 @@ const TheTeam = () => {
               src="/team/fidel.jpg"
             />
             <h2>Fidel Bello</h2>
-            <p>Algorithms Master</p>
+            <p>Software Engineer</p>
             <ul className={styles.about_list}>
               <li>
                 <a
@@ -51,7 +51,7 @@ const TheTeam = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:">email@email.com</a>
+                <a href="mailto:">fidel_23@email.com</a>
               </li>
             </ul>
           </div>
@@ -64,7 +64,7 @@ const TheTeam = () => {
               src="/team/anthony.jpg"
             />
             <h2>Anthony Fernandez</h2>
-            <p>Frontend Dev</p>
+            <p>Software Engineer</p>
             <ul className={styles.about_list}>
               <li>
                 <a
