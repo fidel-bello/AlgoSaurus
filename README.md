@@ -4,9 +4,9 @@
 
 # About AlgoSaurus
 
-AlgoSaurus is a engaging Algorithm Visualizer website that helps users visualize algorithms. It mainly aims to deepen the understanding of algorithms opertions for students just learning algorithms.
+AlgoSaurus is a engaging Algorithm Visualizer website that helps users visualize algorithms. It mainly aims to deepen the understanding of algorithms operations for students just learning algorithms.
 
-Learning alorithms made easier with visualizing. Woundering how?
+Learning algorithms made easier with visualizing. Wondering how?
 Check us out:
 
 ## Table of Contents
