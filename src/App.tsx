@@ -15,8 +15,9 @@ import About from "./pages/about/about";
 function App() {
   return (
     <div className="App">
+
       <Header />
-      <div className="page-container">
+      <div className="page-container">`
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/algorithm-visualizer" element={<Visualizer />} />

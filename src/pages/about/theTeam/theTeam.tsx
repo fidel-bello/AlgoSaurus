@@ -111,7 +111,7 @@ const TheTeam = () => {
         <SplideSlide>
           <div className={styles.person_card}>
             <img
-              className={styles.slide_image}
+              className={styles.slide_image_emily}
               alt="Emily Cruz Dev"
               src="/team/emily.jpg"
             />
