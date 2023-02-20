@@ -25,9 +25,14 @@ Check us out:
 * [Shell sort](https://algo-saurus.web.app/algorithm-visualizer?algo=shell)
 
 ### Installation
-* This app uses npm packages
-* in terminal, npm init -y
-* npm install
+Since this is a react app and we are ussing a couple packages, to run the app locally you must first run:
+```
+npm install
+```
+After that has completed you can now run it locally with:
+```
+npm start
+```
 
 ### License
  * ![badge](https://img.shields.io/badge/license-MIT-blue)
