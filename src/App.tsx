@@ -17,7 +17,7 @@ function App() {
     <div className="App">
 
       <Header />
-      <div className="page-container">`
+      <div className="page-container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/algorithm-visualizer" element={<Visualizer />} />
