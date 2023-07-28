@@ -51,7 +51,7 @@ const TheTeam = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:">fidel_23@email.com</a>
+                <a href="mailto:">fidelbello1997@gmail.com</a>
               </li>
             </ul>
           </div>
