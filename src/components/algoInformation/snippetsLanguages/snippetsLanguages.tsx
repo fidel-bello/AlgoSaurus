@@ -5,6 +5,7 @@ import styles from "./snippetsLanguages.module.css";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   snippets: any;
 }
 

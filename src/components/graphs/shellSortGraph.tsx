@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
 import { VictoryBar } from "victory";
-import { insertionSort } from "../../helpers/algorithms/sorting/insertionSort";
 import { shellSort } from "../../helpers/algorithms/sorting/shellSort";
 import { AlgoGraphInterface } from "../../helpers/interfaces/algoGraphInterface";
 
