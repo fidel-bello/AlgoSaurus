@@ -4,11 +4,9 @@ import styles from "./home.module.css";
 import { motion, Variants } from "framer-motion";
 
 // Particles background
-import { tsParticles } from "tsparticles-engine";
 import { useCallback } from "react";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
-import { loadFull } from "tsparticles";
 import { loadFirePreset } from "tsparticles-preset-fire";
 
 const home = () => {

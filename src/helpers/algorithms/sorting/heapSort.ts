@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { sleep, swapElements } from "../../functions/helperFunctions";
 import { AlgoInterface } from "../../interfaces/algoInterface";
 
@@ -8,7 +9,6 @@ export const heapSort = async ({
   setCurrentIndex2,
   setCurrentIndex3,
   delay,
-  setIsAlgorithmRunning,
 }: AlgoInterface) => {
   if (!dataSet) return null;
   if (!setCurrentIndex2) return null;
