@@ -28,3 +28,21 @@
   height: 100vh;
   pointer-events: none;
 }
+
+.grid_container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  white-space: pre;
+}
+
+.node {
+  width: 25px;
+  height: 25px;
+  outline: 1px solid #b22424;
+  display: inline-block;
+}
