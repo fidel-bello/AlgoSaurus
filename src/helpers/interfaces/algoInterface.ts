@@ -11,4 +11,27 @@ export interface AlgoInterface {
   setIsConfettiRunning?: React.Dispatch<React.SetStateAction<boolean>>;
   setIsAlgorithmRunning: React.Dispatch<React.SetStateAction<boolean>>;
 }
-//binary
+
+// Grid and Node Interfaces for pathfinding
+export interface Node {
+  col: number;
+  row: number;
+  isStart: boolean;
+  isFinish: boolean;
+  distance: number;
+  isVisited: boolean;
+  isWallNode: boolean;
+  previousNode: null;
+}
+
+
+export interface InitialGraphState {
+  grid: Node[][];
+  startNode: number;
+  endNode: number;
+  startNodeCol: number;
+  endNodeCol: number;
+  rowCount: number;
+  columnCount: number;
+  isWallNode: boolean;
+}[];
