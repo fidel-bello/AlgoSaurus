@@ -18,10 +18,10 @@ export interface Node {
   row: number;
   isStart: boolean;
   isFinish: boolean;
-  distance: number;
-  isVisited: boolean;
+  distance?: number;
+  isVisited?: boolean;
   isWallNode: boolean;
-  previousNode: null;
+  previousNode?: null;
 }
 
 
