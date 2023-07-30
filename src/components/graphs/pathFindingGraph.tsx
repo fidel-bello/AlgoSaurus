@@ -1,31 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./graph.module.css";
-
-
-export interface InitialGraphState {
-  grid: [];
-  startNode: number,
-  endNode: number,
-  startNodeCol: number,
-  endNodeCol: number,
-  rowCount: number;
-  columnCount: number;
-  isMousePressed: boolean;
-  isRunning: boolean;
-  isStartNode: boolean;
-  isFinishNode: boolean;
-  isWallNode: boolean;
-  currRow: number;
-  currCol: number;
-  isDesktopView: boolean;
-}
+import Nodes from "../nodes/nodes";
+import { InitialGraphState, Node } from "../../helpers/interfaces/algoInterface";
 
 const PathFindingGraph = (initialState: InitialGraphState): JSX.Element => {
-  const [state, setState] = useState<any>(initialState);
 
+  const { useState, useEffect } = React;
+  const [state, setState] = useState<InitialGraphState>(initialState);
+  
   useEffect(() => {
     const newGrid = getInitializedGrid();
-    setState({ grid: newGrid });
+    setState(prevState => ({ ...prevState, grid: newGrid }));
   }, [initialState]);
 
   const getInitializedGrid = () => {
@@ -50,10 +35,18 @@ const PathFindingGraph = (initialState: InitialGraphState): JSX.Element => {
       isFinish: row === state.endNode && col === state.endNodeCol,
       distance: Infinity,
       isVisited: false,
-      isWall: false,
+      isWallNode: false,
       previousNode: null,
     };
   };
+
+  const handleMouseDown = (row: number, col: number) => {
+    // TODO - Fix this
+  }
+
+  const handleMouseUp = (row: number, col: number) => {
+    // TODO - Fix this
+  }
 
 
   return (
@@ -62,10 +55,18 @@ const PathFindingGraph = (initialState: InitialGraphState): JSX.Element => {
         {state.grid.map((row: any, rowIdx: number) => {
            return (
             <tr key={rowIdx}>
-                {row.map((node: any, nodeIdx: number) => {
-                    const {row, col } = node;
+                {row.map((node: Node, nodeIdx: number) => {
+    
+                    const { row, col, isFinish, isStart, isWallNode } = node;
                     return  (
-                        <td key={nodeIdx} id={`node-${row}-${col}`} className={styles.node}></td>
+                          <Nodes
+                            key={nodeIdx}
+                            col={col}
+                            row={row}
+                            isFinishNode={isFinish}
+                            isStart={isStart}
+                            isWall={isWallNode}
+                          />
                     )
                 })}
             </tr>
