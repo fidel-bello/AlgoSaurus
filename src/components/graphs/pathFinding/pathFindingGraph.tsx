@@ -1,6 +1,6 @@
 import React from "react";
 import { InitialGraphState } from "../../../helpers/interfaces/algoInterface";
-import { Paper, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import Nodes from "./node/nodes";
 
 const PathFindingGrid = (initialState: InitialGraphState): JSX.Element => {
