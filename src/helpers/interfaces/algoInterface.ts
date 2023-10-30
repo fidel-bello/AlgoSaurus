@@ -22,6 +22,11 @@ export interface Node {
   isVisited?: boolean;
   isWallNode: boolean;
   previousNode?: null;
+  isNode?: boolean;
+  distanceToFinishNode?: number;
+  handleMouseDown?: (row: number, col: number) => void;
+  handleMouseUp?: (row: number, col: number) => void
+  handleOnMouseEnter?: (row: number, col: number) => void
 }
 
 
