@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AnimateOnScreenLoad from "../../components/animateOnScreenLoad/animateOnScreenLoad";
+import AnimateOnScreenLoad from "../../components/animations/animateOnScreenLoad";
 import styles from "./contact.module.css";
 
 const Contact = () => {

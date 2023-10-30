@@ -1,9 +1,10 @@
 import React from "react";
-import styles from "./about.module.css";
 
-import AnimateOnScreenLoad from "../../components/animateOnScreenLoad/animateOnScreenLoad";
+
+import AnimateOnScreenLoad from "../../components/animations/animateOnScreenLoad";
 import CustomAccordionItem from "./customAccordionItem/customAccordionItem";
 import TheTeam from "./theTeam/theTeam";
+import styles from "./about.module.css";
 
 const About = (): JSX.Element => {
   const [expanded, setExpanded] = React.useState<string | false>(false);

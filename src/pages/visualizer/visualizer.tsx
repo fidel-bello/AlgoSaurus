@@ -16,7 +16,7 @@ import SelectAlgorithm from "./components/selectAlgorithm";
 import styles from "./visualizer.module.css";
 import ReactSlider from "react-slider";
 import { useSearchParams } from "react-router-dom";
-import AnimateOnScreenLoad from "../../components/animateOnScreenLoad/animateOnScreenLoad";
+import AnimateOnScreenLoad from "../../components/animations/animateOnScreenLoad";
 
 const Visualizer = (): JSX.Element | null => {
   const [data, setData] = useState<number[] | null>(null);

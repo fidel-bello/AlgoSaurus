@@ -1,5 +1,5 @@
 import React from "react";
-import PathFindingGraph from "../../components/graphs/pathFindingGraph";
+import PathFindingGrid from "../../components/graphs/pathFinding/pathFindingGraph";
 import { InitialGraphState } from "../../helpers/interfaces/algoInterface";
 
 const initialState: InitialGraphState = {
@@ -8,13 +8,13 @@ const initialState: InitialGraphState = {
   endNode: 5,
   startNodeCol: 5,
   endNodeCol: 15,
-  rowCount: 18, 
-  columnCount: 26,
+  rowCount: 20, 
+  columnCount: 40,
   isWallNode: false,
 };
 
 const PathFinding: React.FC = () => {
-  return <PathFindingGraph {...initialState } />;
+  return <PathFindingGrid {...initialState } />;
 };
 
 export default PathFinding;
