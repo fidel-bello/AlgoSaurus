@@ -4,12 +4,12 @@ import { InitialGraphState } from "../../helpers/interfaces/algoInterface";
 
 const initialState: InitialGraphState = {
   grid: [],
-  startNode: 5,
-  endNode: 5,
-  startNodeCol: 5,
-  endNodeCol: 15,
-  rowCount: 20, 
-  columnCount: 40,
+  startNode: 1,
+  startNodeCol: 1,
+  endNode: 40,
+  endNodeCol: 20,  
+  rowCount: 40, 
+  columnCount: 20,
   isWallNode: false,
 };
 

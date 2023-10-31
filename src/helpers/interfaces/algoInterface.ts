@@ -13,17 +13,24 @@ export interface AlgoInterface {
 }
 
 // Grid and Node Interfaces for pathfinding
-export interface Node {
-  col: number;
-  row: number;
-  isStart: boolean;
-  isFinish: boolean;
+export interface NodesProps {
+  grid?: [];
+  col?: number;
+  row?: number;
+  isStart?: boolean;
+  isEnd?: boolean;
   distance?: number;
   isVisited?: boolean;
-  isWallNode: boolean;
+  isWallNode?: boolean;
   previousNode?: null;
   isNode?: boolean;
   distanceToFinishNode?: number;
+  startNode?: number;
+  endNode?: number;
+  rowCount?: number;
+  colCount?: number;
+  startNodeCol?: number;
+  endNodeCol?: number;
   handleMouseDown?: (row: number, col: number) => void;
   handleMouseUp?: (row: number, col: number) => void
   handleOnMouseEnter?: (row: number, col: number) => void
@@ -31,7 +38,7 @@ export interface Node {
 
 
 export interface InitialGraphState {
-  grid: Node[][];
+  grid: NodesProps[][];
   startNode: number;
   endNode: number;
   startNodeCol: number;
