@@ -1,19 +1,43 @@
-import React from "react";
-import { InitialGraphState } from "../../../helpers/interfaces/algoInterface";
+import React, { useState, useEffect } from "react";
+import { InitialGraphState, NodesProps } from "../../../helpers/interfaces/algoInterface";
 import { Grid } from "@mui/material";
 import Nodes from "./node/nodes";
+import { createGrid } from "../../../helpers/functions/helperFunctions";
 
 const PathFindingGrid = (initialState: InitialGraphState): JSX.Element => {
+  
+  const [grid, setGrid] = useState<NodesProps[][]>([]);
+
+  useEffect(() => {
+    const newGrid = createGrid({
+      rowCount: initialState.rowCount,
+      colCount: initialState.columnCount,
+      startNode: initialState.startNode,
+      startNodeCol: initialState.startNodeCol,
+      endNode: initialState.endNode,
+      endNodeCol: initialState.endNodeCol,
+      isWallNode: initialState.isWallNode,
+    });
+
+    setGrid(newGrid)
+  }, [initialState]);
+
 
   return (
-    <Grid sx={{ flexGrow: 1 }} container >
+    <Grid sx={{ flexGrow: 1 }} container>
       <Grid item xs={12}>
-        <Grid container sx={{ flexWrap: 'nowrap' }} justifyContent="center">
-          {Array.from({ length: initialState.columnCount }).map((_, colIdx) => (
-            <Grid key={colIdx} item >
-              {Array.from({ length: initialState.rowCount }).map((_, rowIdx) => (
-                <Grid key={rowIdx} item>
-                  <Nodes />
+        <Grid container sx={{ flexWrap: "nowrap" }} justifyContent="center">
+          {grid.map((row: NodesProps[], rowIdx) => (
+            <Grid key={rowIdx} item>
+              {row.map((node: NodesProps, nodeIdx) => (
+                <Grid key={nodeIdx} item>
+                  <Nodes
+                    row={rowIdx}
+                    col={nodeIdx}
+                    isEnd={node.isEnd}
+                    isStart={node.isStart}
+                    isWallNode={node.isWallNode}
+                  />
                 </Grid>
               ))}
             </Grid>
